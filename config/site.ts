@@ -38,6 +38,7 @@ export const siteConfig = {
   ],
   links: {
     github: "https://github.com/stanrainier",
+    gitlab: "https://gitlab.com/stanrainier",
     buymecoffe: "https://buymeacoffee.com/stanrainiersalazar",
   },
 };

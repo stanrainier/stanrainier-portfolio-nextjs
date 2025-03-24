@@ -24,7 +24,10 @@ import {
   HeartFilledIcon,
   SearchIcon,
   Logo,
+  GitlabIcon,
 } from "@/components/icons";
+import {Tooltip} from "@heroui/tooltip";
+
 
 export const Navbar = () => {
   const searchInput = (
@@ -50,22 +53,35 @@ export const Navbar = () => {
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+      <NavbarContent className=" sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <p className="font-bold text-inherit">STAN</p>
           </NextLink>
-        </NavbarBrand>
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
           <ThemeSwitch />
-        </NavbarItem>
+
+        </NavbarBrand>
+
       </NavbarContent>
 
+      {/* <NavbarContent className="hidden sm:flex w-full items-center" justify='center'>
+        <NavbarItem className="hidden sm:flex gap-2 justify-center">
+          <Tooltip content="GitHub" placement="bottom" showArrow>
+            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+              <GithubIcon className="text-default-500" />
+            </Link>
+          </Tooltip>
+          <Tooltip content="GitLab" placement="bottom" showArrow>
+            <Link isExternal aria-label="GitLab" href={siteConfig.links.gitlab}>
+              <GitlabIcon className="text-default-500" />
+            </Link>
+          </Tooltip>
+       </NavbarItem>
+      </NavbarContent> */}
+
+
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="hidden sm:flex sm:basis-full"
         justify="end"
       >
         <ul className="hidden lg:flex gap-6 justify-start ml-2">

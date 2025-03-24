@@ -184,4 +184,28 @@ export const SearchIcon = (props: IconSvgProps) => (
       strokeWidth="2"
     />
   </svg>
+
+  
 );
+
+export const GitlabIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path
+        d="M22.95 9.73l-.02-.06-2.22-6.84a.88.88 0 00-.84-.6.88.88 0 00-.83.6L16.2 8.47H7.8L4.96 2.83a.88.88 0 00-.83-.6.88.88 0 00-.84.6L1.08 9.67l-.03.07a2.4 2.4 0 00.87 2.75l9.54 6.91.03.02c.13.1.29.15.44.15s.31-.05.44-.15l.03-.02 9.54-6.91a2.4 2.4 0 00.87-2.75zM12 18.03L3.4 11.63a1.09 1.09 0 01-.39-1.27L4.2 6.24l2.47 7.6h7.7l2.48-7.6 1.2 4.12c.1.34.03.7-.19.98a1.1 1.1 0 01-.39.36L12 18.03z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
