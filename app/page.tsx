@@ -12,6 +12,7 @@ import { motion } from "motion/react"
 import Contact from "@/components/contact";
 import About from "@/components/about";
 import Projects from "@/components/projects";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,6 +21,17 @@ export default function Home() {
     <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
+          <div className="flex justify-center ">
+          <Image 
+            src="/images/stan.jpg"
+            alt="Stan Rainier D. Salazar"
+            width={400}
+            height={400}
+            className="rounded-full mb-6  bg-blue-500 shadow-lg shadow-cyan-500/100"
+            >
+          </Image>
+          </div>
+
         <motion.div
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
@@ -79,14 +91,15 @@ export default function Home() {
 
     </motion.div>
     <section>
-        <Contact />
-    </section>
-    <section>
         <About />
     </section>
     <section>
         <Projects />
     </section>
+    <section>
+        <Contact />
+    </section>
+
     </div>
     
   );
