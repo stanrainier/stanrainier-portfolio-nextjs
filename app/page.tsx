@@ -9,9 +9,14 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon, GitlabIcon } from "@/components/icons";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button, Divider } from "@heroui/react";
 import { motion } from "motion/react"
+import Contact from "@/components/contact";
+import About from "@/components/about";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
+    <div>
+
     <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
@@ -71,7 +76,18 @@ export default function Home() {
           </Snippet>
         </div>
       </section>
+
     </motion.div>
+    <section>
+        <Contact />
+    </section>
+    <section>
+        <About />
+    </section>
+    <section>
+        <Projects />
+    </section>
+    </div>
     
   );
 }
