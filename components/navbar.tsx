@@ -56,10 +56,12 @@ export const Navbar = () => {
       <NavbarContent className=" sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <p className="font-bold text-inherit">STAN</p>
+          <p className="font-bold text-3xl antialiased font-extrabold text-transparent 
+          bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text transition-all duration-[1500ms]
+          ease-in-out hover:from-cyan-400 hover:to-blue-500">
+            STAN
+          </p>
           </NextLink>
-          <ThemeSwitch />
-
         </NavbarBrand>
 
       </NavbarContent>
@@ -113,6 +115,8 @@ export const Navbar = () => {
             Buy Stan a Coffee
           </Button>
         </NavbarItem>
+        <ThemeSwitch />
+
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">

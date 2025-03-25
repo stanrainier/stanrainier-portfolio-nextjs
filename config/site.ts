@@ -40,5 +40,6 @@ export const siteConfig = {
     github: "https://github.com/stanrainier",
     gitlab: "https://gitlab.com/stanrainier",
     buymecoffe: "https://buymeacoffee.com/stanrainiersalazar",
+    linkedIn: "https://www.linkedin.com/in/stan-rainier-salazar-70365a2bb/",
   },
 };
