@@ -17,29 +17,29 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-[1400px] w-full grid content-around gap-6 md:grid-cols-2">
-  <div className="flex flex-col gap-3 flex-1">
-    <Card className="max-w-[1400px] w-full h-full">
-      <span className="text-md">Social Links</span>
-      <Divider />
-      <CardBody className="flex flex-row gap-3 justify-center items-center">
-        <Avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" />
-        <span className="text-lg">LinkedIn</span>
-      </CardBody>
-      <Divider />
-      <CardBody className="flex flex-row gap-3 justify-center items-center">
-        <Avatar src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_640.png" />
-        <span className="text-lg">GitHub</span>
-      </CardBody>
-      <Divider />
-      <CardBody className="flex flex-row gap-3 justify-center items-center">
-        <Avatar src="https://plantscience.psu.edu/research/labs/roots/images/deeper-site/gitlab-logo/@@images/image.jpeg" />
-        <span className="text-lg">GitLab</span>
-      </CardBody>
-    </Card>
-  </div>
+  //   <div className="max-w-[1400px] w-full grid content-around gap-6  justify-center md:grid-cols-2">
+  // {/* <div className="flex flex-col gap-3 flex-1">
+  //   <Card className="max-w-[1400px] w-full h-full">
+  //     <span className="text-md">Social Links</span>
+  //     <Divider />
+  //     <CardBody className="flex flex-row gap-3 justify-center items-center">
+  //       <Avatar src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" />
+  //       <span className="text-lg">LinkedIn</span>
+  //     </CardBody>
+  //     <Divider />
+  //     <CardBody className="flex flex-row gap-3 justify-center items-center">
+  //       <Avatar src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_640.png" />
+  //       <span className="text-lg">GitHub</span>
+  //     </CardBody>
+  //     <Divider />
+  //     <CardBody className="flex flex-row gap-3 justify-center items-center">
+  //       <Avatar src="https://plantscience.psu.edu/research/labs/roots/images/deeper-site/gitlab-logo/@@images/image.jpeg" />
+  //       <span className="text-lg">GitLab</span>
+  //     </CardBody>
+  //   </Card>
+  // </div> */}
 
-  <div className="flex flex-col gap-3 flex-1">
+  <div className="flex flex-col gap-3 align-self-center   justify-self-center" >
     <Card className="max-w-[1400px] w-full h-full">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
@@ -87,7 +87,7 @@ export default function Contact() {
       </CardBody>
     </Card>
   </div>
-    </div>
+    // </div>
 
   );
 }

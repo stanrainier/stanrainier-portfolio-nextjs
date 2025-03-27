@@ -27,14 +27,14 @@ export default function Hero() {
       </div>
 
     <motion.div
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.8 }}
     >
       <span className={title({ color: "blue" })}>Stan Rainier D. Salazar</span>
     </motion.div>
       <br />
       <span className={title({color:"cyan"})}>
-        Full-Stack Developer
+        Full-Stack Web Developer
       </span>
     </div>
     <div className="flex gap-5">
