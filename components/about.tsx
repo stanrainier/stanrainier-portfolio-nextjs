@@ -1,5 +1,8 @@
 import { title } from "@/components/primitives";
-import { Accordion, AccordionItem, Card, CardBody, Tab, Tabs } from "@heroui/react";
+import { Accordion, AccordionItem, Card, CardBody, Progress, Tab, Tabs, Tooltip } from "@heroui/react";
+import { SiTypescript } from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -7,10 +10,10 @@ export default function About() {
       <div className="flex flex-row gap-4 justify-center">
         <div className="flex gap-8">
             {/* Left Side (Flexible) */}
-            <div className="w-1/3">
-              <Card className="max-w-xl p-4">
+            <div className="w-full h-full">
+              <Card className="max-w-xl p-4  max-h-86">
               <span className={title({ color: "blue" })}>Work Experience</span>
-                <p className="text-lg text-default-500">
+                <p className="text-lg text-default-500 oklch(0.666 0.179 58.318) font-bold">
                   Prominent Outsource
                 </p>
                 <p>
@@ -22,7 +25,7 @@ export default function About() {
               </Card>
             </div>
             {/* Right Side (Fixed Width) */}
-            <div className="flex flex-col justify-center items-center w-2/3">
+            <div className="flex flex-col justify-center items-center w-full">
               <Card className="max-w-xl p-4">
                 <span className={title({ color: "blue" })}>Educational Background</span>
                 <br />
@@ -38,7 +41,67 @@ export default function About() {
       {/* =================section 2================= */}
       <div className="flex flex-col gap-4 justify-center">
         <Tabs aria-label="Options" variant="light">
-              <Tab key="photos" title="Frontend">
+              <Tab key="frontend" title="Frontend">
+                <Card className="w-full h-[500px]">
+                  <CardBody>
+                    <div className="flex">
+                      <h1 className="text-2xl mb-2">
+                        Programming Languages
+                      </h1>
+                    </div>
+                    <div className="grid grid-cols-4 gap-4" >
+                    <Card className="p-2">
+                      <CardBody>
+                        <div className="flex flex-row mb-4 gap-5 align-center">
+                          <SiTypescript size={30} />
+                          <span> TypeScript </span>
+                        </div>
+                        <Progress aria-label="Loading..." className="max-w-md" value={90} />
+                      </CardBody>
+                    </Card>
+                    <Card className="p-2">
+                      <CardBody>
+                        <div className="flex flex-row mb-4 gap-5 align-center">
+                          <IoLogoJavascript size={30} />
+                          <span> JavaScript </span>
+                        </div>
+                        <Progress aria-label="Loading..." className="max-w-md" value={90} />
+                      </CardBody>
+                    </Card>
+                    <Card className="p-2">
+                      <CardBody>
+                        <div className="flex flex-row mb-4 gap-5 align-center">
+                          <FaHtml5 size={30} />
+                          <span> HTML </span>
+                        </div>
+                        <Progress aria-label="Loading..." className="max-w-md" value={90} />
+                      </CardBody>
+                    </Card>
+                    <Card className="p-2">
+                      <CardBody>
+                        <div className="flex flex-row mb-4 gap-5 align-center">
+                          <FaCss3Alt  size={30} />
+                          <span> CSS </span>
+                        </div>
+                        <Progress aria-label="Loading..." className="max-w-md" value={90} />
+                      </CardBody>
+                    </Card>
+                   
+                    </div>
+
+                  </CardBody>
+                </Card>
+              </Tab>
+              <Tab key="backend" title="Backend">
+                <Card className="w-full h-[500px]">
+                  <CardBody>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                    cillum dolore eu fugiat nulla pariatur.
+                  </CardBody>
+                </Card>
+              </Tab>
+              <Tab key="cicd" title="CI/CD">
                 <Card className="w-full h-[500px]">
                   <CardBody>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
@@ -47,12 +110,12 @@ export default function About() {
                   </CardBody>
                 </Card>
               </Tab>
-              <Tab key="music" title="Backend">
+              <Tab key="tools" title="Tools & Other Skills">
                 <Card className="w-full h-[500px]">
                   <CardBody>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                    cillum dolore eu fugiat nulla pariatur.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </CardBody>
                 </Card>
               </Tab>
