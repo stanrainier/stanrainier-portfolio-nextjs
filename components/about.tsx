@@ -30,11 +30,12 @@ export default function About() {
   
   return (
     <div>
+        <h1 className="text-8xl font-bold text-default-500">Background</h1>
       <div className="relative flex justify-center items-center h-[300px]">
       {items.map((item, index) => (
         <motion.div
           key={index}
-          className="absolute w-80"
+          className="m-2"
           style={{ top: `${index * 50}px` }} // Spreads them out
           initial={{ opacity: 1 }}
           whileHover={{ y: -20, opacity: 1, scale: 1.05, zIndex: 10 }}
@@ -48,6 +49,7 @@ export default function About() {
       ))}
     </div>
       {/* =================section 2================= */}
+      <h1 className="text-8xl font-bold text-default-500">Skills</h1>
       <div className="flex flex-col gap-4 justify-center mt-8">
         <Tabs aria-label="Options" variant="light">
               <Tab key="frontend" title="Frontend">

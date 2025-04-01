@@ -40,6 +40,8 @@ export default function Contact() {
   // </div> */}
 
   <div className="flex flex-col gap-3 align-self-center   justify-self-center" >
+          <h1 className="text-8xl font-bold text-default-500">Contact Me</h1>
+
     <Card className="max-w-[1400px] w-full h-full">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
