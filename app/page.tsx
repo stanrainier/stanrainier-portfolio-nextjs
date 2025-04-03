@@ -4,7 +4,7 @@ import { Snippet } from "@heroui/snippet";
 import { Code } from "@heroui/code";
 import { siteConfig } from "@/config/site";
 import { GithubIcon, GitlabIcon } from "@/components/icons";
-import { Alert } from "@heroui/react";
+import { Alert, Spacer } from "@heroui/react";
 import { motion } from "motion/react"
 import Contact from "@/components/contact";
 import About from "@/components/about";
@@ -21,15 +21,25 @@ export default function Home() {
 
     <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
       <Hero />
+      <Spacer x={56} />
+
     </motion.div>
     <section>
+        <Spacer x={56} />
         <About />
+        <Spacer x={56} />
     </section>
     <section>
+      <Spacer x={56} />
         <Projects />
+        <Spacer x={56} />
+
     </section>
     <section>
+        <Spacer x={56} />
         <Contact />
+        <Spacer x={56} />
+
     </section>
 
     </div>

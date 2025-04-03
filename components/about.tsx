@@ -3,7 +3,7 @@ import { Accordion, AccordionItem, Card, CardBody, Progress, Tab, Tabs, Tooltip 
 import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
 import { motion } from "framer-motion";
-
+import {aboutItems} from "@/app/common/data/about-data";
 export default function About() {
   const items = [
     {
@@ -32,7 +32,7 @@ export default function About() {
     <div>
         <h1 className="text-8xl font-bold text-default-500">Background</h1>
       <div className="relative flex justify-center items-center h-[300px]">
-      {items.map((item, index) => (
+      {aboutItems.map((item, index) => (
         <motion.div
           key={index}
           className="m-2"
@@ -55,11 +55,7 @@ export default function About() {
               <Tab key="frontend" title="Frontend">
                 <Card className="w-full ">
                   <CardBody>
-                    <div className="flex">
-                      <h1 className="text-2xl mb-2">
-                        Programming Languages
-                      </h1>
-                    </div>
+
                     <div className="grid grid-cols-4 gap-4">
                       {frontendSkills.map((skill:any) => {
                         const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
@@ -141,7 +137,7 @@ export default function About() {
                   </CardBody>
                 </Card>
               </Tab>
-            </Tabs>
+        </Tabs>
       </div>
     </div>
   );
