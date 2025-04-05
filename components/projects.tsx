@@ -6,7 +6,7 @@ import { CgWebsite } from "react-icons/cg";
 export default function Projects() {
   return (
     <div>
-      <h1 className="text-8xl font-bold text-default-500 mb-8">Projects</h1>
+      <h1 className="text-4xl font-bold  dark:text-amber-50 mb-8">Projects</h1>
       <Tabs aria-label="Project Categories" variant="underlined">
         <Tab key="all" title={
           <div className="flex items-center space-x-2">
@@ -42,7 +42,7 @@ export default function Projects() {
 
 function ProjectGrid({ projects }: { projects: any[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
@@ -61,8 +61,13 @@ function ProjectCard({ project }: any) {
         </div>
       </CardHeader>
       <CardBody>
+      <Image 
+          src={project.image_hero}
+          alt="Stan Rainier D. Salazar"
+          >
+        </Image>
         <Divider />
-        <p className="text-small text-default-500">{project.description}</p>
+        <p className="my-4 text-md  text-default-500">{project.description}</p>
         <Divider />
         <div className="grid grid-cols-4 gap-2 mt-2">
           {project.tags.map((tag: any) => (

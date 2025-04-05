@@ -10,6 +10,7 @@ import { title, subtitle } from "@/components/primitives";
 import { button as buttonStyles } from "@heroui/theme";
 import { Button } from "@heroui/button";
 import { FaLinkedin, FaGitlab, FaGithub  } from "react-icons/fa6";
+import Typewriter from 'typewriter-effect';
 
 export default function Hero() {
     return(
@@ -30,11 +31,22 @@ export default function Hero() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.8 }}
     >
+      <span className="text-4xl font-bold dark:text-amber-50"> Hi, I'm</span>
+      <br />
+
       <span className={title({ color: "blue" })}>Stan Rainier D. Salazar</span>
     </motion.div>
       <br />
-      <span className={title({color:"cyan"})}>
-        Full-Stack Web Developer
+
+      <span className="text-2xl font-bold mb-4 dark:text-amber-50">
+      <Typewriter
+      options={{
+        strings: ['Full-Stack Web Developer', 'Software Engineer', 'Tech Enthusiast'],
+        autoStart: true,
+        loop: true,
+        delay: 75,
+      }}
+    />
       </span>
     </div>
     <div className="flex gap-5">
