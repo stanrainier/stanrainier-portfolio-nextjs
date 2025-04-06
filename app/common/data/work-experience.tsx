@@ -1,5 +1,6 @@
 export const workExperience = [
   {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWinF9dMxnPh8Cmy8kyTS_6jO_LUHQEtNGg&s",
     title: 'Junior Full Stack Developer',
     company: 'Prominent Outsource',
     location: 'Remote',
@@ -12,8 +13,9 @@ export const workExperience = [
     ],
   },
   {
+    image: "/images/mehero.png",
     title: 'Freelance Site Builder',
-    company: 'Freelance',
+    company: 'Freelancer',
     location: 'City, Country',
     date: '2024 - Present',
     description: [
@@ -22,4 +24,5 @@ export const workExperience = [
       'Learned best practices in software development and agile methodologies.',
     ],
   },
+
 ]

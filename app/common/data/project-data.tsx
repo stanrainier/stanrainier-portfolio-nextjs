@@ -37,7 +37,7 @@ export const projects = [
         id: 3,
         image_hero: "/images/appStage.png",
         category: "fullstack",
-        title: "MyTaskOwl Software application",
+        title: "MyTaskOwl Software Application",
         description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality. This application extends the MyTaskOwl Web app’s features by providing an offline-capable version of the software that can run on both Windows and macOS. The app offers a native-like experience with a seamless user interface and robust task management features, while utilizing Electron to bridge web technologies into a powerful desktop application.",
         image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
         url: "https://app.stage.mytaskowl.com",

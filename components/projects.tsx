@@ -1,4 +1,5 @@
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Code, Tabs, Tab } from "@heroui/react";
+"use client";
+import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Code, Tabs, Tab, Tooltip } from "@heroui/react";
 import { projects } from "@/app/common/data/project-data";
 import { FaCode, FaRegFolderOpen } from "react-icons/fa6";
 import { CgWebsite } from "react-icons/cg";
@@ -7,8 +8,7 @@ import { skills_icons } from "@/app/common/data/skills-icons";
 
 export default function Projects() {
   return (
-    <div className="mt-32">
-
+    <div className="mt-56 mb-64">
       <AnimatedSection>
       <h1 className="text-4xl text-center font-bold  dark:text-amber-50 mb-8">Projects</h1>
       <Tabs aria-label="Project Categories" variant="underlined">
@@ -18,8 +18,6 @@ export default function Projects() {
             <span>All</span>
             </div>
         }
-        
-
         >
           <ProjectGrid projects={projects} />
         </Tab>
@@ -57,36 +55,57 @@ function ProjectGrid({ projects }: { projects: any[] }) {
 
 function ProjectCard({ project }: any) {
   return (
-    <Card>
-      <CardHeader>
-        <Image alt="Project Logo" height={40} radius="sm" src={project.image} width={40} />
-        <div className="flex flex-col">
-          <p className="text-md font-bold">{project.title}</p>
-          <p className="text-small text-default-500">{project.url}</p>
-        </div>
-      </CardHeader>
-      <CardBody>
-        <Image
-          src={project.image_hero}
-          alt="Stan Rainier D. Salazar"
-          className="hover:transform hover:scale-90 transition-transform duration-300 ease-in-out rounded-lg mb-6"
-        />
-        <Divider />
-        <p className="my-4 text-md text-white-500 dark:text-white-500 text-justify">{project.description}</p>
-        <Divider />
-        <div className="grid grid-cols-4 gap-2 mt-2">
-          {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
-            <Code key={idx} className="flex items-center gap-1" color="primary">
-              <tag.icon size={20} />
-              <span>{tag.name}</span>
-            </Code>
-          ))}
-        </div>
-      </CardBody>
-      <CardFooter>
-        <Link href={project.url} className="btn btn-primary">Visit</Link>
-      </CardFooter>
-    </Card>
+    <div className="relative group w-full rounded-lg overflow-visible">
+      {/* Static Image */}
+      <Card className="p-4">
+        <CardHeader className="flex items-center gap-4">
+        <h2 className="text-lg font-bold">{project.title}</h2>
+        </CardHeader>
+        <CardBody>
+          <Image
+            alt="Project Hero"
+            src={project.image_hero}
+            className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+          />
+        </CardBody>
+      </Card>
+    
+
+      {/* Hover Card */}
+      <div className="absolute top-0 left-0 w-full min-h-[500px] z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <Card className="w-full h-full text-white shadow-xl rounded-xl overflow-hidden">
+          <CardHeader className="flex items-center gap-4">
+            <Image alt="Project Logo" height={40} radius="sm" src={project.image} width={40} />
+            <div className="flex flex-col">
+              <p className="text-md font-bold">{project.title}</p>
+              <p className="text-small text-default-500">{project.url}</p>
+            </div>
+          </CardHeader>
+          <CardBody className="overflow-y-auto">
+            <Image
+              src={project.image_hero}
+              alt={project.title}
+              className="hover:transform hover:scale-90 transition-transform duration-300 ease-in-out rounded-lg mb-6"
+            />
+            <Divider />
+            <p className="my-4 text-md text-default-500 dark:text-white-500 text-justify">{project.description}</p>
+            <Divider />
+            <div className="grid grid-cols-4 gap-2 mt-2">
+              {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
+                <Code key={idx} className="flex items-center gap-1" color="primary">
+                  <tag.icon size={20} />
+                  <span>{tag.name}</span>
+                </Code>
+              ))}
+            </div>
+          </CardBody>
+          <CardFooter>
+            <Link href={project.url} className="btn btn-primary">Visit</Link>
+          </CardFooter>
+        </Card>
+      </div>
+    </div>
   );
+
 }
 

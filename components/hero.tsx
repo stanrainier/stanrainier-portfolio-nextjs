@@ -45,7 +45,12 @@ export default function Hero() {
         <span className="text-4xl font-bold mb-4 dark:text-amber-50">
         <Typewriter
         options={{
-          strings: ['Full-Stack Web Developer', 'Software Engineer', 'Tech Enthusiast'],
+          strings: ['Full-Stack Web Developer',
+              'Software Engineer',
+              'Tech Enthusiast',
+              'Frontend Developer',
+              'Backend Developer',
+            ],
           autoStart: true,
           loop: true,
           delay: 75,

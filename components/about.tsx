@@ -1,10 +1,9 @@
 import { title } from "@/components/primitives";
-import { Accordion, AccordionItem, Alert, Card, CardBody, CardHeader, Divider, Progress, Tab, Tabs, Tooltip } from "@heroui/react";
+import { Accordion, AccordionItem, Alert, Avatar, Card, CardBody, CardHeader, Divider, Progress, Tab, Tabs, Tooltip } from "@heroui/react";
 import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
 import { motion } from "framer-motion";
 import {aboutItems} from "@/app/common/data/about-data";
-
 import { CiCircleCheck } from "react-icons/ci";
 import Marquee from "./marquee";
 import AnimatedSection from "./animatedSection";
@@ -18,10 +17,8 @@ export default function About() {
   return (
     <div>
       <AnimatedSection>
-
         <h1 className="text-4xl font-bold text-center  dark:text-amber-50">About Me</h1>
-        
-      <div className="relative flex justify-center items-center h-[300px] w-full mb-16 mt-16">
+         <div className="relative flex justify-center items-center lg:h-[300px] w-full mb-16 mt-16">
           <div className="w-full p-4 shadow-lg">
             <span className={title({ color: "blue" })}>Work Experience</span>
             <div className="grid grid-cols-2 gap-4 mt-4">
@@ -33,28 +30,41 @@ export default function About() {
                 whileHover={{ y: -20, opacity: 1, scale: 1.05, zIndex: 10 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
               >
-                <Card className="p-2 mt-4 hover:shadow-2xl transition-shadow duration-300">
-                  <CardHeader className="flex flex-col  gap-1">
-                  <span className="text-2xl font-semibold">{experience.company}</span>
-                  <span className="text-1xl font-bold">{experience.title}</span>
-                  <span className="text-sm">{experience.date}</span>
-                  <Divider className="my-2" />
+                <Card className="p-2 mt-4 hover:shadow-2xl transition-shadow duration-300 lg:h-full">
+                  <CardHeader className="flex flex-row gap-4 items-center justify-start">
+                    <Avatar
+                      src={experience.image}
+                      alt={experience.company}
+                      className="w-24 h-24"
+                      size="lg"
+                    />
+                    <div className="flex flex-col">
+                      <span className="text-2xl font-semibold">{experience.company}</span>
+                      <span className="text-1xl font-bold">{experience.title}</span>
+                      <span className="text-sm">{experience.date}</span>
+                    </div>
                   </CardHeader>
+
+                  <Divider className="my-2" />
+
                   <CardBody>
                     <ul className="mt-2 text-sm">
                       {experience.description.map((desc, idx) => (
-                        <li key={idx} className="list-disc pl-5">{desc}</li>
+                        <li key={idx} className="list-disc pl-5 text-base">{desc}</li>
                       ))}
                     </ul>
                   </CardBody>
                 </Card>
+
               </motion.div>
           ))}
           </div>
         </div>
       </div>
       {/* =================section 2================= */}
+      <div className="mt-52">
       <Marquee/>
+      </div>
 
       <ParallaxDiv>
         <Card className="p-4">
