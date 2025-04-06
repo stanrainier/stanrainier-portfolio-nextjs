@@ -11,33 +11,35 @@ export default function Projects() {
     <div className="mt-56 mb-64">
       <AnimatedSection>
       <h1 className="text-4xl text-center font-bold  dark:text-amber-50 mb-8">Projects</h1>
-      <Tabs aria-label="Project Categories" variant="underlined">
-        <Tab key="all" title={
-          <div className="flex items-center space-x-2">
-            <FaRegFolderOpen />
-            <span>All</span>
-            </div>
-        }
-        >
-          <ProjectGrid projects={projects} />
-        </Tab>
-        <Tab key="fullstack" title={
-          <div className="flex items-center space-x-2">
-            <FaCode /> 
-            <span>Full-stack</span>
-            </div>
-        }>
-          <ProjectGrid projects={projects.filter((project) => project.category === "fullstack")} />
-        </Tab>
-        <Tab key="sitebuilder"  title={
-          <div className="flex items-center space-x-2">
-            <CgWebsite />
-            <span>Site Builders</span>
-            </div>
-        }>
-          <ProjectGrid projects={projects.filter((project) => project.category === "sitebuilder")} />
-        </Tab>
-      </Tabs>
+      <div className="relative h-[700px]"> 
+        <Tabs aria-label="Project Categories" variant="underlined">
+          <Tab key="all" title={
+            <div className="flex items-center space-x-2">
+              <FaRegFolderOpen />
+              <span>All</span>
+              </div>
+          }
+          >
+            <ProjectGrid projects={projects} />
+          </Tab>
+          <Tab key="fullstack" title={
+            <div className="flex items-center space-x-2">
+              <FaCode /> 
+              <span>Full-stack</span>
+              </div>
+          }>
+            <ProjectGrid projects={projects.filter((project) => project.category === "fullstack")} />
+          </Tab>
+          <Tab key="sitebuilder"  title={
+            <div className="flex items-center space-x-2">
+              <CgWebsite />
+              <span>Site Builders</span>
+              </div>
+          }>
+            <ProjectGrid projects={projects.filter((project) => project.category === "sitebuilder")} />
+          </Tab>
+        </Tabs>
+      </div>
       </AnimatedSection>
     </div>
   );
