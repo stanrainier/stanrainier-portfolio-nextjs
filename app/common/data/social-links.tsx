@@ -15,7 +15,7 @@ export const contactSocialLinks =[
     },
     {
         title: "LinkedIn",
-        url: "https://linkedin.com/in/stanrainier",
+        url: "https://www.linkedin.com/in/stan-rainier-salazar-70365a2bb/",
         description: "Connect with me on LinkedIn.",
         icon: FaLinkedin ,
     },

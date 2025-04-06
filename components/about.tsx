@@ -19,7 +19,7 @@ export default function About() {
       <AnimatedSection>
         <h1 className="text-4xl font-bold text-center  dark:text-amber-50">About Me</h1>
          <div className="relative flex justify-center items-center lg:h-[300px] w-full mb-16 mt-16">
-          <div className="w-full p-4 shadow-lg">
+          <div className="w-full p-4 ">
             <span className={title({ color: "blue" })}>Work Experience</span>
             <div className="grid grid-cols-2 gap-4 mt-4">
             {workExperience.map((experience, index) => (
