@@ -34,8 +34,7 @@ export default function Hero() {
           whileTap={{ scale: 0.8 }}
       >
       <span className="text-4xl font-bold dark:text-amber-50">
-        {" "}
-        Hi, I'm
+        Hi, I&apos;m
       </span>
         <br />
 

@@ -18,7 +18,7 @@ export default function Contact() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center dark:text-amber-50">Contact Me</h1>
+      <h1 className="text-4xl font-bold text-center dark:text-amber-50">Connect with me</h1>
       <div className="flex flex-col gap-3 align-self-start justify-self-center" >
       <Card className="max-w-[1400px] w-full h-full">
         <CardHeader className="flex gap-3">
@@ -30,8 +30,8 @@ export default function Contact() {
           </div>
         </CardHeader>
         <Divider />
-        <CardBody className="p-8">
-          <Form className="w-full max-w-xs" onSubmit={onSubmit}>
+        <CardBody className="p-8 align-items-center justify-items-center">
+          <Form className="w-full max-w-xs  " onSubmit={onSubmit}>
             <Input
               isRequired
               errorMessage="Please enter a valid email"
