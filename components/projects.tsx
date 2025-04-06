@@ -2,11 +2,15 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Code, Tab
 import { projects } from "@/app/common/data/project-data";
 import { FaCode, FaRegFolderOpen } from "react-icons/fa6";
 import { CgWebsite } from "react-icons/cg";
+import AnimatedSection from "./animatedSection";
+import { skills_icons } from "@/app/common/data/skills-icons";
 
 export default function Projects() {
   return (
-    <div>
-      <h1 className="text-4xl font-bold  dark:text-amber-50 mb-8">Projects</h1>
+    <div className="mt-32">
+
+      <AnimatedSection>
+      <h1 className="text-4xl text-center font-bold  dark:text-amber-50 mb-8">Projects</h1>
       <Tabs aria-label="Project Categories" variant="underlined">
         <Tab key="all" title={
           <div className="flex items-center space-x-2">
@@ -36,6 +40,7 @@ export default function Projects() {
           <ProjectGrid projects={projects.filter((project) => project.category === "sitebuilder")} />
         </Tab>
       </Tabs>
+      </AnimatedSection>
     </div>
   );
 }
@@ -61,17 +66,20 @@ function ProjectCard({ project }: any) {
         </div>
       </CardHeader>
       <CardBody>
-      <Image 
+        <Image
           src={project.image_hero}
           alt="Stan Rainier D. Salazar"
-          >
-        </Image>
+          className="hover:transform hover:scale-90 transition-transform duration-300 ease-in-out rounded-lg mb-6"
+        />
         <Divider />
-        <p className="my-4 text-md  text-default-500">{project.description}</p>
+        <p className="my-4 text-md text-white-500 dark:text-white-500 text-justify">{project.description}</p>
         <Divider />
         <div className="grid grid-cols-4 gap-2 mt-2">
-          {project.tags.map((tag: any) => (
-            <Code key={tag} color="default">{tag}</Code>
+          {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
+            <Code key={idx} className="flex items-center gap-1" color="primary">
+              <tag.icon size={20} />
+              <span>{tag.name}</span>
+            </Code>
           ))}
         </div>
       </CardBody>
@@ -81,3 +89,4 @@ function ProjectCard({ project }: any) {
     </Card>
   );
 }
+

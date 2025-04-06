@@ -18,7 +18,7 @@ export default function Contact() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold   dark:text-amber-50">Contact Me</h1>
+      <h1 className="text-4xl font-bold text-center dark:text-amber-50">Contact Me</h1>
       <div className="flex flex-col gap-3 align-self-start justify-self-center" >
       <Card className="max-w-[1400px] w-full h-full">
         <CardHeader className="flex gap-3">

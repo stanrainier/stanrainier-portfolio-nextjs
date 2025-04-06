@@ -17,11 +17,9 @@ export default function Home() {
   return (
     <div>
       <Alert description="This website is still under construction" title="Under Construction" color="secondary" variant="bordered" />
-      <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
       <section id="hero">
         <Hero />
       </section>
-      </motion.div>
       <section id="about">
         <Spacer x={56} />
         <About />

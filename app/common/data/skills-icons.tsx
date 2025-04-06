@@ -1,8 +1,8 @@
 
-import { SiDjango, SiJirasoftware, SiMysql, SiPhp, SiPostman, SiTypescript, SiVercel } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io5";
+import { SiDjango, SiJirasoftware, SiMysql, SiNestjs, SiPhp, SiPostman, SiTypescript, SiVercel } from "react-icons/si";
+import { IoLogoElectron, IoLogoJavascript } from "react-icons/io5";
 import { FaBootstrap, FaCcStripe, FaCss3Alt, FaElementor, FaFigma, FaGitAlt, FaHtml5, FaLaravel, FaPython, FaReact, FaWordpressSimple } from "react-icons/fa";
-import { FaAngular } from "react-icons/fa6";
+import { FaAngular, FaShopify } from "react-icons/fa6";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 
 export const skills_icons: Record<string, React.ElementType> = {
@@ -28,5 +28,8 @@ export const skills_icons: Record<string, React.ElementType> = {
     FaFigma,
     SiPostman,
     FaCcStripe,
+    IoLogoElectron,
+    SiNestjs,
+    FaShopify 
   };
   

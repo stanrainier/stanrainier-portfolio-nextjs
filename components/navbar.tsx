@@ -59,7 +59,7 @@ export const Navbar = () => {
           <p className="font-bold text-3xl antialiased font-extrabold text-transparent 
           bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text transition-all duration-[1500ms]
           ease-in-out hover:from-cyan-400 hover:to-blue-500">
-            STAN
+            {`STAN`}
           </p>
           </NextLink>
         </NavbarBrand>
@@ -90,10 +90,8 @@ export const Navbar = () => {
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
-                )}
+                className="text-cyan-600 text-bold data-[active=true]:font-medium hover:text-amber-100 transition-all duration-200 transform ease-in-out "  
+                
                 color="foreground"
                 href={item.href}
               >

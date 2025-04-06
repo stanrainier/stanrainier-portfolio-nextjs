@@ -1,4 +1,3 @@
-import { Card, CardHeader } from "@heroui/react";
 
 export const aboutItems = [
     {
