@@ -8,52 +8,47 @@ import {aboutItems} from "@/app/common/data/about-data";
 import { CiCircleCheck } from "react-icons/ci";
 
 export default function About() {
-  const items = [
-    {
-      title: "Education",
-      details: (
-        <>
-          <p className="text-lg text-default-500">University of Negros Occidental - Recoletos</p>
-          <p className="text-lg text-default-500">B.S. Information Technology <br /> 2020-2024</p>
-        </>
-      )
-    },
-    {
-      title: "Work Experience",
-      details: (
-        <>
-          <p className="text-lg text-default-500 font-bold">Prominent Outsource</p>
-          <p><span className="text-lg text-default-500">Position:</span> Full-Stack Developer</p>
-          <p><span className="text-lg text-default-500">Duration:</span> 2024 - Present</p>
-        </>
-      )
-    },
-  ];
+ 
 
   
   return (
     <div>
-        <h1 className="text-4xl font-bold  dark:text-amber-50">About Me</h1>
+        <h1 className="text-4xl font-bold text-center  dark:text-amber-50">About Me</h1>
         
       <div className="relative flex justify-center items-center h-[300px] w-full">
-      {aboutItems.map((item, index) => (
+      
         <motion.div
-          key={index}
           className="m-2 w-full"
-          style={{ top: `${index * 50}px` }} // Spreads them out
           initial={{ opacity: 1 }}
           whileHover={{ y: -20, opacity: 1, scale: 1.05, zIndex: 10 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
         >
           <Card className="w-full p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <span className={title({ color: "blue" })}>{item.title}</span>
-            {item.details}
+            <span className={title({ color: "blue" })}>Work Experience</span>
+            <span className="text-md">
+              Prominent Outsource
+            </span>
+            <span className="text-sm">
+              2024-Present
+            </span>
+            <span className="text-sm">
+              Junior Full Stack Developer
+            </span>
+            <span className="text-md">
+              Freelance
+            </span>
+            <span className="text-sm">
+              2024-Present
+            </span>
+            <span className="text-sm">
+              Site Building
+            </span>
           </Card>
         </motion.div>
-      ))}
     </div>
       {/* =================section 2================= */}
-      <h1 className="text-4xl font-bold dark:text-amber-50">Skills</h1>
+      <Card className="p-4">
+      <h1 className={title({ color: "blue" })}>Skills</h1>
       <div className="flex flex-col gap-4 justify-center mt-8">
         <Tabs aria-label="Options" variant="light">
 
@@ -183,6 +178,8 @@ export default function About() {
               </Tab>
         </Tabs>
       </div>
+      </Card>
+
     </div>
   );
 }
