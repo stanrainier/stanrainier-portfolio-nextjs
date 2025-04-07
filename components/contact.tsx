@@ -1,10 +1,13 @@
 'use client'
-import { Card, CardHeader, Divider, CardBody, CardFooter, Form, Button, Input, Textarea, Avatar } from "@heroui/react";
+import { Card, CardHeader, Divider, CardBody, CardFooter, Form, Button, Input, Textarea, Avatar, Spacer } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 import { contactSocialLinks } from "@/app/common/data/social-links";
 import AnimatedSection from "./animatedSection";
-
+import { BorderBeam } from "./magicui/border-beam";
+import { WordRotate } from "./magicui/word-rotate";
+import { TextAnimate } from "./magicui/text-animate";
+import { BoxReveal } from "./magicui/box-reveal";
 export default function Contact() {
 
   const [submitted, setSubmitted] = React.useState(null);
@@ -19,22 +22,31 @@ export default function Contact() {
   
 
   return (
-    <div>
+    <div >
       <AnimatedSection>
-      <h1 className="text-4xl font-bold text-center dark:text-amber-50 mb-12">Connect with me</h1>
-      <div className="flex flex-row gap-4 " >
+      <WordRotate className="text-4xl font-bold text-center dark:text-amber-50 mb-12"
+      words={['Connect with me', 'Get in touch', 'Contact me']} >
+      </WordRotate>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4" >
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
-            <p className="text-2xl">Contact Me!</p>
+            <p className="text-2xl">
+              <TextAnimate animation="slideUp" >
+                Contact Me!
+              </TextAnimate>
+            </p>
             <p className="text-lg text-default-500">
-              Feel free to send me a message. Give me feedback, or just say hi!
+              <TextAnimate animation="slideUp" >
+                Feel free to send me a message. Give me feedback, or just say hi!
+              </TextAnimate>
             </p>
           </div>
         </CardHeader>
         <Divider />
         <CardBody className="p-8 align-items-center justify-items-center">
           <Form className="w-full max-w-xs  " onSubmit={onSubmit}>
+          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <Input
               isRequired
               errorMessage="Please enter a valid email"
@@ -44,6 +56,9 @@ export default function Contact() {
               placeholder="Enter your email"
               type="email"
             />
+          </BoxReveal>
+          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+
             <Textarea
               isRequired
               errorMessage="Please enter a message"
@@ -53,6 +68,8 @@ export default function Contact() {
               placeholder="Enter your message"
               type="text"
             />
+            </BoxReveal>
+
             <Button
               type="submit"
               className="bg-gradient-to-tr from-cyan-500 to-blue-500 text-white shadow-lg mt-6"
@@ -68,14 +85,18 @@ export default function Contact() {
             )}
           </Form>
         </CardBody>
+        <BorderBeam duration={8} size={100} />
       </Card>
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
-            <p className="text-2xl">Social Media</p>
+         
+
+            <p className="text-2xl"> <TextAnimate animation="slideUp" >Social Media</TextAnimate></p>
             <p className="text-lg text-default-500">
-              Connect with me on social media
+              <TextAnimate animation="slideUp" > Connect with me on social media</TextAnimate>
             </p>
+            
           </div>
         </CardHeader>
         <Divider />
@@ -88,8 +109,17 @@ export default function Contact() {
                   className="bg-gradient-to-r from-cyan-500 to-violet-500 text-black dark:bg-gray-700 dark:text-white"
                 />
                 <div className="flex flex-col">
-                  <Link href={link.url} className="text-md font-bold hover:text-default-500 duration-300 ease-in-out">{link.title}</Link>
-                  <p className="text-small text-default-500">{link.description}</p>
+             
+                  <Link href={link.url} className="text-md font-bold hover:text-default-500 duration-300 ease-in-out">
+                    <TextAnimate animation="slideUp" >
+                      {link.title}
+                    </TextAnimate>
+                 </Link>
+                  <p className="text-small text-default-500">
+                    <TextAnimate animation="slideUp" >
+                      {link.description}
+                    </TextAnimate>
+                  </p>
                 </div>
                 <Link
                   href={link.url}
@@ -101,9 +131,11 @@ export default function Contact() {
               </div>
             ))}
         </CardBody>
+        <BorderBeam duration={8} size={100} />
         </Card>
     </div>
     </AnimatedSection>
+
   </div>
 
 

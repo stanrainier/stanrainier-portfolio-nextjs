@@ -66,22 +66,6 @@ export const Navbar = () => {
 
       </NavbarContent>
 
-      {/* <NavbarContent className="hidden sm:flex w-full items-center" justify='center'>
-        <NavbarItem className="hidden sm:flex gap-2 justify-center">
-          <Tooltip content="GitHub" placement="bottom" showArrow>
-            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-              <GithubIcon className="text-default-500" />
-            </Link>
-          </Tooltip>
-          <Tooltip content="GitLab" placement="bottom" showArrow>
-            <Link isExternal aria-label="GitLab" href={siteConfig.links.gitlab}>
-              <GitlabIcon className="text-default-500" />
-            </Link>
-          </Tooltip>
-       </NavbarItem>
-      </NavbarContent> */}
-
-
       <NavbarContent
         className="hidden sm:flex sm:basis-full"
         justify="end"

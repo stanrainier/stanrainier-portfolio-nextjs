@@ -10,8 +10,14 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow: scroll;
+
 }
 
+
+body::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
 
 
 @layer base {

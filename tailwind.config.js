@@ -24,11 +24,35 @@ const config = {
   				},
   				'100%': {
   					transform: 'translateX(-50%)'
+  				},
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			grid: {
+  				'0%': {
+  					transform: 'translateY(-50%)'
+  				},
+  				'100%': {
+  					transform: 'translateY(0)'
   				}
   			}
   		},
   		animation: {
-  			marquee: 'marquee 80s linear infinite'
+  			marquee: 'marquee var(--duration) infinite linear',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			grid: 'grid 15s linear infinite'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

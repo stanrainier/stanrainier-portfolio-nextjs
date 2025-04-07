@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site";
 import { Code } from "@heroui/code";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@heroui/dropdown";
-import { Divider } from "@heroui/react";
+import { Divider, Spacer } from "@heroui/react";
 import { Snippet } from "@heroui/snippet";
 import { motion } from "framer-motion";
 import { Link } from "@heroui/link";
@@ -90,28 +90,7 @@ export default function Hero() {
           LinkedIn
         </Link>
       </div>
-      {/* <Dropdown backdrop="blur">
-      <DropdownTrigger>
-        <Button variant="bordered">Other Creative Endeavors</Button>
-      </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions" variant="faded">
-        <DropdownItem key="new">New file</DropdownItem>
-        <DropdownItem key="copy">Copy link</DropdownItem>
-        <DropdownItem key="edit">Edit file</DropdownItem>
-        <DropdownItem key="delete" className="text-danger" color="danger">
-          Delete file
-        </DropdownItem>
-      </DropdownMenu>
-      </Dropdown> */}
-    <Divider className="my-4" />
-
-      {/* <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            ifypablo<Code color="primary">Link</Code>
-          </span>
-        </Snippet>
-      </div> */}
+    <Spacer x={16} />
       </section>
     </AnimatedSection>
 

@@ -1,5 +1,5 @@
 import { title } from "@/components/primitives";
-import { Accordion, AccordionItem, Alert, Avatar, Card, CardBody, CardHeader, Divider, Progress, Tab, Tabs, Tooltip } from "@heroui/react";
+import { Accordion, AccordionItem, Alert, Avatar, Button, Card, CardBody, CardHeader, Divider, Drawer, DrawerContent,DrawerHeader, DrawerBody,DrawerFooter, Progress, Tab, Tabs, Tooltip, useDisclosure } from "@heroui/react";
 import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
 import { motion } from "framer-motion";
@@ -9,19 +9,32 @@ import Marquee from "./marquee";
 import AnimatedSection from "./animatedSection";
 import ParallaxDiv from "./parallaxDiv";
 import { workExperience } from "@/app/common/data/work-experience";
+import { BoxReveal } from "./magicui/box-reveal";
+import { TextAnimate } from "./magicui/text-animate";
+import { IoDocumentText } from "react-icons/io5";
 
 export default function About() {
  
 
-  
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
   return (
     <div>
+      
       <AnimatedSection>
-        <h1 className="text-4xl font-bold text-center  dark:text-amber-50">About Me</h1>
+        
+      <h1 className=" text-4xl lg:text-6xl text-center font-bold  dark:text-amber-50 mt-24 mb-36">
+      <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
+        About Me
+      </TextAnimate>
+      </h1>
          <div className="relative flex justify-center items-center lg:h-[300px] w-full mb-16 mt-16">
           <div className="w-full p-4 ">
+            <div className="flex flex-row lg:flex-row gap-4  items-center">
             <span className={title({ color: "blue" })}>Work Experience</span>
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <Button onPress={onOpen}  startContent={<IoDocumentText  />}>Resume</Button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             {workExperience.map((experience, index) => (
               <motion.div
                 key={index}
@@ -32,27 +45,34 @@ export default function About() {
               >
                 <Card className="p-2 mt-4 hover:shadow-2xl transition-shadow duration-300 lg:h-full">
                   <CardHeader className="flex flex-row gap-4 items-center justify-start">
+                  <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                     <Avatar
                       src={experience.image}
                       alt={experience.company}
                       className="w-24 h-24"
                       size="lg"
                     />
+                  </BoxReveal>
                     <div className="flex flex-col">
-                      <span className="text-2xl font-semibold">{experience.company}</span>
-                      <span className="text-1xl font-bold">{experience.title}</span>
-                      <span className="text-sm">{experience.date}</span>
+                      <span className="text-lg lg:text-2xl font-semibold">{experience.company}</span>
+                      <span className="text-sm lg:text-1xl font-bold">{experience.title}</span>
+                      <span className="text-sm lg:text-sm">{experience.date}</span>
                     </div>
                   </CardHeader>
 
                   <Divider className="my-2" />
 
                   <CardBody>
-                    <ul className="mt-2 text-sm">
+                  <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+                  <div className="mt-6">
+                  <ul className="mt-2 text-sm">
                       {experience.description.map((desc, idx) => (
                         <li key={idx} className="list-disc pl-5 text-base">{desc}</li>
                       ))}
                     </ul>
+                  </div>
+                  </BoxReveal>
+                    
                   </CardBody>
                 </Card>
 
@@ -68,7 +88,12 @@ export default function About() {
 
       <ParallaxDiv>
         <Card className="p-4">
-        <h1 className={title({ color: "blue" })}>Skills</h1>
+        <h1 className="text-center lg:text-4xl font-bold">
+          <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
+          Skills
+          </TextAnimate>
+        </h1>
+        <Divider className="my-4" />
         <div className="flex flex-col gap-4 justify-center mt-8">
           <Tabs aria-label="Options" variant="light">
                 <Tab key="frontend" title="Frontend">
@@ -93,7 +118,7 @@ export default function About() {
                     </Card>
                   </div>
       
-                      <div className="grid grid-cols-4 gap-4 ">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {frontendSkills.map((skill:any) => {
                           const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
                           return (
@@ -139,7 +164,7 @@ export default function About() {
                     </Card>
                   </div>
       
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {backendSkills.map((skill:any) => {
                           const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
                           return (
@@ -164,7 +189,7 @@ export default function About() {
                 </Tab>
                 <Tab key="tools" title="Tools & Other Skills">
             
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {otherSkills.map((skill:any) => {
                           const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
                           return (
@@ -176,8 +201,8 @@ export default function About() {
                               <Card key={skill.name} className="p-2">
                                 <CardBody>
                                   <div className="flex flex-row mb-4 gap-5 align-center">
-                                    <IconComponent size={30} />
-                                    <span>{skill.name}</span>
+                                  <IconComponent className="text-2xl sm:text-base" size={30} />
+                                  <span className="sm:text-sm">{skill.name}</span>
                                   </div>
                                   <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
                                 </CardBody>
@@ -192,8 +217,38 @@ export default function About() {
         </div>
         </Card>
       </ParallaxDiv>
-            
       </AnimatedSection>
+
+
+      <Drawer
+        isDismissable={true}
+        isKeyboardDismissDisabled={true}
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+         backdrop="blur" size="5xl"
+      >
+      <DrawerContent>
+        {(onClose) => (
+          <>
+            <DrawerHeader className="flex flex-col gap-1 text-center">
+            <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
+              Resume
+            </TextAnimate>
+            </DrawerHeader>
+            <DrawerBody className="p-0">
+              <iframe
+                src="/files/StanRanierSalazarCV.pdf"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Resume"
+                className="w-full h-full"
+              ></iframe>
+            </DrawerBody>
+          </>
+        )}
+      </DrawerContent>
+    </Drawer>
     </div>
   );
 }

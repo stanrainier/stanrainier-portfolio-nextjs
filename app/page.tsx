@@ -11,6 +11,7 @@ import About from "@/components/about";
 import Projects from "@/components/projects";
 import Image from "next/image";
 import Hero from "@/components/hero";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 
 export default function Home() {
@@ -30,12 +31,10 @@ export default function Home() {
         <Projects />
         <Spacer x={56} />
       </section>
-      <section id="contact">
+      <section id="contact" >
         <Spacer x={56} />
         <Contact />
       </section>
-      
-    </div>
-    
+      </div>
   );
 }
