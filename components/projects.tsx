@@ -89,38 +89,61 @@ function ProjectCard({ project }: any) {
 
       {/* Hover Card */}
       <div className="absolute top-0 left-0 w-full min-h-[500px] z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <Card className="w-full h-full text-white shadow-xl rounded-xl overflow-hidden">
-          <CardHeader className="flex items-center gap-4">
-            <Image className="cursor-pointer" alt="Project Logo" height={40} radius="sm" src={project.image} width={40} onClick={() => window.open(project.url, "_blank")} />
-            <div className="flex flex-col">
-              <p className="text-md font-bold cursor-pointer hover:text-violet-600 transition ease-in-out duration-300" onClick={() => window.open(project.url, "_blank")}>{project.title}</p>
-              <p className="text-small text-default-500 cursor-pointer hover:text-violet-600 transition ease-in-out duration-300" onClick={() => window.open(project.url, "_blank")}>{project.url}</p>
-            </div>
-          </CardHeader>
-          <CardBody className="overflow-y-auto">
-            <Image
-            onClick={() => window.open(project.url, "_blank")}
-              src={project.image_hero}
-              alt={project.title}
-              className="hover:transform hover:scale-105 cursor-pointer transition-transform duration-300 ease-in-out rounded-lg mb-6"
-            />
-            <Divider />
-            <p className="my-4 p-4 text-md text-black-500 dark:text-white-500 text-justify">{project.description}</p>
-            <Divider />
-            <div className="grid grid-cols-4 gap-2 mt-2">
-              {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
-                <Code key={idx} className="flex items-center gap-1" color="primary">
-                  <tag.icon size={20} />
-                  <span>{tag.name}</span>
-                </Code>
-              ))}
-            </div>
-          </CardBody>
-          <CardFooter>
-            <Link href={project.url} className="btn btn-primary">Visit</Link>
-          </CardFooter>
-        </Card>
+  <Card className="w-full h-full text-white shadow-xl rounded-xl overflow-hidden">
+    <CardHeader className="flex items-center gap-4">
+      <Image 
+        className="cursor-pointer" 
+        alt="Project Logo" 
+        height={40} 
+        radius="sm" 
+        src={project.image} 
+        width={40} 
+        onClick={() => window.open(project.url, "_blank")} 
+      />
+      <div className="flex flex-col">
+        <a
+          className="text-md font-bold cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
+          href={project.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          {project.title}
+        </a>
+        <a
+          className="text-small text-default-500 cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {project.url}
+        </a>
       </div>
+    </CardHeader>
+    <CardBody className="overflow-y-auto">
+      <Image
+        onClick={() => window.open(project.url, "_blank")}
+        src={project.image_hero}
+        alt={project.title}
+        className="hover:transform hover:scale-105 cursor-pointer transition-transform duration-300 ease-in-out rounded-lg mb-6"
+      />
+      <Divider />
+      <p className="my-4 p-4 text-md text-black-500 dark:text-white-500 text-justify">{project.description}</p>
+      <Divider />
+      <div className="grid grid-cols-4 gap-2 mt-2">
+        {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
+          <Code key={idx} className="flex items-center gap-1" color="primary">
+            <tag.icon size={20} />
+            <span>{tag.name}</span>
+          </Code>
+        ))}
+      </div>
+    </CardBody>
+    <CardFooter>
+      <Link href={project.url} className="btn btn-primary">Visit</Link>
+    </CardFooter>
+  </Card>
+      </div>
+
     </div>
   );
 
