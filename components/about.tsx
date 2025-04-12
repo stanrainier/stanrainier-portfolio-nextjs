@@ -85,19 +85,15 @@ export default function About() {
       <div className="mt-52">
       <Marquee/>
       </div>
-
       <ParallaxDiv>
-        <Card className="p-4">
-        <h1 className="text-center lg:text-4xl font-bold">
-          <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
-          Skills
-          </TextAnimate>
-        </h1>
-        <Divider className="my-4" />
+      <h1 className="text-left lg:text-4xl mb-4 font-bold">
+      <span className={title({ color: "blue" })}>Skills</span>
+      </h1>
+        <Card className="p-2 h-full ">
         <div className="flex flex-col gap-4 justify-center mt-8">
           <Tabs aria-label="Options" variant="light">
                 <Tab key="frontend" title="Frontend">
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  {/* <div className="grid grid-cols-2 gap-4 mb-4">
                     <Card className="w-full mb-4">
                     <CardBody className="flex flex-row align-center gap-3 justify-items-center">
                       <CiCircleCheck 
@@ -116,7 +112,7 @@ export default function About() {
                         <span className="text-lg text-blue-700 dark:text-sky-400">I build wordpress websites using Elementor</span>
                       </CardBody>
                     </Card>
-                  </div>
+                  </div> */}
       
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {frontendSkills.map((skill:any) => {

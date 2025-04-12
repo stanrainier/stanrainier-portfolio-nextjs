@@ -102,7 +102,7 @@ function ProjectCard({ project }: any) {
       />
       <div className="flex flex-col">
         <a
-          className="text-md font-bold cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
+          className="text-md font-bold text-gray-950 dark:text-white cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
           href={project.url} 
           target="_blank" 
           rel="noopener noreferrer"
@@ -127,13 +127,13 @@ function ProjectCard({ project }: any) {
         className="hover:transform hover:scale-105 cursor-pointer transition-transform duration-300 ease-in-out rounded-lg mb-6"
       />
       <Divider />
-      <p className="my-4 p-4 text-md text-black-500 dark:text-white-500 text-justify">{project.description}</p>
+      <p className="my-4 p-4 text-md text-gray-950 text-justify dark:text-default-100 bg-white ">{project.description}</p>
       <Divider />
       <div className="grid grid-cols-4 gap-2 mt-2">
         {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
           <Code key={idx} className="flex items-center gap-1" color="primary">
             <tag.icon size={20} />
-            <span>{tag.name}</span>
+            <span className="text-gray-950 dark:text-white">{tag.name}</span>
           </Code>
         ))}
       </div>

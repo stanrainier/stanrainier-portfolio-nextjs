@@ -4,14 +4,17 @@ export const siteConfig = {
   name: "Dev Stan | Portfolio",
   description: "A creative portfolio developed by Stan Rainier D. Salazar",
   navItems: [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Blog", href: "/blog" },
   ],
   navMenuItems: [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Blog", href: "/blog" },
+
   ],
   links: {
     github: "https://github.com/stanrainier",
