@@ -17,7 +17,6 @@ import { ScrollProgress } from "@/components/magicui/scroll-progress";
 export default function Home() {
   return (
     <div>
-      <Alert description="This website is still under construction" title="Under Construction" color="secondary" variant="bordered" />
       <section id="hero">
         <Hero />
       </section>

@@ -24,7 +24,7 @@ export default function Contact() {
   return (
     <div >
       <AnimatedSection>
-      <WordRotate className="text-4xl font-bold text-center dark:text-amber-50 mb-12"
+      <WordRotate className="text-5xl font-bold text-center dark:text-amber-50 mb-12"
       words={['Connect with me', 'Get in touch', 'Contact me']} >
       </WordRotate>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4" >
@@ -135,7 +135,6 @@ export default function Contact() {
         </Card>
     </div>
     </AnimatedSection>
-
   </div>
 
 

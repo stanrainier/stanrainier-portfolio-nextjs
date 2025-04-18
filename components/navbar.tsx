@@ -70,20 +70,22 @@ export const Navbar = () => {
         className="hidden sm:flex sm:basis-full"
         justify="end"
       >
-        <ul className="hidden lg:flex gap-6 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className="text-cyan-600 text-bold data-[active=true]:font-medium hover:text-amber-100 transition-all duration-200 transform ease-in-out "  
-                
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
+         <ul className="flex gap-8 items-center">
+      {siteConfig.navItems.map((item) => (
+        <li key={item.href} className="relative group">
+          <Tooltip
+            content={item.label}
+            placement="bottom"
+            className="text-lg font-semibold "
+            showArrow
+            >
+            <NextLink href={item.href} className="flex items-center gap-2 transition-all">
+              <item.icon className="text-blue-800 text-xl transition-opacity duration-300 ease-in-out group-hover:text-violet-800" />
+            </NextLink>
+          </Tooltip>
+        </li>
+      ))}
+    </ul>
 
         <NavbarItem className="hidden md:flex">
           <Button

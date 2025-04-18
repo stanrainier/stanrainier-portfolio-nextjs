@@ -83,7 +83,11 @@ function ProjectCard({ project }: any) {
             className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
           />
         </CardBody>
-
+        <CardFooter className="flex justify-between items-center">
+          <div className="flex flex-col">
+            <p className="text-md text-justify ">{project.short_description}</p>
+          </div>
+        </CardFooter>
       </Card>
     
 

@@ -13,11 +13,12 @@ import { FaLinkedin, FaGitlab, FaGithub  } from "react-icons/fa6";
 import Typewriter from 'typewriter-effect';
 import AnimatedSection from "./animatedSection";
 import { Particles } from "./magicui/particles";
+import { FaFolder } from "react-icons/fa";
+import { RiUserStarLine } from "react-icons/ri";
 
 export default function Hero() {
     return(
     <AnimatedSection>
-      
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="absolute inset-0 z-[-1]">
         <Particles />
@@ -64,7 +65,19 @@ export default function Hero() {
         </span>
       </div>
       <div className="flex mt-6 gap-5">
+        <Button color="primary" startContent={<FaFolder size={20}/>} variant="ghost">
+          <Link href="/projects">
+            Check My Projects
+          </Link>
+        </Button>
 
+        <Button color="primary" startContent={<RiUserStarLine size={20}/>} variant="ghost">
+          <Link href="/contact">
+            Contact Me
+          </Link>
+        </Button>
+      </div>
+      <div className="flex mt-6 gap-5">
         <Link
           isExternal
           className={buttonStyles({ variant: "bordered", radius: "full" })}

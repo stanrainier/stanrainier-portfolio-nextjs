@@ -12,6 +12,7 @@ import { workExperience } from "@/app/common/data/work-experience";
 import { BoxReveal } from "./magicui/box-reveal";
 import { TextAnimate } from "./magicui/text-animate";
 import { IoDocumentText } from "react-icons/io5";
+import NumberCounter from "@/components/numberCounter";
 
 export default function About() {
  
@@ -32,7 +33,7 @@ export default function About() {
           <div className="w-full p-4 ">
             <div className="flex flex-row lg:flex-row gap-4  items-center">
             <span className={title({ color: "blue" })}>Work Experience</span>
-            <Button onPress={onOpen}  startContent={<IoDocumentText  />}>Resume</Button>
+            <Button onPress={onOpen}  startContent={<IoDocumentText  />}>CV</Button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             {workExperience.map((experience, index) => (
@@ -78,6 +79,9 @@ export default function About() {
 
               </motion.div>
           ))}
+          </div>
+          <div className="p-4 mt-8">
+            <NumberCounter/>
           </div>
         </div>
       </div>
