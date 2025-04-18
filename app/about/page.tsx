@@ -1,7 +1,7 @@
 "use client";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import NumberCounter from "@/components/numberCounter";
-import { Button, Card, Divider, Drawer, DrawerBody, DrawerContent, DrawerHeader, Progress, useDisclosure } from "@heroui/react";
+import { Button, Card, Divider, Drawer, DrawerBody, DrawerContent, DrawerHeader, Link, Progress, useDisclosure } from "@heroui/react";
 import { Image } from "@heroui/react";
 import { Chip } from "@heroui/chip";
 import { aboutItems } from "../common/data/about-data";
@@ -11,6 +11,8 @@ import { workExperience } from "../common/data/work-experience";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { IoDocumentText } from "react-icons/io5";
+import { FaSoundcloud } from "react-icons/fa6";
+import { FaPaintBrush } from "react-icons/fa";
 
 export default function AboutPage() {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -43,24 +45,39 @@ export default function AboutPage() {
                 <Chip>Tech Enthusiast</Chip>
             </div>
             <Divider className="my-4" />
+            
             <Button className="mt-4" variant="light" onPress={onOpen}  startContent={<IoDocumentText  />}>View or Download My CV</Button>
+            <Button className="mt-4" variant="light" onPress={onOpen}  startContent={<FaPaintBrush />}>
+              <Link isExternal
+              href="https://soundcloud.com/ifypablo"
+              target="_blank">
+                Creative Portfolio
+              </Link>
+            </Button>
 
         </div>
         {/* RIGHT SIDE - Description */}
         <div className="flex flex-col justify-start flex-1 min-w-[250px]">
             <span className="text-lg font-semibold mb-2">Bio</span>
             <span className="text-md text-justify mb-4">
-                I'm a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. Alongside my full-time role, I also take on freelance web projects and remain committed to continuous learning and evolving as a developer.
+                I&apos;m a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. 
+                Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. 
+                Alongside my full-time role, I also take on freelance web projects and remain committed to continuous learning and evolving as a developer.
             </span>
             <Divider className="my-4" />
             <span className="text-lg font-semibold mb-2">Interests</span>
             <span className="text-md text-justify mb-4">
-                I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. I also enjoy exploring new technologies and frameworks to enhance my skill set. In my free time, I love reading tech blogs, contributing to open-source projects, and engaging with the developer community.
+                I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. 
+                I also enjoy exploring new technologies and frameworks to enhance my skill set. 
+                In my free time, I love watching tech related videos and catch up with recent happenings in the industry, building passion projects, and engaging with the developer community.
             </span>
             <Divider className="my-4" />
             <span className="text-lg font-semibold mb-2">Hobbies</span>
             <span className="text-md text-justify mb-4">
-                Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. I also love to travel and explore new places, which often inspires my work and creativity.
+                Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. 
+                I also love to travel and explore new places, which often inspires my work and creativity. I have a passion for creating web applications since I was young, and I love to learn new things and improve my skills.
+                I also enjoy reading books and articles about technology and software development, which helps me stay updated with the latest trends and best practices in the industry. I love to do post production and video editing, and I have a keen interest in photography and videography. I also produce music in my free time, which allows me to express my creativity in different ways. 
+                I believe that having a diverse range of interests helps me to be a more well-rounded developer and enhances my problem-solving skills.
             </span>
 
         </div>

@@ -6,10 +6,14 @@ export const workExperience = [
     location: 'Remote',
     date: '2024 - Present',
     description: [
-      'Developed and maintained web applications using React, Next.js, and Node.js.',
-      'Collaborated with clients to gather requirements and deliver tailored solutions.',
-      'Implemented responsive designs and optimized performance for various devices.',
+      'Developed and maintained web applications using Angular, Laravel, and Electron.',
+      'Collaborated with a team to gather requirements and deliver tailored solutions.',
       'Utilized Git for version control and project management.',
+      'Participated in code reviews and contributed to team discussions.',
+      'Learned best practices in software development and agile methodologies.',
+      'Learned about CI/CD pipelines and deployment processes.',
+      'Gained experience in working with RESTful APIs and integrating third-party services.',
+      
     ],
   },
   {
@@ -19,9 +23,10 @@ export const workExperience = [
     location: 'City, Country',
     date: '2024 - Present',
     description: [
-      'Assisted in the development of internal tools using Python and Django.',
-      'Participated in code reviews and contributed to team discussions.',
-      'Learned best practices in software development and agile methodologies.',
+      'Built websites for clients using WordPress and custom themes.',
+      'Collaborated with clients to gather requirements and deliver tailored solutions.',
+      'Utilized Git for version control and project management.',
+
     ],
   },
 
