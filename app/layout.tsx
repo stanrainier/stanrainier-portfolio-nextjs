@@ -14,7 +14,7 @@ import LenisScroll from "@/components/lenis/LenisProvider";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `${siteConfig.name} | %s`, 
   },
   description: siteConfig.description,
   icons: {
@@ -46,7 +46,7 @@ export default function RootLayout({
       }
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen  ">
+          <div className="relative flex flex-col   ">
             <Navbar />
               <main className="container mx-auto  pt-16 px-6 flex-grow ">
               <LenisScroll>

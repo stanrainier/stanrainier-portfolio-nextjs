@@ -12,7 +12,6 @@ export default function Projects() {
   return (
     <div className="mt-56 mb-64">
       <AnimatedSection>
-      
       <h1 className="lg:text-6xl text-center font-bold  dark:text-amber-50 mt-24 ">
       <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
         Projects

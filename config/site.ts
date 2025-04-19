@@ -3,11 +3,12 @@ import { CgProfile } from "react-icons/cg";
 import { FaFolderOpen } from "react-icons/fa";
 import { MdOutlineArticle } from "react-icons/md";
 import { RiUserStarLine } from "react-icons/ri";
+import { IoIosCall } from "react-icons/io";
 
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Dev Stan | Portfolio",
+  name: "Dev Stan",
   description: "A creative portfolio developed by Stan Rainier D. Salazar",
 
   navItems: [
@@ -15,7 +16,7 @@ export const siteConfig = {
     { label: "About", href: "/about", icon: CgProfile },
     { label: "Projects", href: "/projects", icon: FaFolderOpen },
     { label: "Blog", href: "/blog", icon: MdOutlineArticle },
-    { label: "Contact", href: "/contact", icon: RiUserStarLine },
+    { label: "Contact", href: "/contact", icon: IoIosCall },
   ],
   
   navMenuItems: [
@@ -23,8 +24,10 @@ export const siteConfig = {
     { label: "About", href: "/about", icon: CgProfile },
     { label: "Projects", href: "/projects", icon: FaFolderOpen },
     { label: "Blog", href: "/blog", icon: MdOutlineArticle },
-    { label: "Contact", href: "/contact", icon: RiUserStarLine },
+    { label: "Contact", href: "/contact", icon: IoIosCall },
   ],
+
+
   links: {
     github: "https://github.com/stanrainier",
     gitlab: "https://gitlab.com/stanrainier",

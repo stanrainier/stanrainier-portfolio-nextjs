@@ -4,14 +4,13 @@ import NumberCounter from "@/components/numberCounter";
 import { Button, Card, Divider, Drawer, DrawerBody, DrawerContent, DrawerHeader, Link, Progress, useDisclosure } from "@heroui/react";
 import { Image } from "@heroui/react";
 import { Chip } from "@heroui/chip";
-import { aboutItems } from "../common/data/about-data";
 import { backendSkills, frontendSkills, otherSkills } from "../common/data/skills-data";
 import { skills_icons } from "../common/data/skills-icons";
 import { workExperience } from "../common/data/work-experience";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { IoDocumentText } from "react-icons/io5";
-import { FaSoundcloud } from "react-icons/fa6";
+import { FaGraduationCap, FaSoundcloud } from "react-icons/fa6";
 import { FaPaintBrush } from "react-icons/fa";
 
 export default function AboutPage() {
@@ -19,71 +18,84 @@ export default function AboutPage() {
   
   return (
     <div >
-    <h1 className="text-3xl font-bold mb-6">About Me</h1>
-    <Card className="flex flex-row items-start gap-6 p-8">
-    <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+<Card className="flex flex-col md:flex-row items-center gap-6 p-8">
+  <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
 
-        {/* LEFT SIDE - Image, Name, and Chips */}
-        <div className="flex flex-col items-center min-w-[250px]">
-            <Image
-            src="/images/mehero.png"
-            alt="Stan Rainier D. Salazar"
-            width={200}
-            height={200}
-            className="rounded-full mb-4"
-            />
-            <h1 className="text-2xl font-bold text-center dark:text-amber-50 mb-4">
-            Stan Rainier D. Salazar
-            </h1>
-            <div className="flex flex-wrap justify-center gap-2">
-            <Chip>Web Developer</Chip>
-            <Chip>Full Stack Developer</Chip>
-            <Chip>Freelancer</Chip>
-            </div>
-            <div className="flex flex-wrap justify-center gap-2 mt-2">
-                <Chip>Software Developer</Chip>
-                <Chip>Tech Enthusiast</Chip>
-            </div>
-            <Divider className="my-4" />
-            
-            <Button className="mt-4" variant="light" onPress={onOpen}  startContent={<IoDocumentText  />}>View or Download My CV</Button>
-            <Button className="mt-4" variant="light" onPress={onOpen}  startContent={<FaPaintBrush />}>
-              <Link isExternal
-              href="https://soundcloud.com/ifypablo"
-              target="_blank">
-                Creative Portfolio
-              </Link>
-            </Button>
+  {/* LEFT SIDE - Image, Name, and Chips */}
+  <div className="flex flex-col items-center md:w-1/2 mb-6 md:mb-0">
+    <Image
+      src="/images/mewithBueBG.JPG"
+      alt="Stan Rainier D. Salazar"
+      width={200}
+      height={200}
+      className="rounded-full mb-4 border-4 border-gray-300"
+    />
+    <h1 className="text-3xl font-bold text-center  mb-4">
+      Stan Rainier D. Salazar
+    </h1>
+    <div className="flex flex-wrap justify-center gap-2 mb-4">
+      <Chip>Web Developer</Chip>
+      <Chip>Full Stack Developer</Chip>
+      <Chip>Freelancer</Chip>
+    </div>
+    <div className="flex flex-wrap justify-center gap-2">
+      <Chip>Software Developer</Chip>
+      <Chip>Tech Enthusiast</Chip>
+    </div>
+    <Button
+      className="mt-4"
+      variant="light"
+      onPress={onOpen}
+      startContent={<IoDocumentText />}
+    >
+      View or Download My CV
+    </Button>
+    
+    <Divider className="my-4" />
+    <div className="flex flex-col text-center justify-center items-center gap-2 mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
+      <FaGraduationCap size={30} />
+      <span className="text-md font-semibold">University of Negros Occidental - Recoletos</span>
+      <span className="text-sm font-semibold">Bachelor of Science in Information Technology</span>
+      <span className="text-xs">2020 - 2024</span>
+    </div>
 
-        </div>
-        {/* RIGHT SIDE - Description */}
-        <div className="flex flex-col justify-start flex-1 min-w-[250px]">
-            <span className="text-lg font-semibold mb-2">Bio</span>
-            <span className="text-md text-justify mb-4">
-                I&apos;m a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. 
-                Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. 
-                Alongside my full-time role, I also take on freelance web projects and remain committed to continuous learning and evolving as a developer.
-            </span>
-            <Divider className="my-4" />
-            <span className="text-lg font-semibold mb-2">Interests</span>
-            <span className="text-md text-justify mb-4">
-                I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. 
-                I also enjoy exploring new technologies and frameworks to enhance my skill set. 
-                In my free time, I love watching tech related videos and catch up with recent happenings in the industry, building passion projects, and engaging with the developer community.
-            </span>
-            <Divider className="my-4" />
-            <span className="text-lg font-semibold mb-2">Hobbies</span>
-            <span className="text-md text-justify mb-4">
-                Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. 
-                I also love to travel and explore new places, which often inspires my work and creativity. I have a passion for creating web applications since I was young, and I love to learn new things and improve my skills.
-                I also enjoy reading books and articles about technology and software development, which helps me stay updated with the latest trends and best practices in the industry. I love to do post production and video editing, and I have a keen interest in photography and videography. I also produce music in my free time, which allows me to express my creativity in different ways. 
-                I believe that having a diverse range of interests helps me to be a more well-rounded developer and enhances my problem-solving skills.
-            </span>
 
-        </div>
-        <BorderBeam duration={8} size={100} />
 
-    </Card>
+  </div>
+
+  {/* RIGHT SIDE - Description */}
+  <div className="flex flex-col justify-start flex-1 md:w-1/2">
+    <div className="mb-6">
+      <span className="text-lg font-semibold text-purple-700 mb-2">Bio</span>
+      <p className="text-md text-justify">
+        I&apos;m a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. 
+        Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. 
+        Alongside my full-time role, I also take on freelance web projects and remain committed to continuous learning and evolving as a developer.
+      </p>
+    </div>
+
+    <div className="mb-6">
+      <span className="text-lg font-semibold text-purple-700 mb-2">Interests</span>
+      <p className="text-md text-justify">
+        I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. 
+        I also enjoy exploring new technologies and frameworks to enhance my skill set. 
+        In my free time, I love watching tech related videos and catch up with recent happenings in the industry, building passion projects, and engaging with the developer community.
+      </p>
+    </div>
+
+    <div className="mb-6">
+      <span className="text-lg font-semibold text-purple-700 mb-2">Hobbies</span>
+      <p className="text-md text-justify">
+        Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. 
+        I also love to travel and explore new places, which often inspires my work and creativity. I have a passion for creating web applications since I was young, and I love to learn new things and improve my skills.
+        I also enjoy reading books and articles about technology and software development, which helps me stay updated with the latest trends and best practices in the industry. I love to do post-production and video editing, and I have a keen interest in photography and videography. I also produce music in my free time, which allows me to express my creativity in different ways. 
+        I believe that having a diverse range of interests helps me to be a more well-rounded developer and enhances my problem-solving skills.
+      </p>
+    </div>
+  </div>
+
+  <BorderBeam duration={8} size={100} />
+</Card>
 
       <Divider className="my-12" />
 
@@ -106,7 +118,11 @@ export default function AboutPage() {
                 <h2 className="text-md font-semibold mb-1">{item.company}</h2>
                 <h2 className="text-sm font-medium mb-2 text-default-500">{item.date}</h2>
                 <Divider className="mb-4" />
-                <span className="text-base">{item.description}</span>
+                {item.description.map((desc:any, index:any) => (
+                    <span key={index} className="block text-base mb-2">
+                      {desc}
+                    </span>
+                  ))}                
                 </Card>
             ))}
         </div>

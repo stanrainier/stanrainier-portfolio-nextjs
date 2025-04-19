@@ -17,7 +17,7 @@ export const workExperience = [
     ],
   },
   {
-    image: "/images/mehero.png",
+    image: "/images/mewithBueBG.JPG",
     title: 'Freelance Site Builder',
     company: 'Freelancer',
     location: 'City, Country',

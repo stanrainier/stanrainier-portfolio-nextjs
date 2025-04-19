@@ -1,10 +1,29 @@
-import { FaAngular, FaBootstrap, FaElementor, FaJava, FaLaravel, FaReact, FaShopify, FaWordpressSimple } from "react-icons/fa6";
-import { IoLogoElectron, IoLogoJavascript } from "react-icons/io5";
-import { SiAstra, SiNestjs, SiPhp, SiTypescript } from "react-icons/si";
+import { FaAngular, FaBootstrap, FaElementor, FaGithub, FaGoogle, FaJava, FaLaravel, FaReact, FaShopify, FaWordpressSimple } from "react-icons/fa6";
+import { IoLogoElectron, IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiAstra, SiMysql, SiNestjs, SiPhp, SiTypescript } from "react-icons/si";
 
 export const projects = [
     {
         id: 1,
+        image_hero: "/images/portfolioSS.png",
+        category: "fullstack",
+        title: "Dev Portfolio",
+        short_description: "My personal portfolio website built using Next.js, TypeScript, and Tailwind CSS.",
+        description: "My personal portfolio website built using Next.js, TypeScript, and Tailwind CSS. This project showcases my skills, projects, and experience as a developer. The site is fully responsive and optimized for performance, providing a seamless user experience across devices. I utilized Next.js for server-side rendering and static site generation, ensuring fast load times and SEO optimization. The design is clean and modern, reflecting my personal brand and development philosophy.",
+        image: "images/favicon.PNG",
+        url: "/",
+        tags: [
+            { name: "NextJS", icon: RiNextjsFill  },
+            { name: "TailwindCSS", icon: RiTailwindCssFill },
+            { name: "Vercel", icon: IoLogoVercel  }, 
+            { name: "GitHub", icon: FaGithub  } 
+        ],
+        year: [2025],
+        status: "In Progress",
+    },
+    {
+        id: 2,
         image_hero: "/images/MyTaskOwlHero.png",
         category: "sitebuilder",
         title: "MyTaskOwl",
@@ -16,28 +35,38 @@ export const projects = [
             { name: "Elementor", icon: FaElementor },
             { name: "WordPress", icon: FaWordpressSimple },
             { name: "Astra", icon: SiAstra } 
-        ]
+        ],
+        year: [2024,2025],
+        status: "In Progress",
+
     },
     {
-        id: 2,
+        id: 3,
         image_hero: "/images/appStage.png",
         category: "fullstack",
         title: "MyTaskOwl Web app",
         short_description: "The MyTaskOwl Web app is a full-stack application developed using Laravel for the backend and Angular for the frontend.",
-        description: "The MyTaskOwl Web app is a full-stack application developed using Laravel for the backend and Angular for the frontend. The web app allows users to manage tasks, view project timelines, and interact with different features designed for task management. Built with a modern tech stack, the app uses Laravel for its robust server-side architecture, TypeScript for frontend scripting, and integrates other technologies such as NestJS and Electron for enhanced functionality and cross-platform support.",
-        image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
+        description: "The MyTaskOwl Web app is a full-stack application built with Laravel for the backend and Angular for the frontend. It allows users to manage tasks and track project timelines. I worked on the backend with Laravel to create robust server-side architecture, built APIs, and contributed to the WebSocket infrastructure using NestJS. On the frontend, I developed key Angular components, integrated Google OAuth for sign-on, and built the mailing system for registration, password recovery, and verification. I also implemented route guards to secure navigation."
+        ,image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
         url: "https://app.stage.mytaskowl.com",
         tags: [
             { name: "Angular", icon: FaAngular },
             { name: "Laravel", icon: FaLaravel },
             { name: "PHP", icon: SiPhp },
             { name: "TypeScript", icon: SiTypescript },
-            { name: "NestJS", icon: FaReact }, // Update to actual NestJS icon if needed
-        ]
+            { name: "Google Cloud Console", icon: FaGoogle  },
+            { name: "NestJS", icon: SiNestjs }, 
+            { name: "GitHub", icon: FaGithub  },
+            { name: "MySQL", icon: SiMysql   },
+
+        ],
+        year: [2024,2025],
+        status: "In Progress",
+
     },
     {
-        id: 3,
-        image_hero: "/images/appStage.png",
+        id: 4,
+        image_hero: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
         category: "fullstack",
         title: "MyTaskOwl Software Application",
         short_description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality.",
@@ -48,11 +77,17 @@ export const projects = [
             { name: "Angular", icon: FaAngular },
             { name: "TypeScript", icon: SiTypescript },
             { name: "NestJS", icon: SiNestjs  },
-            { name: "Electron", icon: IoLogoElectron  } // Update to Electron icon if needed
-        ]
+            { name: "Electron", icon: IoLogoElectron  },
+            { name: "Google Cloud Console", icon: FaGoogle  },
+            { name: "GitHub", icon: FaGithub  } 
+
+        ],
+        year: [2024,2025],
+        status: "In Progress",
+
     },
     {
-        id: 4,
+        id: 5,
         image_hero: "/images/ZenExp.png",
         category: "sitebuilder",
         title: "ZEN Experience",
@@ -63,9 +98,11 @@ export const projects = [
         tags: [
             { name: "Shopify", icon: FaShopify  },
             { name: "JavaScript", icon: IoLogoJavascript   },
-
             { name: "PHP", icon: SiPhp },
 
-        ]
+        ],
+        year: [2024],
+        status: "Completed",
     },
+
 ]

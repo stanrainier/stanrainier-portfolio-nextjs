@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -27,7 +28,7 @@ import {
   GitlabIcon,
 } from "@/components/icons";
 import {Tooltip} from "@heroui/tooltip";
-
+import { Image } from "@heroui/react";
 
 export const Navbar = () => {
   const searchInput = (
@@ -56,10 +57,11 @@ export const Navbar = () => {
       <NavbarContent className=" sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-          <p className="font-bold text-3xl antialiased font-extrabold text-transparent 
+          <Image src="/images/favicon.PNG" alt="Stan" width={40} height={40} className="" />
+          <p className="font-bold text-2xl ml-2 antialiased font-extrabold text-transparent 
           bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text transition-all duration-[1500ms]
           ease-in-out hover:from-cyan-400 hover:to-blue-500">
-            {`STAN`}
+            {`< STAN >`}
           </p>
           </NextLink>
         </NavbarBrand>

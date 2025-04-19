@@ -1,19 +1,19 @@
-"use client";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { title } from "@/components/primitives";
-import Projects from "@/components/projects";
+import ProjectsDisplay from "@/components/projects_bento";
 import ProjectListByCategory from "@/components/projects_grid";
-import { Card } from "@heroui/react";
+import { Card, Divider, Spacer } from "@heroui/react";
 
+export const metadata = {
+    title: "Projects",
+  };
 export default function ProjectPage() {
     return(
     <div >
-        <h1 className="lg:text-6xl text-center font-bold  dark:text-amber-50 ">
-            <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
-            Projects
-            </TextAnimate>
-        </h1>
-        <div className="w-full">
+        <div className="w-full mb-12">
+        <ProjectsDisplay />
+        </div>
+        <Divider className="mb-12" />
+        <div className="w-full mb-48">
             <ProjectListByCategory />
         </div>
     </div>

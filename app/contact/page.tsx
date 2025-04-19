@@ -1,6 +1,8 @@
 import Contact from "@/components/contact";
 import { title } from "@/components/primitives";
-
+export const metadata = {
+    title: "Contact",
+  };
 export default function ContactPage() {
 
     return(

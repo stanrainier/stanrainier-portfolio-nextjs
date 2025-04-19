@@ -26,7 +26,7 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col items-center w-full px-4 md:px-12 py-12">
+    <div className="flex flex-col items-center w-full px-4 md:px-12 pt-12 pb-96">
       <h1 className={title()}>Dev Blog {'(Coming Soon)'}</h1>
       <p className="text-default-500 text-center mt-2 mb-10 max-w-2xl">
         Insights, tutorials, and experiences from my journey as a full-stack developer.

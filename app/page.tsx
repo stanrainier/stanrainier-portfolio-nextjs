@@ -12,6 +12,7 @@ import Projects from "@/components/projects";
 import Image from "next/image";
 import Hero from "@/components/hero";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import ProjectsDisplay from "@/components/projects_bento";
 
 
 export default function Home() {
@@ -27,7 +28,9 @@ export default function Home() {
       </section>
       <section id="projects">
         <Spacer x={56} />
-        <Projects />
+          <div className="mt-56 mb-64">
+            <ProjectsDisplay />
+          </div>
         <Spacer x={56} />
       </section>
       <section id="contact" >

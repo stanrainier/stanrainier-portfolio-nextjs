@@ -24,7 +24,7 @@ export default function About() {
       
       <AnimatedSection>
         
-      <h1 className=" text-4xl lg:text-6xl text-center font-bold  dark:text-amber-50 mt-24 mb-36">
+      <h1 className=" text-4xl my-36 lg:text-6xl text-center font-bold  dark:text-amber-50 ">
       <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
         About Me
       </TextAnimate>
@@ -33,7 +33,6 @@ export default function About() {
           <div className="w-full p-4 ">
             <div className="flex flex-row lg:flex-row gap-4  items-center">
             <span className={title({ color: "blue" })}>Work Experience</span>
-            <Button onPress={onOpen}  startContent={<IoDocumentText  />}>CV</Button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             {workExperience.map((experience, index) => (
@@ -218,37 +217,6 @@ export default function About() {
         </Card>
       </ParallaxDiv>
       </AnimatedSection>
-
-
-      <Drawer
-        isDismissable={true}
-        isKeyboardDismissDisabled={true}
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-         backdrop="blur" size="5xl"
-      >
-      <DrawerContent>
-        {(onClose) => (
-          <>
-            <DrawerHeader className="flex flex-col gap-1 text-center">
-            <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
-              Resume
-            </TextAnimate>
-            </DrawerHeader>
-            <DrawerBody className="p-0">
-              <iframe
-                src="/files/StanRanierSalazarCV.pdf"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                title="Resume"
-                className="w-full h-full"
-              ></iframe>
-            </DrawerBody>
-          </>
-        )}
-      </DrawerContent>
-    </Drawer>
     </div>
   );
 }
