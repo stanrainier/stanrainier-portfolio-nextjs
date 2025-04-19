@@ -32,8 +32,9 @@ export default function Contact() {
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
             <p className="text-2xl">
-              <TextAnimate animation="slideUp" children={""}/ >
+              <TextAnimate animation="slideUp" >
                 Contact Me!
+              </TextAnimate>
             </p>
             <p className="text-lg text-default-500">
               <TextAnimate animation="slideUp" >
