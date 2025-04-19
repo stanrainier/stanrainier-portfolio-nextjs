@@ -3,7 +3,6 @@ import { Accordion, AccordionItem, Alert, Avatar, Button, Card, CardBody, CardHe
 import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
 import { motion } from "framer-motion";
-import {aboutItems} from "@/app/common/data/about-data";
 import { CiCircleCheck } from "react-icons/ci";
 import Marquee from "./marquee";
 import AnimatedSection from "./animatedSection";
