@@ -182,7 +182,7 @@ export default function AboutPage() {
   );
 }
 
-export function SkillSection({ title, skills }: { title: string; skills: typeof frontendSkills }) {
+function SkillSection({ title, skills }: { title: string; skills: typeof frontendSkills }) {
   return (
     <Card className="p-6">
         <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
