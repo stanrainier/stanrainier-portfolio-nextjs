@@ -1,5 +1,5 @@
 import { title } from "@/components/primitives";
-import { Accordion, AccordionItem, Alert, Avatar, Button, Card, CardBody, CardHeader, Divider, Drawer, DrawerContent,DrawerHeader, DrawerBody,DrawerFooter, Progress, Tab, Tabs, Tooltip, useDisclosure } from "@heroui/react";
+import { Accordion, AccordionItem, Alert, Avatar, Button, Card, CardBody, CardHeader, Divider, Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Progress, Tab, Tabs, Tooltip, useDisclosure } from "@heroui/react";
 import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
 import { motion } from "framer-motion";
@@ -10,14 +10,11 @@ import ParallaxDiv from "./parallaxDiv";
 import { workExperience } from "@/app/common/data/work-experience";
 import { BoxReveal } from "./magicui/box-reveal";
 import { TextAnimate } from "./magicui/text-animate";
-import { IoDocumentText } from "react-icons/io5";
 import NumberCounter from "@/components/numberCounter";
-import { SkillSection, Skill } from "@/components/skillSection";
+import { ShineBorder } from "@/components/magicui/shine-border";
 
 export default function About() {
- 
-
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div>
@@ -97,6 +94,7 @@ export default function About() {
       <div className="mt-4">
         <Marquee />
       </div>
+
       {/* Skills Section */}
       <ParallaxDiv>
         <h1 className="text-left lg:text-4xl mb-4 font-bold">
@@ -207,12 +205,68 @@ export default function About() {
             </Tabs>
           </div>
         </Card>
-        <div className="block sm:hidden mb-32">
-          <SkillSection title="Frontend Skills" skills={frontendSkills as Skill[]} />
-          <SkillSection title="Backend Skills" skills={backendSkills as Skill[]} />
-          <SkillSection title="Other Skills" skills={otherSkills as Skill[]} />
-        </div>
 
+        <div className="block sm:hidden mb-32">
+          <Card className="p-6 mb-4">
+          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <h3 className="text-2xl font-bold mb-4">Frontend Skills</h3>
+            <div className="space-y-4">
+              {frontendSkills
+                .sort((a, b) => b.value - a.value)
+                .map((skill) => {
+                  const Icon = skills_icons[skill.icon];
+                  return (
+                    <div key={skill.name} className="flex items-center space-x-4">
+                      <Icon size={30} />
+                      <span className="font-semibold">{skill.name}</span>
+                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <span className="ml-auto">{skill.value}%</span>
+                    </div>
+                  );
+                })}
+            </div>
+          </Card>
+
+          <Card className="p-6 mb-4">
+          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <h3 className="text-2xl font-bold mb-4">Backend Skills</h3>
+            <div className="space-y-4">
+              {backendSkills
+                .sort((a, b) => b.value - a.value)
+                .map((skill) => {
+                  const Icon = skills_icons[skill.icon];
+                  return (
+                    <div key={skill.name} className="flex items-center space-x-4">
+                      <Icon size={30} />
+                      <span className="font-semibold">{skill.name}</span>
+                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <span className="ml-auto">{skill.value}%</span>
+                    </div>
+                  );
+                })}
+            </div>
+          </Card>
+
+          <Card className="p-6 mb-4">
+          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <h3 className="text-2xl font-bold mb-4">Other Skills</h3>
+            <div className="space-y-4">
+              {otherSkills
+                .sort((a, b) => b.value - a.value)
+                .map((skill) => {
+                  const Icon = skills_icons[skill.icon];
+                  return (
+                    <div key={skill.name} className="flex items-center space-x-4">
+                      <Icon size={30} />
+                      <span className="font-semibold">{skill.name}</span>
+                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <span className="ml-auto">{skill.value}%</span>
+                    </div>
+                  );
+                })}
+            </div>
+          </Card>
+        </div>
       </ParallaxDiv>
     </div>
   );
