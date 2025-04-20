@@ -29,7 +29,7 @@ export default function AboutPage() {
         {/* LEFT SIDE - Image, Name, and Chips */}
         <div className="flex flex-col items-center md:w-1/2 mb-6 md:mb-0">
           <Image
-            src="/images/mewithBueBG.JPG"
+            src="/images/pinkMeSmile.JPG"
             alt="Stan Rainier D. Salazar"
             width={200}
             height={200}
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
           <div className="mb-6">
             <span className="text-lg font-semibold text-purple-700 mb-2">Interests</span>
-            <p className="text-xs text-justify md:text-md">
+            <p className="text-sm text-justify lg:text-md">
               I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. 
               I also enjoy exploring new technologies and frameworks to enhance my skill set. 
               In my free time, I love watching tech related videos and catch up with recent happenings in the industry, building passion projects, and engaging with the developer community.
@@ -90,7 +90,7 @@ export default function AboutPage() {
 
           <div className="mb-6">
             <span className="text-lg font-semibold text-purple-700 mb-2">Hobbies</span>
-            <p className="text-xs text-justify md:text-md">
+            <p className="text-sm text-justify lg:text-md">
               Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. 
               I also love to travel and explore new places, which often inspires my work and creativity. I have a passion for creating web applications since I was young, and I love to learn new things and improve my skills.
               I also enjoy reading books and articles about technology and software development, which helps me stay updated with the latest trends and best practices in the industry. I love to do post-production and video editing, and I have a keen interest in photography and videography. I also produce music in my free time, which allows me to express my creativity in different ways. 

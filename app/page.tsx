@@ -1,17 +1,9 @@
 'use client'
 
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { siteConfig } from "@/config/site";
-import { GithubIcon, GitlabIcon } from "@/components/icons";
 import { Alert, Spacer } from "@heroui/react";
-import { motion } from "motion/react"
 import Contact from "@/components/contact";
 import About from "@/components/about";
-import Projects from "@/components/projects";
-import Image from "next/image";
 import Hero from "@/components/hero";
-import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import ProjectsDisplay from "@/components/projects_bento";
 
 

@@ -12,7 +12,7 @@ import { BoxReveal } from "./magicui/box-reveal";
 import { TextAnimate } from "./magicui/text-animate";
 import { IoDocumentText } from "react-icons/io5";
 import NumberCounter from "@/components/numberCounter";
-import { Skill, SkillSection } from "./skillSection";
+import { SkillSection, Skill } from "@/components/skillSection";
 
 export default function About() {
  
