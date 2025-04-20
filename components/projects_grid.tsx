@@ -63,35 +63,38 @@ export default function ProjectListByCategory() {
                   key={project.id}
                   isPressable
                   onPress={() => handleOpen(project)}
-                  className="p-4 hover:bg-gray-500 transition cursor-pointer w-full"
+                  className="p-4 hover:bg-gray-500 transition cursor-pointer w-full "
                 >
                   <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
 
-                  <div className="grid grid-cols-6 gap-4 items-center">
+                  <div className="flex flex-row lg:gap-4 grid grid-cols-1 lg:grid-cols-6 items-center gap-4">
                     {/* Left: Image */}
-                    <div className="col-span-1">
+                    <div className="col-span-1 flex justify-center">
                       <Image
                         alt={project.title}
                         src={project.image}
                         width={80}
                         height={80}
-                        className="rounded-md"
+                        className="sm:hidden"
+                      />
+                      <Image
+                        alt={project.title}
+                        src={project.image}
+                        width={40}
+                        height={40}
+                        className="hidden sm:block"
                       />
                     </div>
 
                     {/* Middle: Title & Description */}
-                    <div className="col-span-4">
-                      <h2 className="text-lg font-semibold text-left">
-                        {project.title}
-                      </h2>
-                      <p className="text-sm text-left line-clamp-2">
-                        {project.short_description}
-                      </p>
+                    <div className="col-span-1 lg:col-span-4 text-center lg:text-left">
+                      <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+                      <p className="text-sm line-clamp-2">{project.short_description}</p>
                     </div>
 
                     {/* Right: Arrow Icon */}
-                    <div className="col-span-1 flex justify-end items-center">
-                      <FaArrowRight className="text-xl" />
+                    <div className="col-span-1 flex justify-center lg:justify-end items-center">
+                      <FaArrowRight className="hidden sm:block text-xl" />
                     </div>
                   </div>
                 </Card>
@@ -113,6 +116,13 @@ export default function ProjectListByCategory() {
               alt="Project Logo"
               width={40}
               height={40}
+              className="sm:hidden lg:block"
+            />
+            <Image
+              src={selectedProject.image}
+              alt="Project Logo"
+              width={20}
+              className="hidden sm:block"
             />
             <div>
               <h2 className="text-lg font-bold">{selectedProject.title}</h2>

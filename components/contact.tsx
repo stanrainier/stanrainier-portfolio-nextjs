@@ -31,12 +31,12 @@ export default function Contact() {
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
-            <p className="text-2xl">
+            <p className=" text-lg mb-2 lg:text-2xl ">
               <TextAnimate animation="slideUp" >
-                Contact Me!
+                  Contact Me!
               </TextAnimate>
             </p>
-            <p className="text-lg text-default-500">
+            <p className="text-md text-default-500 lg:text-lg">
               <TextAnimate animation="slideUp" >
                 Feel free to send me a message. Give me feedback, or just say hi!
               </TextAnimate>
@@ -90,11 +90,10 @@ export default function Contact() {
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
-         
 
-            <p className="text-2xl"> <TextAnimate animation="slideUp" >Social Media</TextAnimate></p>
-            <p className="text-lg text-default-500">
-              <TextAnimate animation="slideUp" > Connect with me on social media</TextAnimate>
+            <p className="text-lg mb-2 lg:text-2xl"> <TextAnimate animation="slideUp" >Social Media</TextAnimate></p>
+            <p className="text-md text-default-500 lg:text-lg">
+              <TextAnimate animation="slideUp" >Connect with me on social media</TextAnimate>
             </p>
             
           </div>
@@ -102,14 +101,13 @@ export default function Contact() {
         <Divider />
         <CardBody className="p-8 align-items-center justify-items-center">
             {contactSocialLinks.map((link) => (
-              <div key={link.title} className="flex items-center gap-3 mb-4">
+              <div key={link.title} className="flex items-center gap-3 mb-4 sm:flex-row flex-col">
                 <Avatar
                   icon={<link.icon size={30}/>}
                   alt={link.title}
                   className="bg-gradient-to-r from-cyan-500 to-violet-500 text-black dark:bg-gray-700 dark:text-white"
                 />
                 <div className="flex flex-col">
-             
                   <Link href={link.url} className="text-md font-bold hover:text-default-500 duration-300 ease-in-out">
                     <TextAnimate animation="slideUp" >
                       {link.title}

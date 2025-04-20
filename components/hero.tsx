@@ -21,18 +21,28 @@ export default function Hero() {
     <AnimatedSection>
       <section className="flex flex-col md:flex-row items-center gap-10 py-8 md:py-10">
         {/* Background Particles */}
-        <div className="absolute inset-0 z-[-1]">
+        <div className="absolute inset-0 z-[-1] ">
           <Particles />
         </div>
         {/* Left Section - Image */}
         <div className="flex-1 flex justify-center mb-6 md:mb-0">
+        <Image
+            isZoomed
+            src="/images/mehero.png"
+            alt="Stan Rainier D. Salazar"
+            width={200}
+            height={200}
+            className="sm:hidden bg-blue-500 shadow-lg"
+          />
+
+          {/* Medium and up: 600x600 image */}
           <Image
-          isZoomed
+            isZoomed
             src="/images/mehero.png"
             alt="Stan Rainier D. Salazar"
             width={600}
             height={600}
-            className="bg-blue-500 shadow-lg "
+            className="hidden sm:block bg-blue-500 shadow-lg"
           />
         </div>
 
@@ -43,14 +53,14 @@ export default function Hero() {
             whileTap={{ scale: 0.8 }}
             className="mb-4"
           >
-            <span className="text-4xl font-bold dark:text-amber-50">
+            <span className="text-lg font-bold dark:text-amber-50 md:text-4xl">
               Hi, I&apos;m
             </span>
             <br />
             <span className={title({ color: "blue" })}>Stan Rainier D. Salazar</span>
           </motion.div>
 
-          <span className="text-4xl font-bold mb-4 dark:text-amber-50">
+          <span className="text-lg font-bold mb-4 dark:text-amber-50 md:text-4xl">
             <Typewriter
               options={{
                 strings: [
@@ -69,7 +79,7 @@ export default function Hero() {
 
 
           {/* Social Links */}
-          <div className="flex justify-center md:justify-start mt-6 gap-5">
+          <div className="flex justify-center md:justify-start mt-6 gap-5 sm:flex-row flex-col">
             <Link
               isExternal
               className={buttonStyles({ variant: "bordered", radius: "full" })}
@@ -81,7 +91,7 @@ export default function Hero() {
             <Link
               isExternal
               className={buttonStyles({ variant: "bordered", radius: "full" })}
-              href={siteConfig.links.github}
+              href={siteConfig.links.gitlab}
             >
               <FaGitlab size={20} />
               GitLab

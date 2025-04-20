@@ -31,36 +31,30 @@ import {Tooltip} from "@heroui/tooltip";
 import { Image } from "@heroui/react";
 
 export const Navbar = () => {
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: "bg-default-100",
-        input: "text-sm",
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-      }
-      type="search"
-    />
-  );
 
   return (
+
+    // MAIN NAVBAR
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className=" sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-          <Image src="/images/favicon.PNG" alt="Stan" width={40} height={40} className="" />
-          <p className="font-bold text-2xl ml-2 antialiased font-extrabold text-transparent 
+          <Image
+            src="/images/favicon.PNG"
+            alt="Stan"
+            width={30}
+            className="sm:hidden"
+          />
+          <Image
+            src="/images/favicon.PNG"
+            alt="Stan"
+            width={40}
+            height={40}
+            className="hidden sm:block"
+          />
+          <p className="font-bold  ml-2 antialiased font-extrabold text-transparent 
           bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text transition-all duration-[1500ms]
-          ease-in-out hover:from-cyan-400 hover:to-blue-500">
+          ease-in-out hover:from-cyan-400 hover:to-blue-500 lg:text-2xl text-xl">
             {`< STAN >`}
           </p>
           </NextLink>
@@ -68,6 +62,8 @@ export const Navbar = () => {
 
       </NavbarContent>
 
+
+      {/* MOBILE NAVBAR */}
       <NavbarContent
         className="hidden sm:flex sm:basis-full"
         justify="end"
@@ -104,11 +100,8 @@ export const Navbar = () => {
         <ThemeSwitch />
 
       </NavbarContent>
-
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
+        
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
@@ -121,7 +114,7 @@ export const Navbar = () => {
                 color={
                   "primary"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

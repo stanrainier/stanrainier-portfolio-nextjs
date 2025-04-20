@@ -28,7 +28,7 @@ export default function Home() {
       </section>
       <section id="projects">
         <Spacer x={56} />
-          <div className="mt-56 mb-64">
+          <div className="mt-[1000px] mb-64 lg:mt-56">
             <ProjectsDisplay />
           </div>
         <Spacer x={56} />

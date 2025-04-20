@@ -3,6 +3,20 @@ import { IoLogoElectron, IoLogoJavascript, IoLogoVercel } from "react-icons/io5"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiAstra, SiMysql, SiNestjs, SiPhp, SiTypescript } from "react-icons/si";
 
+export function countProjects(projects: any[]) {
+    const projectCount = projects.length;
+    const completedCount = projects.filter(project => project.status === "Completed").length;
+    const inProgressCount = projects.filter(project => project.status === "In Progress").length;
+    const siteBuilderCount = projects.filter(project => project.category === "sitebuilder").length;
+    const fullStackCount = projects.filter(project => project.category === "fullstack").length;
+    return {
+        projectCount,
+        completedCount,
+        inProgressCount,
+        siteBuilderCount,
+        fullStackCount
+    };
+}
 export const projects = [
     {
         id: 1,

@@ -41,7 +41,7 @@ const ProjectsDisplay = () => {
             Projects
         </TextAnimate>
         </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px] lg: auto-rows-[300px]">
         {[...projects].map((project, idx) => (
             <Card
             key={project.id}
@@ -56,28 +56,22 @@ const ProjectsDisplay = () => {
             backgroundPosition: "center",
             }}
         >
-    {/* Background Overlay */}
-        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity"></div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-black opacity-60 lg:opacity-0 lg:group-hover:opacity-60 transition-opacity"></div>
 
         {/* Centered Information - Only visible on hover */}
-        <div className="absolute inset-0 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity">
-        <div className="text-white p-4">
-            <Image
-            src={project.image}
-            alt="Project Logo"
-            width={40}
-            height={40}
-            className="mb-2"
-            />
+        <div className="absolute inset-0 flex items-center justify-center text-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
+          <div className="text-white p-4">
             <h2 className="text-3xl font-semibold mb-2 text-shadow-lg">{project.title}</h2>
             <p className="text-sm text-left line-clamp-2">{project.short_description}</p>
-        </div>
+            <span className="text-sm uppercase font-bold">{project.category} - {project.year[0]}</span>
+          </div>
         </div>
 
+
             {/* Footer with category and arrow */}
-            <div className="flex justify-between items-center mt-auto">
-            <span className="text-sm uppercase font-bold text-blue-500">{project.category}</span>
-            <span className="text-sm uppercase   font-bold text-blue-500">{project.year[0]} </span>
+            <div className="flex justify-end items-center mt-auto">
+        
             <FaArrowRight className="text-xl group-hover:translate-x-1 transition" />
             </div>
         </Card>
