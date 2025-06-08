@@ -1,7 +1,7 @@
-import { FaAngular, FaBootstrap, FaElementor, FaGithub, FaGoogle, FaJava, FaLaravel, FaReact, FaShopify, FaWordpressSimple } from "react-icons/fa6";
+import { FaAngular, FaBootstrap, FaElementor, FaGithub, FaGoogle, FaJava, FaLaravel, FaReact, FaShopify, FaWordpress, FaWordpressSimple } from "react-icons/fa6";
 import { IoLogoElectron, IoLogoJavascript, IoLogoVercel } from "react-icons/io5";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiAstra, SiMysql, SiNestjs, SiPhp, SiTypescript } from "react-icons/si";
+import { SiAstra, SiMysql, SiNestjs, SiPhp, SiTypescript, SiWoocommerce } from "react-icons/si";
 
 export function countProjects(projects: any[]) {
     const projectCount = projects.length;
@@ -18,8 +18,27 @@ export function countProjects(projects: any[]) {
     };
 }
 export const projects = [
-    {
+        {
         id: 1,
+        image_hero: "/images/TheLittleShelf.png",
+        category: "sitebuilder",
+        title: "The Little Shelf",
+        short_description: "The Little Shelf is a website created for a local business. Built using Wordpress and WooCommerce.",
+        description: "The Little Shelf is a custom-built eCommerce website developed for a local business using WordPress and WooCommerce. The project focused on creating a visually appealing and user-friendly online storefront that reflects the brand’s charm and personality. It involved customizing WordPress themes, implementing WooCommerce for seamless product management, and integrating essential plugins to support online sales and customer engagement. The design emphasizes simplicity, responsiveness, and ease of navigation to enhance the shopping experience across all devices.",
+        image: "/images/thelittleshelfwhite.png",
+        url: "https://thelittleshelf.com/",
+        tags: [
+            { name: "WordPress", icon: FaWordpress  },
+            { name: "WooCommerce", icon: SiWoocommerce},
+            { name: "PHP", icon: SiPhp },
+            { name: "Astra Theme", icon: SiAstra },
+
+        ],
+        year: [2025],
+        status: "Completed",
+    },
+    {
+        id: 2,
         image_hero: "/images/portfolioSS.png",
         category: "fullstack",
         title: "Dev Portfolio",
@@ -37,13 +56,13 @@ export const projects = [
         status: "In Progress",
     },
     {
-        id: 2,
+        id: 3,
         image_hero: "/images/MyTaskOwlHero.png",
         category: "sitebuilder",
         title: "MyTaskOwl",
         short_description: "MyTaskOwl is a site built with Elementor, a powerful drag-and-drop builder for WordPress.",
         description: "MyTaskOwl is a site built with Elementor, a powerful drag-and-drop builder for WordPress. This project helped me enhance my site building skills by working with various widgets, templates, and customization options in Elementor, allowing me to create a dynamic and user-friendly interface for the site. The website is fully responsive and was designed to improve both user experience and functionality.",
-        image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
+        image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
         url: "https://mytaskowl.com",
         tags: [
             { name: "Elementor", icon: FaElementor },
@@ -55,13 +74,13 @@ export const projects = [
 
     },
     {
-        id: 3,
+        id: 4,
         image_hero: "/images/appStage.png",
         category: "fullstack",
         title: "MyTaskOwl Web app",
         short_description: "The MyTaskOwl Web app is a full-stack application developed using Laravel for the backend and Angular for the frontend.",
         description: "The MyTaskOwl Web app is a full-stack application built with Laravel for the backend and Angular for the frontend. It allows users to manage tasks and track project timelines. I worked on the backend with Laravel to create robust server-side architecture, built APIs, and contributed to the WebSocket infrastructure using NestJS. On the frontend, I developed key Angular components, integrated Google OAuth for sign-on, and built the mailing system for registration, password recovery, and verification. I also implemented route guards to secure navigation."
-        ,image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
+        ,image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
         url: "https://app.stage.mytaskowl.com",
         tags: [
             { name: "Angular", icon: FaAngular },
@@ -79,13 +98,13 @@ export const projects = [
 
     },
     {
-        id: 4,
+        id: 5,
         image_hero: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
         category: "fullstack",
         title: "MyTaskOwl Software Application",
         short_description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality.",
         description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality. This application extends the MyTaskOwl Web app’s features by providing an offline-capable version of the software that can run on both Windows and macOS. The app offers a native-like experience with a seamless user interface and robust task management features, while utilizing Electron to bridge web technologies into a powerful desktop application.",
-        image: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
+        image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
         url: "https://app.stage.mytaskowl.com",
         tags: [
             { name: "Angular", icon: FaAngular },
@@ -101,7 +120,7 @@ export const projects = [
 
     },
     {
-        id: 5,
+        id: 6,
         image_hero: "/images/ZenExp.png",
         category: "sitebuilder",
         title: "ZEN Experience",
@@ -118,5 +137,7 @@ export const projects = [
         year: [2024],
         status: "Completed",
     },
+    
+
 
 ]

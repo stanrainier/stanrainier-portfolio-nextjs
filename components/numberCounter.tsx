@@ -40,7 +40,7 @@ export default function numberCounter() {
                         <h1 className="text-xl font-bold text-center">Clients</h1>
                     </div>
                     <NumberTicker
-                            value={1}
+                            value={3}
                             className="whitespace-pre-wrap text-4xl font-medium tracking-tighter text-gray"
                         />
                 </Card>

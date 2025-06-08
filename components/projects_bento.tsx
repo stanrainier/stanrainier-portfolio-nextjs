@@ -48,7 +48,7 @@ const ProjectsDisplay = () => {
             isPressable
             onPress={() => handleOpen(project)}
             className={`relative p-4 hover:bg-gray-700 transition cursor-pointer rounded-xl flex flex-col justify-between overflow-hidden group ${
-            idx % 5 === 0 ? "md:col-span-2 md:row-span-2" : ""
+            idx === 0 ? "md:col-span-2 md:row-span-2" : ""
             }`}
             style={{
             backgroundImage: `url(${project.image_hero})`,
