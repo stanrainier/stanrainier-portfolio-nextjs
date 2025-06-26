@@ -12,7 +12,7 @@ import { FaLinkedin, FaGitlab, FaGithub  } from "react-icons/fa6";
 import Typewriter from 'typewriter-effect';
 import AnimatedSection from "./animatedSection";
 import { Particles } from "./magicui/particles";
-import { FaFolder } from "react-icons/fa";
+import { FaFolder, FaPaintBrush } from "react-icons/fa";
 import { RiUserStarLine } from "react-icons/ri";
 import {Image} from "@heroui/react";
 
@@ -103,6 +103,15 @@ export default function Hero() {
             >
               <FaLinkedin size={20} />
               LinkedIn
+            </Link>
+          </div>
+          <div className="flex mt-4">
+            <Link
+              className={buttonStyles({ variant: "bordered", radius: "full" })}
+              href='/creative'
+            >
+              <FaPaintBrush  size={20} />
+              Creative Portfolio
             </Link>
           </div>
         </div>
