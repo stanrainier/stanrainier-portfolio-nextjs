@@ -33,7 +33,7 @@ export default function IfypabloComponent() {
                         ifypablo is a personal passion project driven by a deep love for music and storytelling. As an independent Filipino artist, I write, mix, and arrange every track myself, blending emotionally charged vocals with a genre-defying mix of hip-hop, R&B, and indie pop. Each song is a reflection of real experiences, weaving together themes of love, loss, personal growth, and late-night introspection.
                         <br />
                         <br />
-                        Born from a DIY mindset and a desire for raw, honest expression, ifypablo is more than just a name, it’s a creative outlet where authenticity and emotion take center stage. Whether collaborating with underground artists or releasing self-produced tracks on SoundCloud and beyond, I aim to connect with listeners who find pieces of themselves in the music.
+                        Born from a DIY mindset and a desire for raw, honest expression, ifypablo is more than just a name, it&apos;s a creative outlet where authenticity and emotion take center stage. Whether collaborating with underground artists or releasing self-produced tracks on SoundCloud and beyond, I aim to connect with listeners who find pieces of themselves in the music.
                     </span>
                     <div className="flex justify-center items-center">
                     <Link
@@ -57,28 +57,47 @@ export default function IfypabloComponent() {
                         <h1 className={`${lacquer.className} text-4xl`}>Latest Release</h1>
                         <div className="w-full">
                             <iframe 
-                                width="100%" 
-                                height="600" 
-                                scrolling="no" 
-                                frameBorder="no" 
-                                allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2047237104&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                            title="SoundCloud Player: ifypablo x slate - di ko pa ma amin ft. jdel"
+                            width="100%" 
+                            height="600" 
+                            scrolling="no" 
+                            frameBorder="no" 
+                            allow="autoplay" 
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2047237104&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
                             </iframe>
                             <div
-                                style={{
-                                    fontSize: "10px",
-                                    color: "#cccccc",
-                                    lineBreak: "anywhere",
-                                    wordBreak: "normal",
-                                    overflow: "hidden",
-                                    whiteSpace: "nowrap",
-                                    textOverflow: "ellipsis",
-                                    fontFamily: "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
-                                    fontWeight: 100
-                                }}
+                            style={{
+                                fontSize: "10px",
+                                color: "#cccccc",
+                                lineBreak: "anywhere",
+                                wordBreak: "normal",
+                                overflow: "hidden",
+                                whiteSpace: "nowrap",
+                                textOverflow: "ellipsis",
+                                fontFamily:
+                                "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+                                fontWeight: 100,
+                            }}
                             >
-                                <a href="https://soundcloud.com/ifypablo" title="ifypablo" target="_blank" style={{ color: "#cccccc", textDecoration: "none" }}>ifypablo</a> · 
-                                <a href="https://soundcloud.com/ifypablo/ifypablo-x-slate-di-ko-pa-ma-amin-ft-jdel" title="ifypablo x slate - di ko pa ma amin ft. jdel" target="_blank" style={{ color: "#cccccc", textDecoration: "none" }}>ifypablo x slate - di ko pa ma amin ft. jdel</a>
+                            <a
+                                href="https://soundcloud.com/ifypablo"
+                                rel="noreferrer"
+                                style={{ color: "#cccccc", textDecoration: "none" }}
+                                target="_blank"
+                                title="ifypablo"
+                            >
+                                ifypablo
+                            </a>{" "}
+                            ·{" "}
+                            <a
+                                href="https://soundcloud.com/ifypablo/ifypablo-x-slate-di-ko-pa-ma-amin-ft-jdel"
+                                rel="noreferrer"
+                                style={{ color: "#cccccc", textDecoration: "none" }}
+                                target="_blank"
+                                title="ifypablo x slate - di ko pa ma amin ft. jdel"
+                            >
+                                ifypablo x slate - di ko pa ma amin ft. jdel
+                            </a>
                             </div>
                         </div>
                     </Card>

@@ -6,13 +6,13 @@ import { FaChevronLeft } from "react-icons/fa";
 
 export default function PortfolioBuildPage() {
   return (
+    <div className="min-h-screen py-16">
+      <Link href="/blog">
+        <Button variant="light" className="mb-2" startContent={<FaChevronLeft />} href="/blog">
+          Back
+        </Button>
+      </Link>
 
-    <div className=" min-h-screen py-16" >
-        <Link href="/blog">
-            <Button variant="light" className="mb-2" startContent={<FaChevronLeft />} href="/blog"> 
-                Back
-            </Button>
-        </Link>
       <main className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="mb-8 text-center">
@@ -28,7 +28,7 @@ export default function PortfolioBuildPage() {
         <Card className="bg-white shadow-xl rounded-2xl p-10 text-gray-800">
           {/* Intro */}
           <p className="text-lg leading-relaxed mb-8">
-            In this post, I’m sharing the process behind building my developer portfolio using <strong>Next.js</strong> and <strong>Tailwind CSS</strong>. 
+            In this post, I&apos;m sharing the process behind building my developer portfolio using <strong>Next.js</strong> and <strong>Tailwind CSS</strong>. 
             This includes the stack I chose, how I structured the layout, and the lessons I learned while bringing it all together.
           </p>
 
@@ -36,7 +36,7 @@ export default function PortfolioBuildPage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Why Next.js & Tailwind?</h2>
             <p>
-              I chose Next.js for its powerful routing, built-in server-side rendering, and modern app directory support. It’s fast, scalable, and ideal 
+              I chose Next.js for its powerful routing, built-in server-side rendering, and modern app directory support. It&apos;s fast, scalable, and ideal 
               for SEO-friendly personal sites. Tailwind CSS complements this by enabling utility-first styling, which sped up my development time and 
               gave me full control over the UI without writing custom CSS files.
             </p>
@@ -59,7 +59,7 @@ export default function PortfolioBuildPage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Page Structure & Layout</h2>
             <p>
-              I structured the layout as a simple single-page scroll: Hero → About → Projects → Contact. With Tailwind’s grid and flex utilities, 
+              I structured the layout as a simple single-page scroll: Hero → About → Projects → Contact. With Tailwind&apos;s grid and flex utilities, 
               the design is fully responsive across breakpoints. Custom components helped maintain consistent UI and faster iteration.
             </p>
           </section>
@@ -68,7 +68,7 @@ export default function PortfolioBuildPage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Features</h2>
             <ul className="list-disc list-inside space-y-1 pl-4">
-              <li>Dark mode toggle using Tailwind’s <code>dark:</code> variant</li>
+              <li>Dark mode toggle using Tailwind&apos;s <code>dark:</code> variant</li>
               <li>Scroll-based section highlighting in the navbar</li>
               <li>Reusable components with consistent styling</li>
               <li>SEO-ready metadata and Open Graph tags</li>
@@ -80,8 +80,8 @@ export default function PortfolioBuildPage() {
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Challenges & Lessons Learned</h2>
             <p>
-              Responsiveness was a key challenge especially managing layout across devices using Tailwind's breakpoints. I also had to balance performance 
-              with visuals by deferring non-essential assets and optimizing media. Next.js' modular routing helped me stay organized with scalable code structure.
+              Responsiveness was a key challenge especially managing layout across devices using Tailwind&apos;s breakpoints. I also had to balance performance 
+              with visuals by deferring non-essential assets and optimizing media. Next.js&apos; modular routing helped me stay organized with scalable code structure.
             </p>
           </section>
 
@@ -90,7 +90,7 @@ export default function PortfolioBuildPage() {
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Conclusion</h2>
             <p>
               Building this portfolio gave me full control over design and functionality. The stack allowed for rapid development, clean structure, 
-              and a professional look. It’s a solid setup for any developer looking to showcase their work in a modern, performant way.
+              and a professional look. It&apos;s a solid setup for any developer looking to showcase their work in a modern, performant way.
             </p>
           </section>
 

@@ -35,7 +35,7 @@ export default function AngularVsReactPage() {
 
           {/* Section: Angular Strengths */}
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Why I Prefer Angular's Structure</h2>
+            <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Why I Prefer Angular&apos;s Structure</h2>
             <p>
               One thing I deeply appreciate about Angular is its file and project structure. The CLI generates everything cleanly, components, services, 
               modules, all separated in a scalable way. This organization becomes increasingly valuable as the project grows. 
