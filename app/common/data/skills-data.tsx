@@ -4,12 +4,12 @@ export const frontendSkills = [
     { name: "HTML", icon: "FaHtml5", value: 90 },
     { name: "CSS", icon: "FaCss3Alt", value: 90 },
     { name: "Angular", icon: "FaAngular", value: 90 },
-    { name: "NextJS", icon: "RiNextjsFill", value: 50},
+    { name: "NextJS", icon: "RiNextjsFill", value: 80},
     { name: "React", icon: "FaReact", value: 50},
-    { name: "Tailwind", icon: "RiTailwindCssFill", value: 40},
+    { name: "Tailwind", icon: "RiTailwindCssFill", value: 80},
     { name: "Bootstrap", icon: "FaBootstrap", value: 70},
-    { name: "Wordpress", icon: "FaWordpressSimple", value: 50 },
-    { name: "Elementor", icon: "FaElementor", value: 80 },
+    { name: "Wordpress", icon: "FaWordpressSimple", value: 90 },
+    { name: "Elementor", icon: "FaElementor", value: 90 },
     
   ];
 
@@ -23,9 +23,9 @@ export const backendSkills = [
 
 export const otherSkills = [
   { name: "Git", icon: "FaGitAlt", value: 90 },
-  { name: "Vercel", icon: "SiVercel", value: 30 },
+  { name: "Vercel", icon: "SiVercel", value: 60 },
   { name: "Jira", icon: "SiJirasoftware", value: 50 },
-  { name: "Figma", icon: "FaFigma", value: 50 },
+  { name: "Figma", icon: "FaFigma", value: 60 },
   { name: "Postman", icon: "SiPostman", value: 40 },
   { name: "Stripe", icon: "FaCcStripe", value: 10 },
 ];

@@ -20,6 +20,42 @@ export function countProjects(projects: any[]) {
 export const projects = [
         {
         id: 1,
+        image_hero: "https://m.media-amazon.com/images/I/41AvPg+atZL._UF894,1000_QL80_.jpg",
+        category: "sitebuilder",
+        title: "MagnetaPicks",
+        short_description: "A website for a business using WordPress, WooCommerce, and Elementor.",
+        description: "A website for a business using WordPress, WooCommerce, and Elementor. The project involved customizing themes, setting up an online store, and ensuring a responsive design that works well on all devices. The site features a clean and modern layout, easy navigation, and integrated payment gateways to facilitate smooth transactions for customers.",
+        image: "https://m.media-amazon.com/images/I/41AvPg+atZL._UF894,1000_QL80_.jpg",
+        url: "#",
+        tags: [
+            { name: "Elementor", icon: FaElementor },
+            { name: "WooCommerce", icon: SiWoocommerce},
+            { name: "PHP", icon: SiPhp },
+            { name: "GitHub", icon: FaGithub  },
+        ],
+        year: [2025],
+        status: "In Progress",
+        },
+        {
+        id: 2,
+        image_hero: "https://mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png",
+        category: "fullstack",
+        title: "MyTaskOwl Admin Panel",
+        short_description: "The MyTaskOwl Admin Panel is built with nextJS using the existing backend of MyTaskOwl (Laravel). The admin panel allows administrators to manage users, view analytics, and configure system settings.",
+        description: "The MyTaskOwl Admin Panel is built with nextJS using the existing backend of MyTaskOwl (Laravel). The admin panel allows administrators to manage users, view analytics, and configure system settings. I worked on integrating the admin panel with the existing backend APIs, ensuring secure authentication and authorization for admin users. The panel features a clean and intuitive interface, making it easy for administrators to navigate and perform their tasks efficiently.",
+        image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
+        url: "#",
+        tags: [
+            { name: "TypeScript", icon: SiTypescript },
+            { name: "GitHub", icon: FaGithub  },
+            { name: "NextJS", icon: RiNextjsFill  },
+
+        ],
+        year: [2025],
+        status: "Completed",
+        },
+        {
+        id: 3,
         image_hero: "/images/TheLittleShelf.png",
         category: "sitebuilder",
         title: "The Little Shelf",
@@ -38,7 +74,7 @@ export const projects = [
         status: "Completed",
     },
     {
-        id: 2,
+        id: 4,
         image_hero: "/images/portfolioSS.png",
         category: "fullstack",
         title: "Dev Portfolio",
@@ -53,10 +89,10 @@ export const projects = [
             { name: "GitHub", icon: FaGithub  } 
         ],
         year: [2025],
-        status: "In Progress",
+        status: "Completed",
     },
     {
-        id: 3,
+        id: 5,
         image_hero: "/images/MyTaskOwlHero.png",
         category: "sitebuilder",
         title: "MyTaskOwl",
@@ -70,11 +106,11 @@ export const projects = [
             { name: "Astra", icon: SiAstra } 
         ],
         year: [2024,2025],
-        status: "In Progress",
+        status: "Completed",
 
     },
     {
-        id: 4,
+        id: 6,
         image_hero: "/images/appStage.png",
         category: "fullstack",
         title: "MyTaskOwl Web app",
@@ -98,8 +134,8 @@ export const projects = [
 
     },
     {
-        id: 5,
-        image_hero: "https://mytaskowl.com/wp-content/uploads/2024/10/taskowl-logo-final-edited-1-300x300.png",
+        id: 7,
+        image_hero: "https://mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png",
         category: "fullstack",
         title: "MyTaskOwl Software Application",
         short_description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality.",
@@ -120,7 +156,7 @@ export const projects = [
 
     },
     {
-        id: 6,
+        id: 8,
         image_hero: "/images/ZenExp.png",
         category: "sitebuilder",
         title: "ZEN Experience",

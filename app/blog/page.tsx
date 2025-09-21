@@ -30,9 +30,9 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="flex flex-col items-center w-full px-4 md:px-12 pt-12 pb-96">
-      <h1 className={title()}>Dev Blog {'(Coming Soon)'}</h1>
+      <h1 className={title()}>Dev Blog </h1>
       <p className="text-default-500 text-center mt-2 mb-10 max-w-2xl">
-        Insights, tutorials, and experiences from my journey as a full-stack developer.
+        Insights, tutorials, and experiences from my journey as a junior full-stack developer.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full max-w-7xl">
