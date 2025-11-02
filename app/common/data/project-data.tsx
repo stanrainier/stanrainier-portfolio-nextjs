@@ -25,8 +25,8 @@ export const projects = [
         title: "MagnetaPicks",
         short_description: "A website for a business using WordPress, WooCommerce, and Elementor.",
         description: "A website for a business using WordPress, WooCommerce, and Elementor. The project involved customizing themes, setting up an online store, and ensuring a responsive design that works well on all devices. The site features a clean and modern layout, easy navigation, and integrated payment gateways to facilitate smooth transactions for customers.",
-        image: "https://m.media-amazon.com/images/I/41AvPg+atZL._UF894,1000_QL80_.jpg",
-        url: "#",
+        image: "/images/magentapicks-original.png",
+        url: "https://magnetapicks.free.nf/",
         tags: [
             { name: "Elementor", icon: FaElementor },
             { name: "WooCommerce", icon: SiWoocommerce},
