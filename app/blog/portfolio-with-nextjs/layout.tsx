@@ -10,8 +10,10 @@ export default function blogNextJS({
 }) {
 
   return (
-    <section className="flex flex-col gap-8 ">
-      <div className="w-full mx-auto px-4">{children}</div>
+    <section className="min-h-screen">
+      <div className="max-w-4xl mx-auto">
+        {children}
+      </div>
     </section>
   );
 }

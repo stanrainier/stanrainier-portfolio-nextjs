@@ -9,8 +9,10 @@ export default function AngularVsReactLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center gap-8 py-16 px-4">
-      <div className="w-full max-w-3xl">{children}</div>
+    <section className="min-h-screen">
+      <div className="max-w-4xl mx-auto">
+        {children}
+      </div>
     </section>
   );
 }

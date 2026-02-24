@@ -44,7 +44,7 @@ export const projects = [
         short_description: "The MyTaskOwl Admin Panel is built with nextJS using the existing backend of MyTaskOwl (Laravel). The admin panel allows administrators to manage users, view analytics, and configure system settings.",
         description: "The MyTaskOwl Admin Panel is built with nextJS using the existing backend of MyTaskOwl (Laravel). The admin panel allows administrators to manage users, view analytics, and configure system settings. I worked on integrating the admin panel with the existing backend APIs, ensuring secure authentication and authorization for admin users. The panel features a clean and intuitive interface, making it easy for administrators to navigate and perform their tasks efficiently.",
         image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
-        url: "#",
+        url: "Not Available for Public Access",
         tags: [
             { name: "TypeScript", icon: SiTypescript },
             { name: "GitHub", icon: FaGithub  },
@@ -81,7 +81,7 @@ export const projects = [
         short_description: "My personal portfolio website built using Next.js, TypeScript, and Tailwind CSS.",
         description: "My personal portfolio website built using Next.js, TypeScript, and Tailwind CSS. This project showcases my skills, projects, and experience as a developer. The site is fully responsive and optimized for performance, providing a seamless user experience across devices. I utilized Next.js for server-side rendering and static site generation, ensuring fast load times and SEO optimization. The design is clean and modern, reflecting my personal brand and development philosophy.",
         image: "images/favicon.PNG",
-        url: "/",
+        url: "",
         tags: [
             { name: "NextJS", icon: RiNextjsFill  },
             { name: "TailwindCSS", icon: RiTailwindCssFill },
@@ -117,7 +117,7 @@ export const projects = [
         short_description: "The MyTaskOwl Web app is a full-stack application developed using Laravel for the backend and Angular for the frontend.",
         description: "The MyTaskOwl Web app is a full-stack application built with Laravel for the backend and Angular for the frontend. It allows users to manage tasks and track project timelines. I worked on the backend with Laravel to create robust server-side architecture, built APIs, and contributed to the WebSocket infrastructure using NestJS. On the frontend, I developed key Angular components, integrated Google OAuth for sign-on, and built the mailing system for registration, password recovery, and verification. I also implemented route guards to secure navigation."
         ,image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
-        url: "https://app.stage.mytaskowl.com",
+        url: "https://app.mytaskowl.com",
         tags: [
             { name: "Angular", icon: FaAngular },
             { name: "Laravel", icon: FaLaravel },
@@ -141,7 +141,7 @@ export const projects = [
         short_description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality.",
         description: "The MyTaskOwl Software application is a desktop application built using Angular for the frontend and Electron for the cross-platform desktop functionality. This application extends the MyTaskOwl Web app’s features by providing an offline-capable version of the software that can run on both Windows and macOS. The app offers a native-like experience with a seamless user interface and robust task management features, while utilizing Electron to bridge web technologies into a powerful desktop application.",
         image: "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
-        url: "https://app.stage.mytaskowl.com",
+        url: "https://app.mytaskowl.com",
         tags: [
             { name: "Angular", icon: FaAngular },
             { name: "TypeScript", icon: SiTypescript },

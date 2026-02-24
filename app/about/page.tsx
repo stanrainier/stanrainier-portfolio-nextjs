@@ -71,7 +71,7 @@ export default function AboutPage() {
         {/* RIGHT SIDE - Description */}
         <div className="flex flex-col justify-start flex-1 md:w-1/2">
           <div className="mb-6">
-            <span className="text-lg font-semibold text-purple-700 mb-2">Bio</span>
+            <span className="text-lg font-semibold text-purple-700 mb-2 text-center sm:text-left">Bio</span>
             <p className="text-sm text-justify md:text-md lg:text-md">
               I&apos;m a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. 
               Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. 
@@ -80,7 +80,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mb-6">
-            <span className="text-lg font-semibold text-purple-700 mb-2">Interests</span>
+            <span className="text-lg font-semibold text-purple-700 mb-2 text-center sm:text-left">Interests</span>
             <p className="text-sm text-justify lg:text-md">
               I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. 
               I also enjoy exploring new technologies and frameworks to enhance my skill set. 
@@ -107,29 +107,43 @@ export default function AboutPage() {
       {/* Work Experience and Skills Section */}
       <div>
         <h2 className="text-3xl font-bold my-12 text-center">Work Experience</h2>
-        <div className=" flex flex-row flex-wrap justify-center items-start gap-6">
-            {workExperience.map((item: any) => (
-                <Card key={item.title} className="w-[500px] h-full p-6">
-                <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+        <div className="flex flex-row flex-wrap justify-center items-start gap-6">
+          {workExperience.map((item: any) => (
+            <Card
+              key={item.title}
+              className="w-[500px] h-full p-6 flex flex-col items-center sm:items-start"
+            >
+              <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
 
-                <Image
-                    src={item.image}
-                    alt={item.company}
-                    width={100}
-                    height={100}
-                    className="rounded-full mb-4"
-                />
-                <h2 className="text-2xl font-bold mb-2">{item.title}</h2>
-                <h2 className="text-md font-semibold mb-1">{item.company}</h2>
-                <h2 className="text-sm font-medium mb-2 text-default-500">{item.date}</h2>
-                <Divider className="mb-4" />
-                {item.description.map((desc:any, index:any) => (
-                    <span key={index} className="block text-base mb-2">
-                      {desc}
-                    </span>
-                  ))}                
-                </Card>
-            ))}
+              <Image
+                src={item.image}
+                alt={item.company}
+                width={100}
+                height={100}
+                className="rounded-full mb-4"
+              />
+
+              <h2 className="text-2xl font-bold mb-2 text-center sm:text-left">
+                {item.title}
+              </h2>
+
+              <h2 className="text-md font-semibold mb-1 text-center sm:text-left">
+                {item.company}
+              </h2>
+
+              <h2 className="text-sm font-medium mb-2 text-default-500 text-center sm:text-left">
+                {item.date}
+              </h2>
+
+              <Divider className="mb-4 w-full" />
+
+              {item.description.map((desc: any, index: any) => (
+                <span key={index} className="block text-base mb-2 ">
+                  {desc}
+                </span>
+              ))}
+            </Card>
+          ))}
         </div>
         <div className="flex flex-col justify-center items-center w-full h-full mt-12">
         <NumberCounter />
@@ -139,7 +153,7 @@ export default function AboutPage() {
         <Divider className="my-12" />
       {/* Skills Section */}
       <div className="mt-12">
-        <h2 className="text-3xl font-bold mb-6">Skills</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center sm:text-left">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SkillSection title="Frontend Skills" skills={frontendSkills} />
           <SkillSection title="Backend Skills" skills={backendSkills} />

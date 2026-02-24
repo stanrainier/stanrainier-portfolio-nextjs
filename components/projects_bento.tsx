@@ -36,7 +36,7 @@ const ProjectsDisplay = () => {
     
     <div className="p-8" >
         <AnimatedSection>
-        <h1 className="lg:text-6xl text-center font-bold  dark:text-amber-50 mb-24 ">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center font-bold dark:text-amber-50 mb-24">        
         <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
             Projects
         </TextAnimate>
@@ -80,7 +80,9 @@ const ProjectsDisplay = () => {
 
       {/* Modal */}
       <Modal isOpen={isOpen} onClose={handleClose} size="4xl">
-        <ModalContent>
+        <ModalContent
+          className="max-h-[80vh] sm:max-h-[90vh] md:max-h-[95vh] overflow-y-auto"
+        >
           {selectedProject && (
             <>
               <ModalHeader className="flex items-center gap-4">
@@ -107,7 +109,7 @@ const ProjectsDisplay = () => {
                 <Image
                   src={selectedProject.image_hero}
                   alt="Hero"
-                  className="rounded-lg mb-4 justify-center w-full  object-cover"
+                  className="rounded-lg mb-4 justify-center w-full object-cover"
                 />
                 <p className="text-justify text-md p-4 rounded">
                   {selectedProject.description}
@@ -116,17 +118,16 @@ const ProjectsDisplay = () => {
                 <Divider className="my-4" />
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                    {selectedProject.tags.map((tag, i) => (
-                        <div
-                        key={i}
-                        className="flex items-center justify-center gap-2 p-2 border border-gray-300 rounded-full "
-                        >
-                        {React.createElement(tag.icon, { size: 18 })}
-                        <span className="text-sm">{tag.name}</span>
-                        </div>
-                    ))}
+                  {selectedProject.tags.map((tag, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-center gap-2 p-2 border border-gray-300 rounded-full"
+                    >
+                      {React.createElement(tag.icon, { size: 18 })}
+                      <span className="text-sm">{tag.name}</span>
                     </div>
-
+                  ))}
+                </div>
               </ModalBody>
 
               <ModalFooter>

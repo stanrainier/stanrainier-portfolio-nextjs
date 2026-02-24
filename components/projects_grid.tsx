@@ -106,83 +106,87 @@ export default function ProjectListByCategory() {
     </div>
 
   {/* Modal */}
-  <Modal isOpen={isOpen} onClose={handleClose} size="4xl">
-    <ModalContent>
-      {selectedProject && (
-        <>
-          <ModalHeader className="flex items-center gap-4">
-            <Image
-              src={selectedProject.image}
-              alt="Project Logo"
-              width={40}
-              height={40}
-              className="sm:hidden lg:block"
-            />
-            <Image
-              src={selectedProject.image}
-              alt="Project Logo"
-              width={20}
-              className="hidden sm:block"
-            />
-            <div>
-              <h2 className="text-lg font-bold">{selectedProject.title}</h2>
-              <Link
-                href={selectedProject.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-blue-600 hover:underline"
-              >
-                {selectedProject.url}
-              </Link>
-            </div>
-          </ModalHeader>
-
-          <ModalBody>
-            <Image
-              src={selectedProject.image_hero}
-              alt="Hero"
-              className="rounded-lg mb-4"
-            />
-
-            <p className="text-justify text-md p-4 rounded">
-              {selectedProject.description}
-            </p>
-
-            <Divider className="my-4" />
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-              {selectedProject.tags.map(
-                (
-                  tag: { name: string; icon: React.ElementType },
-                  i: number
-                ) => (
-                  <Code
-                    key={i}
-                    className="flex items-center gap-1"
-                    color="primary"
-                  >
-                    <tag.icon size={18} />
-                    <span>{tag.name}</span>
-                  </Code>
-                )
-              )}
-            </div>
-          </ModalBody>
-
-          <ModalFooter>
+<Modal isOpen={isOpen} onClose={handleClose} size="4xl">
+  <ModalContent
+    className="max-h-[80vh] sm:max-h-[90vh] md:max-h-[95vh] overflow-y-auto 
+               rounded-t-2xl sm:rounded-2xl mt-auto sm:mt-0"
+  >
+    {selectedProject && (
+      <>
+        <ModalHeader className="flex items-center gap-4">
+          {/* Logo: responsive size */}
+          <Image
+            src={selectedProject.image}
+            alt="Project Logo"
+            width={40}
+            height={40}
+            className="sm:hidden lg:block"
+          />
+          <Image
+            src={selectedProject.image}
+            alt="Project Logo"
+            width={20}
+            className="hidden sm:block"
+          />
+          <div>
+            <h2 className="text-lg font-bold">{selectedProject.title}</h2>
             <Link
               href={selectedProject.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-sm text-blue-600 hover:underline"
             >
-              Visit project ↗
+              {selectedProject.url}
             </Link>
-          </ModalFooter>
-        </>
-      )}
-    </ModalContent>
-  </Modal>
+          </div>
+        </ModalHeader>
+
+        <ModalBody>
+          <Image
+            src={selectedProject.image_hero}
+            alt="Hero"
+            className="rounded-lg mb-4 w-full object-cover"
+          />
+
+          <p className="text-justify text-md p-4 rounded">
+            {selectedProject.description}
+          </p>
+
+          <Divider className="my-4" />
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            {selectedProject.tags.map(
+              (
+                tag: { name: string; icon: React.ElementType },
+                i: number
+              ) => (
+                <Code
+                  key={i}
+                  className="flex items-center gap-1"
+                  color="primary"
+                >
+                  <tag.icon size={18} />
+                  <span>{tag.name}</span>
+                </Code>
+              )
+            )}
+          </div>
+        </ModalBody>
+
+        <ModalFooter>
+          <Link
+            href={selectedProject.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            Visit project ↗
+          </Link>
+        </ModalFooter>
+      </>
+    )}
+  </ModalContent>
+</Modal>
 </div>
 
   );

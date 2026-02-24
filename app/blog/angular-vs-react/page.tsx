@@ -16,7 +16,7 @@ export default function AngularVsReactPage() {
       <main className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="mb-8 text-center">
-          <h1 className="text-5xl font-extrabold text-indigo-600 mb-2">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-600 mb-2">
             Angular vs. React: My Junior Full-Stack Developer Perspective
           </h1>
           <p className="text-sm text-default-600">
@@ -27,7 +27,7 @@ export default function AngularVsReactPage() {
         {/* Card Content */}
         <Card className="bg-white shadow-xl rounded-2xl p-10 text-gray-800">
           {/* Intro */}
-          <p className="text-lg leading-relaxed mb-8">
+          <p className="text-lg leading-relaxed mb-8 text-justify">
             In this blog post, I want to share my experience and thoughts on Angular and React, two of the most widely used frontend frameworks today.
             I’ve spent more time building production apps with Angular, but I’ve also explored React and gained insights on both strengths and trade-offs.
             This is not about which one is better universally, but which one fits better based on the project, developer experience, and ecosystem support.
@@ -36,11 +36,11 @@ export default function AngularVsReactPage() {
           {/* Section: Angular Strengths */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Why I Prefer Angular&apos;s Structure</h2>
-            <p>
+            <p className="text-justify">
               One thing I deeply appreciate about Angular is its file and project structure. The CLI generates everything cleanly, components, services, 
               modules, all separated in a scalable way. This organization becomes increasingly valuable as the project grows. 
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               Angular’s use of **services** and **observables** is a huge plus for me. Services promote clear separation of concerns, while observables 
               give you powerful asynchronous handling built in with RxJS. This makes data flow predictable and easier to manage in complex applications.
             </p>
@@ -49,12 +49,12 @@ export default function AngularVsReactPage() {
           {/* Section: React Strengths */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Where React Excels</h2>
-            <p>
+            <p className="text-justify">
               On the other hand, React is incredibly well-supported in terms of libraries and community. The ecosystem around React is massive.
               From UI libraries like Shadcn, MUI, Chakra, to routing solutions, and especially in state management with tools like Zustand, Jotai, and Redux Toolkit.
               It’s highly flexible and lets you pick exactly what you want.
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               Another strength of React is how mature it is for **Server-Side Rendering (SSR)** through frameworks like Next.js. If SEO, performance, or
               hybrid rendering is important, React currently dominates with solutions that are easy to integrate and widely adopted.
             </p>
@@ -63,11 +63,11 @@ export default function AngularVsReactPage() {
           {/* Section: Real Talk – Popularity & Frustrations */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Frustrations & Trade-offs</h2>
-            <p>
+            <p className="text-justify">
               One frustrating thing for me as someone more experienced in Angular is seeing how it’s not as popular anymore compared to React.
               It often gets overlooked even though it provides a complete solution out of the box, routing, form handling, HTTP, testing, all built-in.
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               React, while flexible, also requires more decisions upfront. You have to choose your own tools for routing, styling, testing, and more. 
               This makes React very customizable, but also fragmented for beginners or solo developers.
             </p>
@@ -76,11 +76,11 @@ export default function AngularVsReactPage() {
           {/* Section: CLI, Developer Experience */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">CLI & Developer Experience</h2>
-            <p>
+            <p className="text-justify">
               Angular CLI is one of its strongest features in my opinion. It scaffolds everything you need with a single command and keeps your architecture clean.
               I’ve found it especially useful in large enterprise-scale projects where structure and maintainability are essential.
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               React doesn’t offer an official CLI beyond Create React App (which is now deprecated), but modern frameworks like **Next.js** and tools like **Vite** 
               provide excellent alternatives. Still, Angular’s convention-over-configuration approach is something I personally enjoy.
             </p>
@@ -89,11 +89,11 @@ export default function AngularVsReactPage() {
           {/* Conclusion */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-3 text-indigo-500">Conclusion</h2>
-            <p>
+            <p className="text-justify">
               If I were to build a **large-scale, scalable web app** today, I’d lean toward Angular simply because of my experience and how well it enforces structure.
               The built-in tools like services, modules, and observables make it ideal for organized development.
             </p>
-            <p className="mt-4">
+            <p className="mt-4 text-justify">
               That said, React has my respect, its ecosystem, UI libraries, and community-driven innovation are hard to ignore. I plan to continue improving my
               React skills and experimenting with state management and SSR tools in future projects.
             </p>

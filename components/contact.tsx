@@ -31,12 +31,12 @@ export default function Contact() {
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
           <div className="flex flex-col">
-            <p className=" text-lg mb-2 lg:text-2xl ">
+            <p className=" text-lg mb-2 lg:text-2xl  text-center sm:text-left">
               <TextAnimate animation="slideUp" >
                   Contact Me!
               </TextAnimate>
             </p>
-            <p className="text-md text-default-500 lg:text-lg">
+            <p className="text-md text-default-500 lg:text-lg  text-center sm:text-left">
               <TextAnimate animation="slideUp" >
                 Feel free to send me a message. Give me feedback, or just say hi!
               </TextAnimate>
@@ -89,9 +89,9 @@ export default function Contact() {
       </Card>
       <Card className="max-w-[1400px] w-full ">
         <CardHeader className="flex gap-3">
-          <div className="flex flex-col">
+          <div className="flex flex-col" >
 
-            <p className="text-lg mb-2 lg:text-2xl"> <TextAnimate animation="slideUp" >Social Media</TextAnimate></p>
+            <p className="text-lg mb-2 lg:text-2xl "> <TextAnimate animation="slideUp" >Social Media</TextAnimate></p>
             <p className="text-md text-default-500 lg:text-lg">
               <TextAnimate animation="slideUp" >Connect with me on social media</TextAnimate>
             </p>
@@ -108,12 +108,12 @@ export default function Contact() {
                   className="bg-gradient-to-r from-cyan-500 to-violet-500 text-black dark:bg-gray-700 dark:text-white"
                 />
                 <div className="flex flex-col">
-                  <Link href={link.url} className="text-md font-bold hover:text-default-500 duration-300 ease-in-out">
+                  <Link href={link.url} className="text-md font-bold hover:text-default-500 duration-300 ease-in-out  text-center sm:text-left">
                     <TextAnimate animation="slideUp" >
                       {link.title}
                     </TextAnimate>
                  </Link>
-                  <p className="text-small text-default-500">
+                  <p className="text-small text-default-500  text-center sm:text-left">
                     <TextAnimate animation="slideUp" >
                       {link.description}
                     </TextAnimate>

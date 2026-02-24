@@ -30,7 +30,7 @@ export default function About() {
         <div className="flex justify-center items-center w-full">
           <div className="w-full p-4">
             {/* Work Experience */}
-            <div className="flex flex-row gap-4 items-center">
+            <div className="flex flex-row gap-4 items-center ">
               <span className={title({ color: "blue" })}>Work Experience</span>
             </div>
 
@@ -60,9 +60,9 @@ export default function About() {
                         />
                       </BoxReveal>
                       <div className="flex flex-col">
-                        <span className="text-lg lg:text-2xl font-semibold">{experience.company}</span>
-                        <span className="text-sm lg:text-xl font-bold">{experience.title}</span>
-                        <span className="text-sm">{experience.date}</span>
+                        <span className="text-lg lg:text-2xl font-semibold text-center sm:text-left">{experience.company}</span>
+                        <span className="text-sm lg:text-xl font-bold text-center sm:text-left">{experience.title}</span>
+                        <span className="text-sm text-center sm:text-left">{experience.date}</span>
                       </div>
                     </CardHeader>
                     <Divider className="my-2" />
@@ -83,7 +83,7 @@ export default function About() {
             </div>
 
             {/* Number Counter */}
-            <div className="p-4 mt-8">
+            <div className=" sm:p-4 mt-8 ">
               <NumberCounter />
             </div>
           </div>

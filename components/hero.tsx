@@ -105,7 +105,7 @@ export default function Hero() {
               LinkedIn
             </Link>
           </div>
-          <div className="flex mt-4">
+          <div className="flex mt-4 sm:mt-6 gap-5 sm:flex-row flex-col justify-center md:justify-start">
             <Link
               className={buttonStyles({ variant: "bordered", radius: "full" })}
               href='/creative'
