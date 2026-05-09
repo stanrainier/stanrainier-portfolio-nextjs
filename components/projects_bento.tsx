@@ -22,6 +22,8 @@ const ProjectsDisplay = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<null | (typeof projects)[number]>(null);
 
+  const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+
   const handleOpen = (project: (typeof projects)[number]) => {
     setSelectedProject(project);
     setIsOpen(true);
@@ -42,7 +44,7 @@ const ProjectsDisplay = () => {
         </TextAnimate>
         </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px] lg: auto-rows-[300px]">
-        {[...projects].map((project, idx) => (
+        {sortedProjects.map((project, idx) => (
             <Card
             key={project.id}
             isPressable

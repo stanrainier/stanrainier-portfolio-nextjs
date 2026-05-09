@@ -24,6 +24,8 @@ export default function ProjectListByCategory() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isOpen, setIsOpen] = useState(false);
 
+  const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+
   const handleOpen = (project: any) => {
     setSelectedProject(project);
     setIsOpen(true);
@@ -36,7 +38,7 @@ export default function ProjectListByCategory() {
 
   // Group by category
   const groupedProjects: { [category: string]: typeof projects } = {};
-  projects.forEach((project) => {
+  sortedProjects.forEach((project) => {
     if (!groupedProjects[project.category]) {
       groupedProjects[project.category] = [];
     }

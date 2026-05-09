@@ -9,6 +9,8 @@ import { TextAnimate } from "./magicui/text-animate";
 import { Safari } from "./magicui/safari";
 
 export default function Projects() {
+  const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+
   return (
     <div className="mt-56 mb-64">
       <AnimatedSection>
@@ -28,7 +30,7 @@ export default function Projects() {
               </div>
           }
           >
-            <ProjectGrid projects={projects} />
+            <ProjectGrid projects={sortedProjects} />
           </Tab>
           <Tab key="fullstack" title={
             <div className="flex items-center space-x-2">
@@ -36,7 +38,7 @@ export default function Projects() {
               <span>Full-stack</span>
               </div>
           }>
-            <ProjectGrid projects={projects.filter((project) => project.category === "fullstack")} />
+            <ProjectGrid projects={sortedProjects.filter((project) => project.category === "fullstack")} />
           </Tab>
           <Tab key="sitebuilder"  title={
             <div className="flex items-center space-x-2">
@@ -44,7 +46,7 @@ export default function Projects() {
               <span>Site Builders</span>
               </div>
           }>
-            <ProjectGrid projects={projects.filter((project) => project.category === "sitebuilder")} />
+            <ProjectGrid projects={sortedProjects.filter((project) => project.category === "sitebuilder")} />
           </Tab>
         </Tabs>
       </div>
