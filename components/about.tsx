@@ -1,15 +1,31 @@
-import { title } from "@/components/primitives";
-import { Accordion, AccordionItem, Alert, Avatar, Button, Card, CardBody, CardHeader, Divider, Drawer, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter, Progress, Tab, Tabs, Tooltip, useDisclosure } from "@heroui/react";
-import { frontendSkills, backendSkills, otherSkills } from "@/app/common/data/skills-data";
-import { skills_icons } from "@/app/common/data/skills-icons";
+import {
+  Avatar,
+  Card,
+  CardBody,
+  CardHeader,
+  Divider,
+  Progress,
+  Tab,
+  Tabs,
+  useDisclosure,
+} from "@heroui/react";
 import { motion } from "framer-motion";
 import { CiCircleCheck } from "react-icons/ci";
+
 import Marquee from "./marquee";
 import AnimatedSection from "./animatedSection";
 import ParallaxDiv from "./parallaxDiv";
-import { workExperience } from "@/app/common/data/work-experience";
 import { BoxReveal } from "./magicui/box-reveal";
 import { TextAnimate } from "./magicui/text-animate";
+
+import { workExperience } from "@/app/common/data/work-experience";
+import { skills_icons } from "@/app/common/data/skills-icons";
+import {
+  frontendSkills,
+  backendSkills,
+  otherSkills,
+} from "@/app/common/data/skills-data";
+import { title } from "@/components/primitives";
 import NumberCounter from "@/components/numberCounter";
 import { ShineBorder } from "@/components/magicui/shine-border";
 
@@ -21,7 +37,12 @@ export default function About() {
       <AnimatedSection>
         {/* About Me Title */}
         <h1 className="text-4xl my-24 lg:text-6xl text-center font-bold dark:text-amber-50">
-          <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
+          <TextAnimate
+            animation="slideUp"
+            by="character"
+            delay={0.1}
+            duration={0.5}
+          >
             About Me
           </TextAnimate>
         </h1>
@@ -40,6 +61,7 @@ export default function About() {
                   key={index}
                   className="relative m-2 w-full"
                   initial={{ opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
                   whileHover={{
                     y: -20,
                     opacity: 1,
@@ -47,22 +69,27 @@ export default function About() {
                     zIndex: 10,
                     position: "relative",
                   }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
                 >
                   <Card className="p-2 mt-4 hover:shadow-2xl transition-shadow duration-300 lg:h-full">
                     <CardHeader className="flex flex-col lg:flex-row gap-4 items-center lg:items-center justify-start">
                       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                         <Avatar
-                          src={experience.image}
                           alt={experience.company}
                           className="w-24 h-24"
                           size="lg"
+                          src={experience.image}
                         />
                       </BoxReveal>
                       <div className="flex flex-col">
-                        <span className="text-lg lg:text-2xl font-semibold text-center sm:text-left">{experience.company}</span>
-                        <span className="text-sm lg:text-xl font-bold text-center sm:text-left">{experience.title}</span>
-                        <span className="text-sm text-center sm:text-left">{experience.date}</span>
+                        <span className="text-lg lg:text-2xl font-semibold text-center sm:text-left">
+                          {experience.company}
+                        </span>
+                        <span className="text-sm lg:text-xl font-bold text-center sm:text-left">
+                          {experience.title}
+                        </span>
+                        <span className="text-sm text-center sm:text-left">
+                          {experience.date}
+                        </span>
                       </div>
                     </CardHeader>
                     <Divider className="my-2" />
@@ -70,7 +97,10 @@ export default function About() {
                       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
                         <ul className="mt-2 text-sm">
                           {experience.description.map((desc, idx) => (
-                            <li key={idx} className="list-disc pl-5 text-base mb-2">
+                            <li
+                              key={idx}
+                              className="list-disc pl-5 text-base mb-2"
+                            >
                               {desc}
                             </li>
                           ))}
@@ -108,12 +138,21 @@ export default function About() {
                   {frontendSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent =
+                        skills_icons[skill.icon as keyof typeof skills_icons];
+
                       return (
                         <motion.div
                           key={skill.name}
-                          whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}
-                          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                          }}
                         >
                           <Card key={skill.name} className="p-2">
                             <CardBody>
@@ -121,7 +160,11 @@ export default function About() {
                                 <IconComponent size={30} />
                                 <span>{skill.name}</span>
                               </div>
-                              <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                              <Progress
+                                aria-label={skill.name}
+                                className="max-w-md"
+                                value={skill.value}
+                              />
                             </CardBody>
                           </Card>
                         </motion.div>
@@ -134,19 +177,23 @@ export default function About() {
                   <Card className="w-full mb-4">
                     <CardBody className="flex flex-row align-center gap-3 justify-items-center">
                       <CiCircleCheck
-                        size={32}
                         className="text-lg text-blue-700 dark:text-sky-400"
+                        size={32}
                       />
-                      <span className="text-lg text-blue-700 dark:text-sky-400">I have built web applications with Laravel Framework</span>
+                      <span className="text-lg text-blue-700 dark:text-sky-400">
+                        I have built web applications with Laravel Framework
+                      </span>
                     </CardBody>
                   </Card>
                   <Card className="w-full mb-4">
                     <CardBody className="flex flex-row align-center gap-3 justify-items-center">
                       <CiCircleCheck
-                        size={32}
                         className="text-lg text-blue-700 dark:text-sky-400"
+                        size={32}
                       />
-                      <span className="text-lg text-blue-700 dark:text-sky-400">I am familiar with MySQL for Database</span>
+                      <span className="text-lg text-blue-700 dark:text-sky-400">
+                        I am familiar with MySQL for Database
+                      </span>
                     </CardBody>
                   </Card>
                 </div>
@@ -155,12 +202,21 @@ export default function About() {
                   {backendSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent =
+                        skills_icons[skill.icon as keyof typeof skills_icons];
+
                       return (
                         <motion.div
                           key={skill.name}
-                          whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}
-                          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                          }}
                         >
                           <Card key={skill.name} className="p-2">
                             <CardBody>
@@ -168,7 +224,11 @@ export default function About() {
                                 <IconComponent size={30} />
                                 <span>{skill.name}</span>
                               </div>
-                              <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                              <Progress
+                                aria-label={skill.name}
+                                className="max-w-md"
+                                value={skill.value}
+                              />
                             </CardBody>
                           </Card>
                         </motion.div>
@@ -181,20 +241,36 @@ export default function About() {
                   {otherSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent =
+                        skills_icons[skill.icon as keyof typeof skills_icons];
+
                       return (
                         <motion.div
                           key={skill.name}
-                          whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)" }}
-                          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15,
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+                          }}
                         >
                           <Card key={skill.name} className="p-2">
                             <CardBody>
                               <div className="flex flex-row mb-4 gap-5 align-center">
-                                <IconComponent className="text-2xl sm:text-base" size={30} />
+                                <IconComponent
+                                  className="text-2xl sm:text-base"
+                                  size={30}
+                                />
                                 <span className="sm:text-sm">{skill.name}</span>
                               </div>
-                              <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                              <Progress
+                                aria-label={skill.name}
+                                className="max-w-md"
+                                value={skill.value}
+                              />
                             </CardBody>
                           </Card>
                         </motion.div>
@@ -208,18 +284,26 @@ export default function About() {
 
         <div className="block sm:hidden mb-32">
           <Card className="p-6 mb-4">
-          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
             <h3 className="text-2xl font-bold mb-4">Frontend Skills</h3>
             <div className="space-y-4">
               {frontendSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
                   const Icon = skills_icons[skill.icon];
+
                   return (
-                    <div key={skill.name} className="flex items-center space-x-4">
+                    <div
+                      key={skill.name}
+                      className="flex items-center space-x-4"
+                    >
                       <Icon size={30} />
                       <span className="font-semibold">{skill.name}</span>
-                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <Progress
+                        aria-label={skill.name}
+                        className="max-w-md"
+                        value={skill.value}
+                      />
                       <span className="ml-auto">{skill.value}%</span>
                     </div>
                   );
@@ -228,18 +312,26 @@ export default function About() {
           </Card>
 
           <Card className="p-6 mb-4">
-          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
             <h3 className="text-2xl font-bold mb-4">Backend Skills</h3>
             <div className="space-y-4">
               {backendSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
                   const Icon = skills_icons[skill.icon];
+
                   return (
-                    <div key={skill.name} className="flex items-center space-x-4">
+                    <div
+                      key={skill.name}
+                      className="flex items-center space-x-4"
+                    >
                       <Icon size={30} />
                       <span className="font-semibold">{skill.name}</span>
-                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <Progress
+                        aria-label={skill.name}
+                        className="max-w-md"
+                        value={skill.value}
+                      />
                       <span className="ml-auto">{skill.value}%</span>
                     </div>
                   );
@@ -248,18 +340,26 @@ export default function About() {
           </Card>
 
           <Card className="p-6 mb-4">
-          <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+            <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
             <h3 className="text-2xl font-bold mb-4">Other Skills</h3>
             <div className="space-y-4">
               {otherSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
                   const Icon = skills_icons[skill.icon];
+
                   return (
-                    <div key={skill.name} className="flex items-center space-x-4">
+                    <div
+                      key={skill.name}
+                      className="flex items-center space-x-4"
+                    >
                       <Icon size={30} />
                       <span className="font-semibold">{skill.name}</span>
-                      <Progress aria-label={skill.name} className="max-w-md" value={skill.value} />
+                      <Progress
+                        aria-label={skill.name}
+                        className="max-w-md"
+                        value={skill.value}
+                      />
                       <span className="ml-auto">{skill.value}%</span>
                     </div>
                   );

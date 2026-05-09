@@ -26,6 +26,7 @@ interface ParallaxProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;
+
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
@@ -56,6 +57,7 @@ function ParallaxText({
         const containerWidth = containerRef.current.offsetWidth;
         const textWidth = textRef.current.offsetWidth;
         const newRepetitions = Math.ceil(containerWidth / textWidth) + 2;
+
         setRepetitions(newRepetitions);
       }
     };
@@ -63,12 +65,14 @@ function ParallaxText({
     calculateRepetitions();
 
     window.addEventListener("resize", calculateRepetitions);
+
     return () => window.removeEventListener("resize", calculateRepetitions);
   }, [children]);
 
   const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
   const directionFactor = React.useRef<number>(1);
+
   useAnimationFrame((t, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 

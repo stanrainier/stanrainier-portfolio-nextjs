@@ -2,7 +2,6 @@ import { AiOutlineHome } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FaFolderOpen } from "react-icons/fa";
 import { MdOutlineArticle } from "react-icons/md";
-import { RiUserStarLine } from "react-icons/ri";
 import { IoIosCall } from "react-icons/io";
 
 export type SiteConfig = typeof siteConfig;
@@ -18,7 +17,7 @@ export const siteConfig = {
     { label: "Blog", href: "/blog", icon: MdOutlineArticle },
     { label: "Contact", href: "/contact", icon: IoIosCall },
   ],
-  
+
   navMenuItems: [
     { label: "Home", href: "/", icon: AiOutlineHome },
     { label: "About", href: "/about", icon: CgProfile },
@@ -26,7 +25,6 @@ export const siteConfig = {
     { label: "Blog", href: "/blog", icon: MdOutlineArticle },
     { label: "Contact", href: "/contact", icon: IoIosCall },
   ],
-
 
   links: {
     github: "https://github.com/stanrainier",

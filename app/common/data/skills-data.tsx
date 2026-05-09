@@ -1,17 +1,16 @@
 export const frontendSkills = [
-    { name: "TypeScript", icon: "SiTypescript", value: 90 },
-    { name: "JavaScript", icon: "IoLogoJavascript", value: 90 },
-    { name: "HTML", icon: "FaHtml5", value: 90 },
-    { name: "CSS", icon: "FaCss3Alt", value: 90 },
-    { name: "Angular", icon: "FaAngular", value: 90 },
-    { name: "NextJS", icon: "RiNextjsFill", value: 80},
-    { name: "React", icon: "FaReact", value: 50},
-    { name: "Tailwind", icon: "RiTailwindCssFill", value: 80},
-    { name: "Bootstrap", icon: "FaBootstrap", value: 70},
-    { name: "Wordpress", icon: "FaWordpressSimple", value: 90 },
-    { name: "Elementor", icon: "FaElementor", value: 90 },
-    
-  ];
+  { name: "TypeScript", icon: "SiTypescript", value: 90 },
+  { name: "JavaScript", icon: "IoLogoJavascript", value: 90 },
+  { name: "HTML", icon: "FaHtml5", value: 90 },
+  { name: "CSS", icon: "FaCss3Alt", value: 90 },
+  { name: "Angular", icon: "FaAngular", value: 90 },
+  { name: "NextJS", icon: "RiNextjsFill", value: 80 },
+  { name: "React", icon: "FaReact", value: 50 },
+  { name: "Tailwind", icon: "RiTailwindCssFill", value: 80 },
+  { name: "Bootstrap", icon: "FaBootstrap", value: 70 },
+  { name: "Wordpress", icon: "FaWordpressSimple", value: 90 },
+  { name: "Elementor", icon: "FaElementor", value: 90 },
+];
 
 export const backendSkills = [
   { name: "PHP", icon: "SiPhp", value: 90 },
@@ -29,6 +28,3 @@ export const otherSkills = [
   { name: "Postman", icon: "SiPostman", value: 40 },
   { name: "Stripe", icon: "FaCcStripe", value: 10 },
 ];
-
-
-

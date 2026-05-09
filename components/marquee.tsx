@@ -1,10 +1,15 @@
-'use client'
+"use client";
 
-import { frontendSkills, backendSkills, otherSkills } from '@/app/common/data/skills-data';
+import { Marquee } from "./magicui/marquee";
+
+import {
+  frontendSkills,
+  backendSkills,
+  otherSkills,
+} from "@/app/common/data/skills-data";
 import { skills_icons } from "@/app/common/data/skills-icons";
-import { Marquee } from './magicui/marquee';
 
-const mergedSkills = [...frontendSkills, ...backendSkills, ...otherSkills]
+const mergedSkills = [...frontendSkills, ...backendSkills, ...otherSkills];
 
 export default function SkillsMarquee() {
   return (
@@ -13,7 +18,9 @@ export default function SkillsMarquee() {
       <Marquee pauseOnHover className="text-center">
         <div className="flex w-max">
           {mergedSkills.concat(mergedSkills).map((skill, index) => {
-            const IconComponent = skills_icons[skill.icon as keyof typeof skills_icons]
+            const IconComponent =
+              skills_icons[skill.icon as keyof typeof skills_icons];
+
             return IconComponent ? (
               <span
                 key={index}
@@ -22,11 +29,10 @@ export default function SkillsMarquee() {
               >
                 <IconComponent size={40} />
               </span>
-            ) : null
+            ) : null;
           })}
         </div>
       </Marquee>
-      
     </div>
-  )
+  );
 }

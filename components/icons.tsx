@@ -184,8 +184,6 @@ export const SearchIcon = (props: IconSvgProps) => (
       strokeWidth="2"
     />
   </svg>
-
-  
 );
 
 export const GitlabIcon: React.FC<IconSvgProps> = ({
@@ -208,4 +206,3 @@ export const GitlabIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-

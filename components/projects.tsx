@@ -1,12 +1,23 @@
 "use client";
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Code, Tabs, Tab, Tooltip } from "@heroui/react";
-import { projects } from "@/app/common/data/project-data";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Link,
+  Image,
+  Code,
+  Tabs,
+  Tab,
+} from "@heroui/react";
 import { FaCode, FaRegFolderOpen } from "react-icons/fa6";
 import { CgWebsite } from "react-icons/cg";
+
 import AnimatedSection from "./animatedSection";
-import { skills_icons } from "@/app/common/data/skills-icons";
 import { TextAnimate } from "./magicui/text-animate";
-import { Safari } from "./magicui/safari";
+
+import { projects } from "@/app/common/data/project-data";
 
 export default function Projects() {
   const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
@@ -14,42 +25,62 @@ export default function Projects() {
   return (
     <div className="mt-56 mb-64">
       <AnimatedSection>
-      <h1 className="lg:text-6xl text-center font-bold  dark:text-amber-50 mt-24 ">
-      <TextAnimate animation="slideUp" by="character" duration={0.5} delay={0.1}>
-        Projects
-      </TextAnimate>
-      </h1>
-    
-   
-      <div className="relative h-[700px]"> 
-        <Tabs aria-label="Project Categories" variant="underlined">
-          <Tab key="all" title={
-            <div className="flex items-center space-x-2">
-              <FaRegFolderOpen />
-              <span>All</span>
-              </div>
-          }
+        <h1 className="lg:text-6xl text-center font-bold  dark:text-amber-50 mt-24 ">
+          <TextAnimate
+            animation="slideUp"
+            by="character"
+            delay={0.1}
+            duration={0.5}
           >
-            <ProjectGrid projects={sortedProjects} />
-          </Tab>
-          <Tab key="fullstack" title={
-            <div className="flex items-center space-x-2">
-              <FaCode /> 
-              <span>Full-stack</span>
-              </div>
-          }>
-            <ProjectGrid projects={sortedProjects.filter((project) => project.category === "fullstack")} />
-          </Tab>
-          <Tab key="sitebuilder"  title={
-            <div className="flex items-center space-x-2">
-              <CgWebsite />
-              <span>Site Builders</span>
-              </div>
-          }>
-            <ProjectGrid projects={sortedProjects.filter((project) => project.category === "sitebuilder")} />
-          </Tab>
-        </Tabs>
-      </div>
+            Projects
+          </TextAnimate>
+        </h1>
+
+        <div className="relative h-[700px]">
+          <Tabs aria-label="Project Categories" variant="underlined">
+            <Tab
+              key="all"
+              title={
+                <div className="flex items-center space-x-2">
+                  <FaRegFolderOpen />
+                  <span>All</span>
+                </div>
+              }
+            >
+              <ProjectGrid projects={sortedProjects} />
+            </Tab>
+            <Tab
+              key="fullstack"
+              title={
+                <div className="flex items-center space-x-2">
+                  <FaCode />
+                  <span>Full-stack</span>
+                </div>
+              }
+            >
+              <ProjectGrid
+                projects={sortedProjects.filter(
+                  (project) => project.category === "fullstack",
+                )}
+              />
+            </Tab>
+            <Tab
+              key="sitebuilder"
+              title={
+                <div className="flex items-center space-x-2">
+                  <CgWebsite />
+                  <span>Site Builders</span>
+                </div>
+              }
+            >
+              <ProjectGrid
+                projects={sortedProjects.filter(
+                  (project) => project.category === "sitebuilder",
+                )}
+              />
+            </Tab>
+          </Tabs>
+        </div>
       </AnimatedSection>
     </div>
   );
@@ -69,19 +100,25 @@ function ProjectCard({ project }: any) {
   return (
     <div className="relative group w-full rounded-lg overflow-visible">
       {/* Static Image */}
-      <Card >
-      <CardHeader className="flex items-center gap-4">
-            <Image alt="Project Logo" height={40} radius="sm" src={project.image} width={40} />
-            <div className="flex flex-col">
-              <p className="text-md font-bold">{project.title}</p>
-              <p className="text-small text-default-500">{project.url}</p>
-            </div>
-          </CardHeader>
+      <Card>
+        <CardHeader className="flex items-center gap-4">
+          <Image
+            alt="Project Logo"
+            height={40}
+            radius="sm"
+            src={project.image}
+            width={40}
+          />
+          <div className="flex flex-col">
+            <p className="text-md font-bold">{project.title}</p>
+            <p className="text-small text-default-500">{project.url}</p>
+          </div>
+        </CardHeader>
         <CardBody>
           <Image
             alt="Project Hero"
-            src={project.image_hero}
             className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+            src={project.image_hero}
           />
         </CardBody>
         <CardFooter className="flex justify-between items-center">
@@ -90,67 +127,78 @@ function ProjectCard({ project }: any) {
           </div>
         </CardFooter>
       </Card>
-    
 
       {/* Hover Card */}
       <div className="absolute top-0 left-0 w-full min-h-[500px] z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-  <Card className="w-full h-full text-white shadow-xl rounded-xl overflow-hidden">
-    <CardHeader className="flex items-center gap-4">
-      <Image 
-        className="cursor-pointer" 
-        alt="Project Logo" 
-        height={40} 
-        radius="sm" 
-        src={project.image} 
-        width={40} 
-        onClick={() => window.open(project.url, "_blank")} 
-      />
-      <div className="flex flex-col">
-        <a
-          className="text-md font-bold text-gray-950 dark:text-white cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
-          href={project.url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          {project.title}
-        </a>
-        <a
-          className="text-small text-default-500 cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {project.url}
-        </a>
+        <Card className="w-full h-full text-white shadow-xl rounded-xl overflow-hidden">
+          <CardHeader className="flex items-center gap-4">
+            <Image
+              alt="Project Logo"
+              className="cursor-pointer"
+              height={40}
+              radius="sm"
+              src={project.image}
+              width={40}
+              onClick={() => window.open(project.url, "_blank")}
+            />
+            <div className="flex flex-col">
+              <a
+                className="text-md font-bold text-gray-950 dark:text-white cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
+                href={project.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {project.title}
+              </a>
+              <a
+                className="text-small text-default-500 cursor-pointer hover:text-violet-600 transition ease-in-out duration-300"
+                href={project.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {project.url}
+              </a>
+            </div>
+          </CardHeader>
+          <CardBody className="overflow-y-auto">
+            <Image
+              alt={project.title}
+              className="hover:transform hover:scale-105 cursor-pointer transition-transform duration-300 ease-in-out rounded-lg mb-6"
+              src={project.image_hero}
+              onClick={() => window.open(project.url, "_blank")}
+            />
+            <Divider />
+            <p className="my-4 p-4 text-md text-gray-950 text-justify dark:text-default-100 bg-white ">
+              {project.description}
+            </p>
+            <Divider />
+            <div className="grid grid-cols-4 gap-2 mt-2">
+              {project.tags.map(
+                (
+                  tag: { name: string; icon: React.ElementType },
+                  idx: number,
+                ) => (
+                  <Code
+                    key={idx}
+                    className="flex items-center gap-1"
+                    color="primary"
+                  >
+                    <tag.icon size={20} />
+                    <span className="text-gray-950 dark:text-white">
+                      {tag.name}
+                    </span>
+                  </Code>
+                ),
+              )}
+            </div>
+          </CardBody>
+          <CardFooter>
+            <Link className="btn btn-primary" href={project.url}>
+              Visit
+            </Link>
+          </CardFooter>
+        </Card>
       </div>
-    </CardHeader>
-    <CardBody className="overflow-y-auto">
-      <Image
-        onClick={() => window.open(project.url, "_blank")}
-        src={project.image_hero}
-        alt={project.title}
-        className="hover:transform hover:scale-105 cursor-pointer transition-transform duration-300 ease-in-out rounded-lg mb-6"
-      />
-      <Divider />
-      <p className="my-4 p-4 text-md text-gray-950 text-justify dark:text-default-100 bg-white ">{project.description}</p>
-      <Divider />
-      <div className="grid grid-cols-4 gap-2 mt-2">
-        {project.tags.map((tag: { name: string, icon: React.ElementType }, idx: number) => (
-          <Code key={idx} className="flex items-center gap-1" color="primary">
-            <tag.icon size={20} />
-            <span className="text-gray-950 dark:text-white">{tag.name}</span>
-          </Code>
-        ))}
-      </div>
-    </CardBody>
-    <CardFooter>
-      <Link href={project.url} className="btn btn-primary">Visit</Link>
-    </CardFooter>
-  </Card>
-      </div>
-
     </div>
   );
-
 }
-

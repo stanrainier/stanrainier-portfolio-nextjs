@@ -1,42 +1,43 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useState } from 'react'
+import { motion } from "framer-motion";
+import { ReactNode, useEffect, useState } from "react";
 
 const AnimatedSection = ({ children }: { children: ReactNode }) => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640) // mobile breakpoint <640px
-    }
+      setIsMobile(window.innerWidth < 640); // mobile breakpoint <640px
+    };
 
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // If mobile, just render a plain section
   if (isMobile) {
-    return <section className="mb-16">{children}</section>
+    return <section className="mb-16">{children}</section>;
   }
 
   // Otherwise, use animation
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50, filter: 'blur(8px)' }}
+      className="mb-16"
+      initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
+      viewport={{ once: false, amount: 0.2 }}
       whileInView={{
         opacity: 1,
         y: 0,
-        filter: 'blur(0px)',
-        transition: { duration: 0.6, ease: 'easeOut' },
+        filter: "blur(0px)",
+        transition: { duration: 0.6, ease: "easeOut" },
       }}
-      viewport={{ once: false, amount: 0.2 }}
-      className="mb-16"
     >
       {children}
     </motion.section>
-  )
-}
+  );
+};
 
-export default AnimatedSection
+export default AnimatedSection;

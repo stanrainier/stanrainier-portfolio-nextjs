@@ -1,12 +1,13 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import React, {
   ComponentPropsWithoutRef,
   useEffect,
   useRef,
   useState,
 } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface MousePosition {
   x: number;
@@ -60,6 +61,7 @@ function hexToRgb(hex: string): number[] {
   const red = (hexInt >> 16) & 255;
   const green = (hexInt >> 8) & 255;
   const blue = hexInt & 255;
+
   return [red, green, blue];
 }
 
@@ -148,6 +150,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       const x = mousePosition.x - rect.left - w / 2;
       const y = mousePosition.y - rect.top - h / 2;
       const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+
       if (inside) {
         mouse.current.x = x;
         mouse.current.y = y;
@@ -170,6 +173,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       circles.current = [];
       for (let i = 0; i < quantity; i++) {
         const circle = circleParams();
+
         drawCircle(circle);
       }
     }
@@ -186,6 +190,7 @@ export const Particles: React.FC<ParticlesProps> = ({
     const dx = (Math.random() - 0.5) * 0.1;
     const dy = (Math.random() - 0.5) * 0.1;
     const magnetism = 0.1 + Math.random() * 4;
+
     return {
       x,
       y,
@@ -205,6 +210,7 @@ export const Particles: React.FC<ParticlesProps> = ({
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
       const { x, y, translateX, translateY, size, alpha } = circle;
+
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
@@ -232,8 +238,10 @@ export const Particles: React.FC<ParticlesProps> = ({
   const drawParticles = () => {
     clearContext();
     const particleCount = quantity;
+
     for (let i = 0; i < particleCount; i++) {
       const circle = circleParams();
+
       drawCircle(circle);
     }
   };
@@ -247,6 +255,7 @@ export const Particles: React.FC<ParticlesProps> = ({
   ): number => {
     const remapped =
       ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
+
     return remapped > 0 ? remapped : 0;
   };
 
@@ -264,6 +273,7 @@ export const Particles: React.FC<ParticlesProps> = ({
       const remapClosestEdge = parseFloat(
         remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
       );
+
       if (remapClosestEdge > 1) {
         circle.alpha += 0.02;
         if (circle.alpha > circle.targetAlpha) {
@@ -294,6 +304,7 @@ export const Particles: React.FC<ParticlesProps> = ({
         circles.current.splice(i, 1);
         // create a new circle
         const newCircle = circleParams();
+
         drawCircle(newCircle);
       }
     });
@@ -302,9 +313,9 @@ export const Particles: React.FC<ParticlesProps> = ({
 
   return (
     <div
-      className={cn("pointer-events-none", className)}
       ref={canvasContainerRef}
       aria-hidden="true"
+      className={cn("pointer-events-none", className)}
       {...props}
     >
       <canvas ref={canvasRef} className="size-full" />
