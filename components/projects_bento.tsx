@@ -130,27 +130,63 @@ const ProjectsDisplay = () => {
                 </ModalHeader>
 
                 <ModalBody className="min-h-0 overflow-hidden p-0">
-                  <div className="grid h-full min-h-0 grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)]">
-                    <div className="flex min-h-[320px] items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.24),_transparent_45%),linear-gradient(180deg,rgba(255,255,255,0.9),rgba(244,244,245,0.85))] dark:bg-none dark:bg-zinc-950/80 p-5 sm:p-6 lg:min-h-0 lg:p-8">
+                  <div className="flex h-full min-h-0 flex-col lg:grid lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)]">
+                    <div className="flex min-h-0 flex-col border-b border-divider bg-content1 lg:hidden">
+                      <div className="min-h-0 space-y-6 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
+                        <div className="space-y-3">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-default-500">
+                            Overview
+                          </p>
+                          <p className="text-sm leading-7 text-default-700 dark:text-zinc-300 sm:text-[15px]">
+                            {selectedProject.description}
+                          </p>
+                        </div>
+
+                        <Divider className="bg-divider" />
+
+                        <div className="space-y-3">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-default-500">
+                            Stack
+                          </p>
+                          <div className="grid grid-cols-1 gap-2">
+                            {selectedProject.tags.map((tag, i) => (
+                              <div
+                                key={i}
+                                className="flex min-w-0 items-center gap-3 rounded-2xl border border-divider bg-content2/70 px-4 py-3"
+                              >
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-default-100 text-foreground">
+                                  {React.createElement(tag.icon, { size: 18 })}
+                                </span>
+                                <span className="min-w-0 break-words text-sm leading-5 text-default-700 dark:text-zinc-200">
+                                  {tag.name}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="hidden min-h-0 flex-col items-center justify-center gap-3 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.24),_transparent_45%),linear-gradient(180deg,rgba(255,255,255,0.9),rgba(244,244,245,0.85))] p-4 lg:flex lg:min-h-0 lg:p-8 dark:bg-none dark:bg-zinc-950/80">
                       <a
-                        className="group relative flex h-full max-h-[520px] w-full items-center justify-center overflow-hidden rounded-[1.75rem] border border-divider bg-content2/70 dark:bg-black/20 p-4 shadow-inner transition hover:border-cyan-300/40 sm:p-6"
+                        className="group relative flex aspect-[16/10] w-full max-w-[760px] items-center justify-center overflow-hidden rounded-[1.75rem] border border-divider bg-content2/70 p-4 shadow-inner transition hover:border-cyan-300/40 dark:bg-black/20 sm:p-6 lg:aspect-auto lg:h-full lg:max-h-[520px]"
                         href={selectedProject.image_hero}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         <Image
                           alt="Hero"
-                          className="h-full max-h-[460px] w-full object-contain transition duration-300 group-hover:scale-[1.02]"
+                          className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.02]"
                           src={selectedProject.image_hero}
                         />
-                        <span className="pointer-events-none absolute bottom-4 right-4 rounded-full border border-divider bg-content1/90 px-3 py-1.5 text-xs font-medium tracking-[0.2em] text-foreground backdrop-blur">
-                          Expand image
-                        </span>
                       </a>
+                      <span className="rounded-full border border-divider bg-content1/90 px-3 py-1.5 text-xs font-medium tracking-[0.2em] text-foreground backdrop-blur">
+                        Expand image
+                      </span>
                     </div>
 
-                    <div className="flex min-h-0 flex-col border-t border-divider lg:border-l lg:border-t-0">
-                      <div className="min-h-0 space-y-6 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
+                    <div className="hidden min-h-0 flex-col border-t border-divider lg:flex lg:border-l lg:border-t-0">
+                      <div className="min-h-0 space-y-6 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6 lg:max-h-[860px] lg:px-7">
                         <div className="space-y-3">
                           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-default-500">
                             Overview
@@ -175,7 +211,7 @@ const ProjectsDisplay = () => {
                                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-default-100 text-foreground">
                                   {React.createElement(tag.icon, { size: 18 })}
                                 </span>
-                                <span className="min-w-0 text-sm leading-5 text-default-700 dark:text-zinc-200 break-words">
+                                <span className="min-w-0 break-words text-sm leading-5 text-default-700 dark:text-zinc-200">
                                   {tag.name}
                                 </span>
                               </div>
