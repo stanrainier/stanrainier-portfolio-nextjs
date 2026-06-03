@@ -1,6 +1,6 @@
 export const workExperience = [
   {
-    image: "https://mytaskowl.com/wp-content/uploads/2025/05/mytaskowl_logo.png",
+    image:  "/images/mytaskowlLOGO.png",
     title: 'Full Stack Developer',
     company: 'MyTaskOwl LLC',
     location: 'Remote',
@@ -26,9 +26,9 @@ export const workExperience = [
     date: "2024 - Present",
     description: [
       'Built websites for clients using WordPress and custom themes.',
-      'Built websites for clients using Shopify.',
       'Collaborated with clients to gather requirements and deliver tailored solutions.',
       'Utilized Git for version control and project management.',
+
     ],
   },
 ];

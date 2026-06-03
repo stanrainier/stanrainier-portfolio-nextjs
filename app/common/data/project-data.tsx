@@ -73,7 +73,7 @@ export const projects = [
   {
     id: 2,
     image_hero:
-      "https://mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png",
+      "https://mytaskowl.com/wp-content/uploads/2026/01/Screenshot-2026-01-28-233745.webp",
     category: "fullstack",
     title: "MyTaskOwl Desktop Application",
     short_description:
@@ -81,7 +81,7 @@ export const projects = [
     description:
       "I architected and built the initial foundation of the MyTaskOwl Desktop application, establishing the integration between Angular and Electron. The project was designed to extend web functionality into a native desktop environment for Windows and macOS, providing offline capabilities and a seamless user experience. After successfully setting up the core infrastructure and primary task management modules, the project was handed over for continued feature expansion.",
     image:
-      "https://mytaskowl.com/wp-content/uploads/2026/01/Screenshot-2026-01-28-233745.webp",
+      "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
     url: "https://mytaskowl.com/downloads/",
     tags: [
       { name: "Angular", icon: FaAngular },
@@ -203,14 +203,14 @@ export const projects = [
   {
     id: 8,
     image_hero:
-      "https://m.media-amazon.com/images/I/41AvPg+atZL._UF894,1000_QL80_.jpg",
+      "/images/magentapicks.png",
     category: "sitebuilder",
     title: "MagnetaPicks",
     short_description:
       "A website for a business using WordPress, WooCommerce, and Elementor.",
     description:
       "A website for a business using WordPress, WooCommerce, and Elementor. The project involved customizing themes, setting up an online store, and ensuring a responsive design that works well on all devices. The site features a clean and modern layout, easy navigation, and integrated payment gateways to facilitate smooth transactions for customers.",
-    image: "/images/magentapicks.png",
+    image: "/images/magentapicks-original.png",
     url: "https://magnetapicks.free.nf/",
     tags: [
       { name: "Elementor", icon: FaElementor },
