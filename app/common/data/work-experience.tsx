@@ -1,19 +1,21 @@
 export const workExperience = [
   {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWinF9dMxnPh8Cmy8kyTS_6jO_LUHQEtNGg&s",
-    title: "Junior Full Stack Developer",
-    company: "Prominent Outsource",
-    location: "Remote",
-    date: "2024 - Present",
+    image: "https://mytaskowl.com/wp-content/uploads/2025/05/mytaskowl_logo.png",
+    title: 'Full Stack Developer',
+    company: 'MyTaskOwl LLC',
+    location: 'Remote',
+    date: '2024 - 2026',
     description: [
-      "Developed and maintained web applications using Angular, Laravel, and Electron.",
-      "Collaborated with a team to gather requirements and deliver tailored solutions.",
-      "Utilized Git for version control and project management.",
-      "Participated in code reviews and contributed to team discussions.",
-      "Learned best practices in software development and agile methodologies.",
-      "Learned about CI/CD pipelines and deployment processes.",
-      "Gained experience in working with RESTful APIs and integrating third-party services.",
+      'Developed and maintained web applications using Angular, Laravel, and Electron.',
+      'Collaborated with a team to gather requirements and deliver tailored solutions.',
+      'Utilized Git for version control and project management.',
+      'Participated in code reviews and contributed to team discussions.',
+      'Learned best practices in software development and agile methodologies.',
+      'Learned about CI/CD pipelines and deployment processes.',
+      'Gained experience in working with RESTful APIs and integrating third-party services.',
+      'Contributed to the development of internal tools and automation scripts.',
+      'Developed Mobile applications using Expo and React Native.',
+      'Deployed application on both Android and iOS platforms, ensuring cross-platform compatibility and optimal performance.',
     ],
   },
   {
@@ -23,9 +25,10 @@ export const workExperience = [
     location: "City, Country",
     date: "2024 - Present",
     description: [
-      "Built websites for clients using WordPress and custom themes.",
-      "Collaborated with clients to gather requirements and deliver tailored solutions.",
-      "Utilized Git for version control and project management.",
+      'Built websites for clients using WordPress and custom themes.',
+      'Built websites for clients using Shopify.',
+      'Collaborated with clients to gather requirements and deliver tailored solutions.',
+      'Utilized Git for version control and project management.',
     ],
   },
 ];

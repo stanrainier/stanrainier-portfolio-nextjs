@@ -1,5 +1,6 @@
 import {
   FaAngular,
+  FaApple,
   FaElementor,
   FaGithub,
   FaGoogle,
@@ -80,8 +81,8 @@ export const projects = [
     description:
       "I architected and built the initial foundation of the MyTaskOwl Desktop application, establishing the integration between Angular and Electron. The project was designed to extend web functionality into a native desktop environment for Windows and macOS, providing offline capabilities and a seamless user experience. After successfully setting up the core infrastructure and primary task management modules, the project was handed over for continued feature expansion.",
     image:
-      "https://i0.wp.com/mytaskowl.com/wp-content/uploads/2025/05/cropped-mytaskowl_logo.png?fit=801%2C844&ssl=1",
-    url: "https://app.mytaskowl.com",
+      "https://mytaskowl.com/wp-content/uploads/2026/01/Screenshot-2026-01-28-233745.webp",
+    url: "https://mytaskowl.com/downloads/",
     tags: [
       { name: "Angular", icon: FaAngular },
       { name: "TypeScript", icon: SiTypescript },
@@ -209,7 +210,7 @@ export const projects = [
       "A website for a business using WordPress, WooCommerce, and Elementor.",
     description:
       "A website for a business using WordPress, WooCommerce, and Elementor. The project involved customizing themes, setting up an online store, and ensuring a responsive design that works well on all devices. The site features a clean and modern layout, easy navigation, and integrated payment gateways to facilitate smooth transactions for customers.",
-    image: "/images/magentapicks-original.png",
+    image: "/images/magentapicks.png",
     url: "https://magnetapicks.free.nf/",
     tags: [
       { name: "Elementor", icon: FaElementor },
@@ -230,12 +231,14 @@ export const projects = [
     description:
       "Serving as the mobile companion to the MyTaskOwl Web ecosystem, this application enables users to manage tasks and professional staffing on the go. I led the development team and managed the end-to-end deployment process. The app features real-time synchronization, push notifications, and a unified interface across platforms, ensuring a seamless transition between desktop and mobile workflows.",
     image: "images/mytaskowl-app-logo.png",
-    url: "https://play.google.com/store/apps/details?id=com.mytaskowl.mytaskowl",
+    url: "https://apps.apple.com/ph/app/mytaskowl-mobile/id6762628862",
     tags: [
       { name: "React Native", icon: FaReact },
       { name: "Expo", icon: SiExpo },
       { name: "TypeScript", icon: SiTypescript },
       { name: "GitHub", icon: FaGithub },
+      { name: "Apple Store Connect", icon: FaApple },
+      { name: "Google Play Console", icon: FaGoogle },
     ],
     year: [2026],
     status: "Published",
