@@ -24,9 +24,8 @@ const ParallaxDiv: React.FC<ParallaxDivProps> = ({ children }) => {
 
   return (
     <motion.div
-      animate={{ y: scrollY * 1.5 }}
-      className="h-[500px] bg-fixed relative"
-      style={{ background: "url(/your-image.jpg) center/cover no-repeat" }}
+      animate={{ y: scrollY * 0.35 }}
+      className="relative overflow-visible"
       transition={{ type: "spring", stiffness: 100 }}
     >
       {children}

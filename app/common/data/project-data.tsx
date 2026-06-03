@@ -203,7 +203,7 @@ export const projects = [
   {
     id: 8,
     image_hero:
-      "/images/magentapicks.png",
+      "/images/magnetapicks.png",
     category: "sitebuilder",
     title: "MagnetaPicks",
     short_description:

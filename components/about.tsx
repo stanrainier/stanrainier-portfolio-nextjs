@@ -19,7 +19,7 @@ import { BoxReveal } from "./magicui/box-reveal";
 import { TextAnimate } from "./magicui/text-animate";
 
 import { workExperience } from "@/app/common/data/work-experience";
-import { skills_icons } from "@/app/common/data/skills-icons";
+import { getSkillIcon } from "@/app/common/data/skills-icons";
 import {
   frontendSkills,
   backendSkills,
@@ -138,8 +138,7 @@ export default function About() {
                   {frontendSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent =
-                        skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent = getSkillIcon(skill.icon);
 
                       return (
                         <motion.div
@@ -202,8 +201,7 @@ export default function About() {
                   {backendSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent =
-                        skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent = getSkillIcon(skill.icon);
 
                       return (
                         <motion.div
@@ -241,8 +239,7 @@ export default function About() {
                   {otherSkills
                     .sort((a, b) => b.value - a.value)
                     .map((skill: any) => {
-                      const IconComponent =
-                        skills_icons[skill.icon as keyof typeof skills_icons];
+                      const IconComponent = getSkillIcon(skill.icon);
 
                       return (
                         <motion.div
@@ -290,7 +287,7 @@ export default function About() {
               {frontendSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
-                  const Icon = skills_icons[skill.icon];
+                  const Icon = getSkillIcon(skill.icon);
 
                   return (
                     <div
@@ -318,7 +315,7 @@ export default function About() {
               {backendSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
-                  const Icon = skills_icons[skill.icon];
+                  const Icon = getSkillIcon(skill.icon);
 
                   return (
                     <div
@@ -346,7 +343,7 @@ export default function About() {
               {otherSkills
                 .sort((a, b) => b.value - a.value)
                 .map((skill) => {
-                  const Icon = skills_icons[skill.icon];
+                  const Icon = getSkillIcon(skill.icon);
 
                   return (
                     <div

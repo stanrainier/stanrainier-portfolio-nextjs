@@ -20,196 +20,165 @@ import {
   frontendSkills,
   otherSkills,
 } from "../common/data/skills-data";
-import { skills_icons } from "../common/data/skills-icons";
+import { getSkillIcon } from "../common/data/skills-icons";
 import { workExperience } from "../common/data/work-experience";
 
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import NumberCounter from "@/components/numberCounter";
-import { BorderBeam } from "@/components/magicui/border-beam";
 
 export default function AboutPage() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div>
-      <h1 className="text-4xl mb-8 lg:text-6xl text-center font-bold dark:text-amber-50">
-        <TextAnimate
-          animation="slideUp"
-          by="character"
-          delay={0.1}
-          duration={0.5}
-        >
-          About Me
-        </TextAnimate>
-      </h1>
-      <Card className="flex flex-col md:flex-row items-center gap-6 p-8">
-        <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
-
-        {/* LEFT SIDE - Image, Name, and Chips */}
-        <div className="flex flex-col items-center md:w-1/2 mb-6 md:mb-0">
-          <Image
-            alt="Stan Rainier D. Salazar"
-            className="rounded-full mb-4 border-4 border-gray-300"
-            height={200}
-            src="/images/pinkMeSmile.JPG"
-            width={200}
-          />
-          <h1 className="text-lg font-bold text-center mb-4 lg:text-3xl ">
-            Stan Rainier D. Salazar
-          </h1>
-          <div className="flex flex-wrap justify-center gap-2 mb-4">
-            <Chip>Web Developer</Chip>
-            <Chip>Full Stack Developer</Chip>
-            <Chip>Freelancer</Chip>
-          </div>
-          <div className="flex flex-wrap justify-center gap-2">
-            <Chip>Software Developer</Chip>
-            <Chip>Tech Enthusiast</Chip>
-          </div>
-          <Button
-            className="mt-4"
-            startContent={<IoDocumentText />}
-            variant="light"
-            onPress={onOpen}
+    <div className="mx-auto w-full max-w-7xl space-y-14 px-5 py-8 sm:px-8 lg:space-y-16">
+      <section className="text-center">
+        <h1 className="text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl">
+          <TextAnimate
+            animation="slideUp"
+            by="character"
+            delay={0.1}
+            duration={0.5}
           >
-            View or Download My CV
-          </Button>
+            About Me
+          </TextAnimate>
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-default-500 sm:text-base">
+          Full stack developer focused on useful products, clean architecture,
+          and practical user experience.
+        </p>
+      </section>
 
-          <Divider className="my-4" />
-          <div className="flex flex-col text-center justify-center items-center gap-2 mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
-            <FaGraduationCap size={30} />
-            <span className="text-md font-semibold">
-              University of Negros Occidental - Recoletos
-            </span>
-            <span className="text-sm font-semibold">
-              Bachelor of Science in Information Technology
-            </span>
-            <span className="text-xs">2020 - 2024</span>
+      <Card className="relative overflow-hidden rounded-[2rem] border border-divider bg-content1/85 p-6 shadow-[0_28px_90px_rgba(0,0,0,0.18)] sm:p-8 lg:p-10">
+        <ShineBorder shineColor={["#0ea5e9", "#155eef", "#0ea5e9"]} />
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-10">
+          <div className="space-y-5 rounded-3xl border border-divider bg-content2/60 p-6 text-center lg:text-left">
+            <div className="mx-auto w-fit rounded-full border border-divider p-1.5">
+              <Image
+                alt="Stan Rainier D. Salazar"
+                className="h-36 w-36 rounded-full object-cover sm:h-44 sm:w-44"
+                height={176}
+                src="/images/pinkMeSmile.JPG"
+                width={176}
+              />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold text-foreground">
+                Stan Rainier D. Salazar
+              </h2>
+              <p className="mt-1 text-sm text-default-500">
+                Full Stack Developer • Philippines
+              </p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+              <Chip className="border border-divider bg-default-100 text-foreground">
+                Web Developer
+              </Chip>
+              <Chip className="border border-divider bg-default-100 text-foreground">
+                Full Stack Developer
+              </Chip>
+              <Chip className="border border-divider bg-default-100 text-foreground">
+                Freelancer
+              </Chip>
+              <Chip className="border border-divider bg-default-100 text-foreground">
+                Tech Enthusiast
+              </Chip>
+            </div>
+
+            <Button
+              className="mt-2 w-full rounded-full border border-cyan-400/35 bg-cyan-400/10 font-semibold text-cyan-200 hover:bg-cyan-300/15"
+              startContent={<IoDocumentText />}
+              variant="light"
+              onPress={onOpen}
+            >
+              View or Download CV
+            </Button>
+
+            <div className="rounded-2xl border border-divider bg-content1 p-4">
+              <div className="mb-2 flex items-center justify-center gap-2 text-foreground lg:justify-start">
+                <FaGraduationCap size={20} />
+                <span className="text-sm font-semibold">Education</span>
+              </div>
+              <p className="text-sm font-semibold text-foreground">
+                University of Negros Occidental - Recoletos
+              </p>
+              <p className="mt-1 text-sm text-default-600">
+                Bachelor of Science in Information Technology
+              </p>
+              <p className="mt-1 text-xs text-default-500">2020 - 2024</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <AboutBlock
+              body="I&apos;m a results-driven Full Stack Developer based in the Philippines, currently working at Prominent Outsource. Skilled in Angular and Laravel, and currently exploring React, I build and maintain responsive web applications, collaborate with clients to deliver tailored solutions, and contribute to internal tool development. Alongside my full-time role, I also take on freelance web projects and remain committed to continuous learning and evolving as a developer."
+              title="Bio"
+            />
+            <AboutBlock
+              body="I have a keen interest in web development, particularly in creating user-friendly interfaces and optimizing backend performance. I also enjoy exploring new technologies and frameworks to enhance my skill set. In my free time, I love watching tech related videos and catch up with recent happenings in the industry, building passion projects, and engaging with the developer community."
+              title="Interests"
+            />
+            <AboutBlock
+              body="Outside of coding, I enjoy playing video games, watching movies, and spending time with friends and family. I also love to travel and explore new places, which often inspires my work and creativity. I have a passion for creating web applications since I was young, and I love to learn new things and improve my skills. I also enjoy reading books and articles about technology and software development, which helps me stay updated with the latest trends and best practices in the industry. I love to do post-production and video editing, and I have a keen interest in photography and videography. I also produce music in my free time, which allows me to express my creativity in different ways. I believe that having a diverse range of interests helps me to be a more well-rounded developer and enhances my problem-solving skills."
+              title="Hobbies"
+            />
           </div>
         </div>
-
-        {/* RIGHT SIDE - Description */}
-        <div className="flex flex-col justify-start flex-1 md:w-1/2">
-          <div className="mb-6">
-            <span className="text-lg font-semibold text-purple-700 mb-2 text-center sm:text-left">
-              Bio
-            </span>
-            <p className="text-sm text-justify md:text-md lg:text-md">
-              I&apos;m a results-driven Full Stack Developer based in the
-              Philippines, currently working at Prominent Outsource. Skilled in
-              Angular and Laravel, and currently exploring React, I build and
-              maintain responsive web applications, collaborate with clients to
-              deliver tailored solutions, and contribute to internal tool
-              development. Alongside my full-time role, I also take on freelance
-              web projects and remain committed to continuous learning and
-              evolving as a developer.
-            </p>
-          </div>
-
-          <div className="mb-6">
-            <span className="text-lg font-semibold text-purple-700 mb-2 text-center sm:text-left">
-              Interests
-            </span>
-            <p className="text-sm text-justify lg:text-md">
-              I have a keen interest in web development, particularly in
-              creating user-friendly interfaces and optimizing backend
-              performance. I also enjoy exploring new technologies and
-              frameworks to enhance my skill set. In my free time, I love
-              watching tech related videos and catch up with recent happenings
-              in the industry, building passion projects, and engaging with the
-              developer community.
-            </p>
-          </div>
-
-          <div className="mb-6">
-            <span className="text-lg font-semibold text-purple-700 mb-2">
-              Hobbies
-            </span>
-            <p className="text-sm text-justify lg:text-md">
-              Outside of coding, I enjoy playing video games, watching movies,
-              and spending time with friends and family. I also love to travel
-              and explore new places, which often inspires my work and
-              creativity. I have a passion for creating web applications since I
-              was young, and I love to learn new things and improve my skills. I
-              also enjoy reading books and articles about technology and
-              software development, which helps me stay updated with the latest
-              trends and best practices in the industry. I love to do
-              post-production and video editing, and I have a keen interest in
-              photography and videography. I also produce music in my free time,
-              which allows me to express my creativity in different ways. I
-              believe that having a diverse range of interests helps me to be a
-              more well-rounded developer and enhances my problem-solving
-              skills.
-            </p>
-          </div>
-        </div>
-
-        <BorderBeam duration={8} size={100} />
       </Card>
 
-      <Divider className="my-12" />
-
-      {/* Work Experience and Skills Section */}
-      <div>
-        <h2 className="text-3xl font-bold my-12 text-center">
-          Work Experience
-        </h2>
-        <div className="flex flex-row flex-wrap justify-center items-start gap-6">
-          {workExperience.map((item: any) => (
+      <section className="space-y-6">
+        <SectionHeading subtitle="Career milestones and shipping experience" title="Work Experience" />
+        <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+          {workExperience.map((item: (typeof workExperience)[number]) => (
             <Card
               key={item.title}
-              className="w-[500px] h-full p-6 flex flex-col items-center sm:items-start"
+              className="rounded-3xl border border-divider bg-content1/85 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.16)]"
             >
-              <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Image
+                  alt={item.company}
+                  className="h-16 w-16 rounded-2xl object-cover ring-1 ring-divider"
+                  height={64}
+                  src={item.image}
+                  width={64}
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-sm font-medium text-default-600">{item.company}</p>
+                  <p className="text-xs uppercase tracking-[0.24em] text-default-500">
+                    {item.date}
+                  </p>
+                </div>
+              </div>
 
-              <Image
-                alt={item.company}
-                className="rounded-full mb-4"
-                height={100}
-                src={item.image}
-                width={100}
-              />
+              <Divider className="my-5 bg-divider" />
 
-              <h2 className="text-2xl font-bold mb-2 text-center sm:text-left">
-                {item.title}
-              </h2>
-
-              <h2 className="text-md font-semibold mb-1 text-center sm:text-left">
-                {item.company}
-              </h2>
-
-              <h2 className="text-sm font-medium mb-2 text-default-500 text-center sm:text-left">
-                {item.date}
-              </h2>
-
-              <Divider className="mb-4 w-full" />
-
-              {item.description.map((desc: any, index: any) => (
-                <span key={index} className="block text-base mb-2 ">
-                  {desc}
-                </span>
-              ))}
+              <ul className="space-y-2.5">
+                {item.description.map((desc: string, index: number) => (
+                  <li key={index} className="text-sm leading-6 text-default-700">
+                    {desc}
+                  </li>
+                ))}
+              </ul>
             </Card>
           ))}
         </div>
-        <div className="flex flex-col justify-center items-center w-full h-full mt-12">
+        <div className="pt-6">
           <NumberCounter />
         </div>
-      </div>
+      </section>
 
-      <Divider className="my-12" />
-      {/* Skills Section */}
-      <div className="mt-12">
-        <h2 className="text-3xl font-bold mb-6 text-center sm:text-left">
-          Skills
-        </h2>
+      <section className="space-y-6">
+        <SectionHeading subtitle="Main technologies used in production" title="Skills" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SkillSection skills={frontendSkills} title="Frontend Skills" />
           <SkillSection skills={backendSkills} title="Backend Skills" />
           <SkillSection skills={otherSkills} title="Other Skills" />
         </div>
-      </div>
+      </section>
 
       <Drawer
         backdrop="blur"
@@ -220,9 +189,9 @@ export default function AboutPage() {
         onOpenChange={onOpenChange}
       >
         <DrawerContent>
-          {(onClose) => (
+          {() => (
             <>
-              <DrawerHeader className="flex flex-col gap-1 text-center">
+              <DrawerHeader className="flex flex-col gap-1 border-b border-white/10 text-center">
                 <TextAnimate
                   animation="slideUp"
                   by="character"
@@ -250,6 +219,26 @@ export default function AboutPage() {
   );
 }
 
+function SectionHeading({ title, subtitle }: { title: string; subtitle: string }) {
+  return (
+    <div className="space-y-2">
+      <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{title}</h2>
+      <p className="text-sm text-default-500 sm:text-base">{subtitle}</p>
+    </div>
+  );
+}
+
+function AboutBlock({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="rounded-2xl border border-divider bg-content2/60 p-5 sm:p-6">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-600 dark:text-cyan-300">
+        {title}
+      </p>
+      <p className="text-sm leading-7 text-default-700 sm:text-[15px]">{body}</p>
+    </div>
+  );
+}
+
 function SkillSection({
   title,
   skills,
@@ -258,26 +247,31 @@ function SkillSection({
   skills: typeof frontendSkills;
 }) {
   return (
-    <Card className="p-6">
-      <ShineBorder shineColor={["#1703fc", "#fc03f0", "#fc03f0"]} />
+    <Card className="rounded-3xl border border-divider bg-content1/85 p-5 shadow-[0_20px_70px_rgba(0,0,0,0.16)] sm:p-6">
+      <ShineBorder shineColor={["#0ea5e9", "#155eef", "#0ea5e9"]} />
 
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
-      <div className="space-y-4">
-        {skills
-          .sort((a, b) => b.value - a.value) // Sort in descending order by 'value'
+      <h3 className="mb-4 text-xl font-semibold text-foreground">{title}</h3>
+      <div className="space-y-3">
+        {[...skills]
+          .sort((a, b) => b.value - a.value)
           .map((skill: any) => {
-            const Icon = skills_icons[skill.icon];
+            const Icon = getSkillIcon(skill.icon);
 
             return (
-              <div key={skill.name} className="flex items-center space-x-4">
-                <Icon size={30} />
-                <span className="font-semibold">{skill.name}</span>
-                <Progress
-                  aria-label="Loading..."
-                  className="max-w-md"
-                  value={skill.value}
-                />
-                <span className="ml-auto">{skill.value}%</span>
+              <div
+                key={skill.name}
+                className="rounded-2xl border border-divider bg-content2/65 p-3"
+              >
+                <div className="mb-2 flex items-center gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-default-100 text-foreground ring-1 ring-divider">
+                    <Icon size={18} />
+                  </span>
+                  <span className="text-sm font-semibold text-foreground">{skill.name}</span>
+                  <span className="ml-auto text-xs font-semibold text-default-500">
+                    {skill.value}%
+                  </span>
+                </div>
+                <Progress aria-label={skill.name} className="max-w-none" value={skill.value} />
               </div>
             );
           })}
