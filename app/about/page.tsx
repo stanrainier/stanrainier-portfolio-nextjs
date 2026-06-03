@@ -237,7 +237,7 @@ export default function AboutPage() {
                   className="w-full h-full"
                   frameBorder="0"
                   height="100%"
-                  src="/files/StanRanierSalazarCV.pdf"
+                  src="/files/CV_StanRainierSalazar.pdf"
                   title="Resume"
                   width="100%"
                 />
